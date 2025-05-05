@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+  <meta content="1; mode=block" http-equiv="X-XSS-Protection"/>
+  <link href="/docs/icon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/docs/icon.svg" rel="shortcut icon" type="image/svg+xml"/>
+  <link href="https://www.gstatic.com" rel="dns-prefetch"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="dns-prefetch"/>
+  <meta content="This tutorial provides an introduction to Code Workspaces by setting up a workspace for either JupyterLabÂ® or RStudioÂ® Workbench. All code..." name="description"/>
+  <link href="https://palantir.com/docs/foundry/code-workspaces/getting-started//" rel="canonical"/>
+  <meta content="Palantir" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://palantir.com/docs/foundry/code-workspaces/getting-started//" property="og:url"/>
+  <meta content="Palantir" property="og:site_name"/>
+  <meta content="https://palantir.com/docs/resources/homepage/iso-grid.png" name="image" property="og:image"/>
+  <meta content="This tutorial provides an introduction to Code Workspaces by setting up a workspace for either JupyterLabÂ® or RStudioÂ® Workbench. All code..." property="og:description"/>
+  <meta content="Documentation | Palantir" name="twitter:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@palantirtech" name="twitter:site"/>
+  <link href="https://www.googletagmanager.com" rel="preconnect"/>
+  <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
+  <title>
+   Code Workspaces â¢ Getting started â¢ Palantir
+  </title>
+  <meta content="23" name="next-head-count"/>
+  <script data-nscript="beforeInteractive" type="text/javascript">
+   function OptanonWrapper() {}
+  </script>
+  <link as="style" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="preload"/>
+  <link data-n-g="" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="stylesheet"/>
+  <noscript data-n-css="">
+  </noscript>
+  <script defer="" nomodule="" src="/docs/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js">
+  </script>
+  <script data-document-language="true" data-domain-script="0c1270b7-3d02-4afa-bd15-f3c23839b75a" data-nscript="beforeInteractive" defer="" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/webpack-d50bf798bfb74151.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/framework-777d23e5800d4dc0.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/main-7bc202b68cac4a69.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/_app-87c1de53eb5f2af5.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5117-b9a97c6f03ed6079.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1059-7fd152d892580497.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5819-22ba01b9d8cbb33a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/8913-a71dbce8790fe614.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1472-56bad0c7930cc63a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/9537-3c0ceb8250403970.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/%5B...slug%5D-1bf87c642d9d87bc.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_buildManifest.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_ssgManifest.js">
+  </script>
+ </head>
+ <body>
+  <div data-reactroot="" id="__next">
+   <script id="docs-theme" nonce="**CSP_NONCE**">
+    (function() {
+                                    const theme = document.cookie.split('; ').find(row => row.startsWith('docsColorTheme='));
+                                    if (theme) {
+                                        document.body.className = theme.split('=')[1] + "Theme";
+                                    }
+                                })();
+   </script>
+   <noscript>
+    <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PSL84DJ" style="display:none;visibility:hidden" width="0">
+    </iframe>
+   </noscript>
+   <div class="ptcom-design__layoutWrapper__ko5zom ptcom-design__hasToc__ko5zom">
+    <div class="ptcom-design__navContainer__ko5zom ptcom-design__hasDropdownNav__ko5zom">
+     <div class="ptcom-design__cornerButtons__twowro">
+      <button aria-expanded="false" class="ptcom-design__button__16lyg8o" id="navBtn" title="Show Navigation">
+       <div class="ptcom-design__burger__16lyg8o hamburger hamburger--emphatic">
+        <span class="hamburger-box">
+         <span class="hamburger-inner">
+         </span>
+        </span>
+       </div>
+      </button>
+      <button aria-expanded="false" class="ptcom-design__button__67pw73" id="searchBtn" title="Search">
+       <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <title>
+         Search
+        </title>
+        <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+        </circle>
+        <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+        </path>
+       </svg>
+      </button>
+     </div>
+     <div class="ptcom-design__brandBar__ko5zom">
+      <div class="ptcom-design__logoContainer__ko5zom">
+       <div class="ptcom-design__navBrand__1aug2ec">
+        <a aria-label="Link to Palantir homepage" class="ptcom-design__branding__1aug2ec" data-axe="reviewed" href="../../../docs/ id="logo">
+         <svg class="ptcom-design__logo__1aug2ec" height="20" role="img" viewbox="0 0 83 20" width="83" xmlns="http://www.w3.org/2000/svg">
+          <title>
+           Palantir
+          </title>
+          <path d="M20.115 2.092h5.112c1.896 0 3.133.084 4.204 1.255.742.837 1.154 1.841 1.154 3.013 0 1.171-.412 2.176-1.236 3.012-.825.837-1.896 1.34-4.617 1.34H22.26v6.945h-2.144V2.092zm2.144 6.862h2.473c1.402 0 3.545-.084 3.545-2.678 0-2.427-1.979-2.427-3.133-2.427H22.26v5.105zm15.169 8.703c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.165-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zM36.026 12.3c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.989 0 1.813-.418 2.308-1.172.412-.753.495-1.338.495-2.845-.33.084-.66 0-1.155 0zM40.89 2.092h1.979v15.565H40.89V2.092zm10.553 15.565c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.164-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zm-1.32-5.356c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.99 0 1.814-.418 2.308-1.172.413-.753.495-1.338.495-2.845-.412.084-.66 0-1.154 0zm4.865-4.184V6.862h1.978v1.757c.248-.418.99-1.924 3.38-1.924.99 0 3.875.334 3.875 3.682v7.364H62.16v-6.862c0-.67-.082-1.34-.577-1.841-.495-.502-1.237-.753-1.896-.753-1.484 0-2.803 1.087-2.803 3.263v6.193h-1.979V8.117h.083zm9.893-1.255h1.896V4.519l1.978-.67v2.93h2.391v1.506h-2.39v6.443c0 .502 0 1.423 1.4 1.423.413 0 .825-.084.99-.084v1.59c-.33.084-.907.167-1.649.167-1.896 0-2.72-.586-2.72-2.343V8.284H64.88V6.862zm7.666-4.77h2.391v2.26h-2.39v-2.26zm.165 4.77h1.979v10.795h-1.979V6.862zm3.875 2.176c0-.753-.082-1.507-.082-2.176h1.978l.083 2.092c.412-1.506 1.648-2.008 2.555-2.092a9.379 9.379 0 011.402-.084v2.009c-.083 0-.248-.084-.412-.084h-.578c-2.39 0-2.885 1.422-2.885 3.263v5.774H76.67V9.037h-.083zM7.832 0C3.71 0 .33 3.431.33 7.615s3.38 7.615 7.502 7.615 7.502-3.43 7.502-7.615C15.334 3.431 11.954 0 7.832 0zm0 12.887c-2.886 0-5.194-2.343-5.194-5.272 0-2.929 2.308-5.272 5.194-5.272 2.885 0 5.194 2.343 5.194 5.272-.083 2.929-2.391 5.272-5.194 5.272zm6.677 1.674l-6.677 2.928-6.678-2.928L0 16.653 7.832 20l7.832-3.347-1.155-2.092z">
+          </path>
+         </svg>
+        </a>
+        <div class="ptcom-design__subnavLink__1aug2ec">
+         <li class="ptcom-design__item__vv201u ptcom-design__subNavListContainer__1wclymi" tabindex="0">
+          <div class="ptcom-design__pageGroupTitle__vv201u ptcom-design__subNavPickerDropdown__1wclymi">
+           <span>
+            Documentation
+           </span>
+           <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+            </polyline>
+           </svg>
+          </div>
+          <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__subNavList__1wclymi ptcom-design__pageGroupListFixedWidth__vv201u">
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/>
+             Documentation
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/apollo/>
+             Apollo
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/gotham/>
+             Gotham
+            </a>
+           </li>
+          </ul>
+         </li>
+        </div>
+       </div>
+      </div>
+      <div class="ptcom-design__searchContainer__ko5zom">
+       <div class="ptcom-design__container__11sdyh7">
+        <div class="ptcom-design__search__11sdyh7">
+         <div class="ptcom-design__searchIcon__11sdyh7">
+          <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            Search documentation
+           </title>
+           <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+           </circle>
+           <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+           </path>
+          </svg>
+         </div>
+         <form class="ptcom-design__inputForm__11sdyh7" method="GET">
+          <label class="ptcom-design__hiddenLabel__11sdyh7" for="query">
+           Search
+          </label>
+          <input autocomplete="off" class="ptcom-design__searchInput__11sdyh7" id="query" name="query" placeholder="Search documentation" type="search" value=""/>
+         </form>
+         <div class="ptcom-design__quickSearchRightSideContainer__11sdyh7">
+          <svg class="ptcom-design__quickSearchRightSideButton__11sdyh7" enable-background="new 0 0 16 16" id="Layer_1" version="1.1" viewbox="0 0 16 16" x="0px" y="0px">
+           <title>
+            karat
+           </title>
+           <g id="key_control_1_">
+            <g>
+             <path clip-rule="evenodd" d="M12.71,5.29l-4-4C8.53,1.11,8.28,1,8,1S7.47,1.11,7.29,1.29l-4,4
+                    C3.11,5.47,3,5.72,3,6c0,0.55,0.45,1,1,1c0.28,0,0.53-0.11,0.71-0.29L8,3.41l3.29,3.29C11.47,6.89,11.72,7,12,7c0.55,0,1-0.45,1-1
+                    C13,5.72,12.89,5.47,12.71,5.29z" fill-rule="evenodd">
+             </path>
+            </g>
+           </g>
+          </svg>
+          <p class="ptcom-design__addition__11sdyh7">
+           +
+          </p>
+          <p class="ptcom-design__quickSearchRightSideButton__11sdyh7">
+           K
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <a class="ptcom-design__altLink__ko5zom" href="../../../docs/foundry/api/v2/>
+       API Reference â
+      </a>
+      <a class="ptcom-design__button__10xiqev ptcom-design__feedbackButton__ko5zom ptcom-design__feedbackButton-WithToc__ko5zom">
+       Send feedback
+      </a>
+      <div class="ptcom-design__pickers__ko5zom">
+       <div class="ptcom-design__localePicker__958zz8 ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__958zz8">
+         <button class="ptcom-design__button__958zz8" title="Select a locale">
+          <span>
+           en
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__958zz8">
+         <button class="ptcom-design__button__958zz8 ptcom-design__active__958zz8" title="Select en locale">
+          <span>
+           en
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select jp locale">
+          <span>
+           jp
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select kr locale">
+          <span>
+           kr
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select zh locale">
+          <span>
+           zh
+          </span>
+         </button>
+        </div>
+       </div>
+       <div class="ptcom-design__themePicker__efbtyr ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr" title="Current theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr ptcom-design__active__efbtyr" title="Select light theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightBlueTheme__efbtyr" title="Select lightBlue theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightGoldTheme__efbtyr" title="Select lightGold theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkTheme__efbtyr" title="Select dark theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkMintTheme__efbtyr" title="Select darkMint theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkSalmonTheme__efbtyr" title="Select darkSalmon theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+     <ul class="ptcom-design__dropdownNav__vv201u ptcom-design__dropdownNav__ko5zom">
+      <li class="ptcom-design__item__vv201u ptcom-design__isSelected__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Capabilities
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/data-integration/overview/>
+          Data connectivity &amp; integration
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/model-integration/overview/>
+          Model connectivity &amp; development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/ontology/overview/>
+          Ontology building
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/dev-toolchain/overview/>
+          Developer toolchain
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/app-building/overview/>
+          Use case development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/analytics/overview/>
+          Analytics
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/devops/overview/>
+          Product delivery
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/security/overview/>
+          Security &amp; governance
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/administration/overview/>
+          Management &amp; enablement
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="ptcom-design__item__vv201u">
+       <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/getting-started/overview/>
+        Getting started
+       </a>
+      </li>
+      <li class="ptcom-design__item__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Platform updates
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__pageGroupListFixedWidth__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/>
+          Announcements
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/release-notes/>
+          Release notes
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+    <div class="ptcom-design__content__ko5zom ptcom-design__hasToc__ko5zom ptcom-design__hasDropdownNav__ko5zom ptcom-design__hasSidebarNav__ko5zom">
+     <div class="ptcom-design__sideBarWrapper__ko5zom">
+      <nav class="ptcom-design__sideBar__ko5zom ptcom-design__container__17amtsp">
+       <h2 class="ptcom-design__header__17amtsp ptcom-design__headerNavTitle__17amtsp">
+        Developer toolchain
+       </h2>
+       <ul class="ptcom-design__navList__17amtsp">
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/dev-toolchain/overview/>
+          Overview
+         </a>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Ontology SDK
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/permissions/>
+            Permissions
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Developer Console
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/navigation/>
+              Navigation
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/create-a-new-osdk/>
+              Create a new Developer Console application
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/third_party_app_scopes/>
+              Application scopes
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Build applications
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/how-to-bootstrapping-java/>
+              Bootstrap a new Java application
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/how-to-bootstrapping-python/>
+              Bootstrap a new Python application
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/how-to-bootstrapping-typescript/>
+              Bootstrap a new TypeScript application
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/how-to-bootstrapping-server-side-typescript/>
+              Bootstrap a new TypeScript application with a service user
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/how-to-add-to-existing-typescript/>
+              Add an OSDK package to an existing application
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/how-to-create-backend-service-app-different-org/>
+              Create an application using a different Organization
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/deploy-osdk-application-on-foundry/>
+              Host an OSDK application on Foundry
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Manage applications
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/application-metrics/>
+              Application metrics [Beta]
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/oauth-clients/>
+              OAuth clients
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             OSDK references
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/java-osdk/>
+              Java OSDK
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/python-osdk/>
+              Python OSDK
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/python-osdk-migration/>
+              Python OSDK migration guide [Beta]
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/typescript-osdk-migration/>
+              TypeScript OSDK migration guide
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/generate-osdk-for-other-languages/>
+              Generate OSDK for other languages
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/typescript-subscriptions/>
+              Subscribe to Ontology changes with the TypeScript OSDK
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/unsupported-types/>
+              Unsupported types for OSDK
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk/marketplace-osdk-deployment/>
+              Update OSDK application for Marketplace deployment
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/release-notes/?filters=dev-toolchain rel="noopener noreferrer" target="_blank">
+          Release notes â
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Applications
+         </div>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Compute modules [Beta]
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compute-modules/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compute-modules/get-started/>
+            Getting started
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Configuration
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compute-modules/execution-modes/>
+              Execution modes
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compute-modules/containers/>
+              Containers
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compute-modules/scaling/>
+              Scaling
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compute-modules/sources/>
+              Sources
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compute-modules/functions/>
+              Functions
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compute-modules/advanced-custom-client/>
+            Create a custom compute module client (Advanced)
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compute-modules/debugging/>
+            Debugging
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compute-modules/usage/>
+            Usage and pricing
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Code Workspaces
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/code-workspaces/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp ptcom-design__isSelected__17amtsp" href="../../../docs/foundry/code-workspaces/getting-started/>
+            Getting started
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/code-workspaces/data/>
+            Interact with data
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/code-workspaces/ontology/>
+            Interact with the Ontology [Beta]
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/code-workspaces/training-models/>
+            Train and interact with models
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/code-workspaces/jupyterlab/>
+            JupyterLabÂ®
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/code-workspaces/rstudio/>
+            RStudioÂ® Workbench
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/code-workspaces/palantir-provided-models/>
+            Palantir-provided models
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/code-workspaces/security/>
+            Security
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/code-workspaces/code-workspaces-faq/>
+            FAQ
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/code-workspaces/troubleshooting/>
+            Troubleshooting
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/code-workspaces/compute-usage/>
+            Compute usage
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           VS Code workspaces [Beta]
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/vs-code/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/vs-code/ai-development-tools/>
+            AI development tools [Beta]
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/vs-code/troubleshooting/>
+            Troubleshooting
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Palantir extension for Visual Studio Code [Beta]
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/palantir-extension-for-visual-studio-code/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/palantir-extension-for-visual-studio-code/extension-features/>
+            Feature list
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/palantir-extension-for-visual-studio-code/transforms-preview/>
+            Transforms preview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/palantir-extension-for-visual-studio-code/transforms-build/>
+            Transforms build
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/palantir-extension-for-visual-studio-code/transforms-type-hints/>
+            Transforms type hints
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/palantir-extension-for-visual-studio-code/python-libraries/>
+            Python libraries
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Functionality
+         </div>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Foundry Branching [Beta]
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundry-branching/overview/>
+            Overview
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Core concepts
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundry-branching/core-concepts/>
+              Core concepts
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundry-branching/best-practices-and-technical-details/>
+              Best practices and technical details
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundry-branching/supported-functionality/>
+              Supported functionality
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Navigation
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundry-branching/branching-app/>
+              Foundry Branching application
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundry-branching/branch-taskbar/>
+              Branch taskbar
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Usage
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundry-branching/branching-lifecycle-usage/>
+              Branching lifecycle
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundry-branching/rebasing-and-conflict-resolution/>
+              Rebasing and conflict resolution
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundry-branching/branch-retention/>
+              Branch retention
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Cross-application interactivity
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cross-app-interactivity/overview/>
+            Overview
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             App Pairing
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cross-app-interactivity/app-pairing/>
+              App Pairing widget
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Drag and drop
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cross-app-interactivity/drag-and-drop-overview/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cross-app-interactivity/tutorial/>
+              Create a drag-and-drop integration point
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cross-app-interactivity/enrichment-reference/>
+              Drag and drop between Foundry and Gotham
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cross-app-interactivity/enrichment-tutorial/>
+              Implement drag and drop between Foundry and Gotham
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cross-app-interactivity/design-guidelines/>
+              Design guidelines
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Media types reference
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cross-app-interactivity/objects/>
+              Objects
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cross-app-interactivity/object-sets/>
+              Object sets
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Libraries
+         </div>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           FoundryTS
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/overview/>
+            Overview
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             API Reference
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/foundryts/>
+              FoundryTS
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/interval/>
+              Interval
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/node-collection/>
+              NodeCollection
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-cumulative-aggregate/>
+              functions.cumulative_aggregate
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-derivative/>
+              functions.derivative
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-distribution/>
+              functions.distribution
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-dsl/>
+              functions.dsl
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-exponential-regression/>
+              functions.exponential_regression
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-first-point/>
+              functions.first_point
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-integral/>
+              functions.integral
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-interpolate/>
+              functions.interpolate
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-last-point/>
+              functions.last_point
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-linear-regression/>
+              functions.linear_regression
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-mean/>
+              functions.mean
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-periodic-aggregate/>
+              functions.periodic_aggregate
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-points/>
+              functions.points
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-polynomial-regression/>
+              functions.polynomial_regression
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-rolling-aggregate/>
+              functions.rolling_aggregate
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-scale/>
+              functions.scale
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-scatter/>
+              functions.scatter
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-series/>
+              functions.series
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-skip-nonfinite/>
+              functions.skip_nonfinite
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-statistics/>
+              functions.statistics
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-sum/>
+              functions.sum
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-time-extent/>
+              functions.time_extent
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-time-range/>
+              functions.time_range
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-time-series-search/>
+              functions.time_series_search
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-time-shift/>
+              functions.time_shift
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-timestamp-scale/>
+              functions.timestamp_scale
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-udf/>
+              functions.udf
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-unit-conversion/>
+              functions.unit_conversion
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-value-shift/>
+              functions.value_shift
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/functions-where/>
+              functions.where
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/nodes-function-node/>
+              nodes.FunctionNode
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/nodes-summarizer-node/>
+              nodes.SummarizerNode
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/objects-foundry-object/>
+              objects.FoundryObject
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/objects-object/>
+              objects.Object
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/search-property/>
+              search.Property
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/search-search/>
+              search.Search
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/foundryts/search-ontology/>
+              search.ontology
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="ptcom-design__bodyContainer__ko5zom" data-pagefind-filter="product:foundry" data-pagefind-meta="product:foundry">
+      <div class="ptcom-design__breadcrumbs__qq0wfv" data-pagefind-meta="breadcrumb:Developer toolchain / Code Workspaces / Getting started">
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" href="../../../docs/foundry/dev-toolchain/overview/>
+         Developer toolchain
+        </a>
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" data-pagefind-weight="1" href="../../../docs/foundry/code-workspaces/overview/>
+         Code Workspaces
+        </a>
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" data-pagefind-weight="1" href="../../../docs/foundry/code-workspaces/getting-started/>
+         Getting started
+        </a>
+       </span>
+      </div>
+      <div data-pagefind-body="true">
+       <div class="ptcom-design__markdownDoc__1vbgce2">
+        <h1 data-pagefind-weight="1" id="user-content-getting-started-with-code-workspaces" level="1" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#getting-started-with-code-workspaces" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Getting started with Code Workspaces
+        </h1>
+        <p>
+         This tutorial provides an introduction to Code Workspaces by setting up a workspace for either JupyterLabÂ® or RStudioÂ® Workbench.
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-backing-code-repository" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#backing-code-repository" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Backing code repository
+        </h2>
+        <p>
+         All code workspaces are backed by a Palantir platform
+         <a href="../../../docs/foundry/code-workspaces/../code-repositories/overview/>
+          code repository
+         </a>
+         . This enables code workspaces to have industry-standard version control features like branching, merging, and commit history, allowing other users to view the code and safely operate in the same workspace.
+        </p>
+        <div class="ptcom-design__callout__5381em ptcom-design__warning__5381em">
+         <svg class="ptcom-design__icon__5381em" fill="currentColor" height="20" role="img" viewbox="0 0 20 20" width="20">
+          <path d="M11,2H9L2,15v2H18V15.5ZM10,15a1,1,0,1,1,1-1A1,1,0,0,1,10,15Zm1-3H9V6h2Z">
+          </path>
+         </svg>
+         <p>
+          Previously, code workspaces and associated code repositories were represented by separate resources. Now, code workspaces and associated code repositories are represented by a single resource; the code repository. Selecting the code repository from any folder in Foundry will automatically open the associated Jupyter or RStudioÂ® workspace.
+         </p>
+         <p>
+          <strong>
+           This change applies to new code workspaces, and does not affect existing code workspaces and code repositories, which will continue to be separate resources.
+          </strong>
+          .
+         </p>
+        </div>
+        <h2 data-pagefind-weight="0.9" id="user-content-launch-a-code-workspace" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#launch-a-code-workspace" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Launch a code workspace
+        </h2>
+        <p>
+         To launch a code workspace, open the Code Workspaces application and navigate to the
+         <strong>
+          General
+         </strong>
+         tab. Then, select a folder in which to create your code workspace.
+        </p>
+        <div class="ptcom-design__callout__5381em">
+         <svg class="ptcom-design__icon__5381em" fill="currentColor" height="20" role="img" viewbox="0 0 20 20" width="20">
+          <path d="M10,2a8,8,0,1,0,8,8A8,8,0,0,0,10,2Zm1,13H9V10H7V8h4ZM10,7a1,1,0,1,1,1-1A1,1,0,0,1,10,7Z">
+          </path>
+         </svg>
+         <p>
+          Users with
+          <code>
+           Editor
+          </code>
+          or
+          <code>
+           Owner
+          </code>
+          roles on the project will be able to modify the settings of the code workspace. Users with
+          <code>
+           Viewer
+          </code>
+          roles on the project will be able to launch the workspace. You can select your home folder as a location, but this may cause your code workspace and data to be restricted to a project.
+         </p>
+        </div>
+        <p>
+         Choose the type of workspace to launch. Currently, the supported workspaces are JupyterLab and RStudioÂ® Workbench.
+        </p>
+        <p>
+         <img alt="Select JupyterLabÂ® or RStudioÂ®" node="[object Object]" src="/docs/resources/foundry/code-workspaces/launch-code-workspace-1.png"/>
+        </p>
+        <p>
+         <img alt="Name and location selection" node="[object Object]" src="/docs/resources/foundry/code-workspaces/launch-code-workspace-2.png"/>
+        </p>
+        <p>
+         Then, set the name and location of the backing code repository for the workspace you want to create. If you are creating an RStudioÂ® workspace, you will be able to select a license. In most cases, the license will be automatically selected.
+        </p>
+        <p>
+         <img alt="Choose folder and select license" node="[object Object]" src="/docs/resources/foundry/code-workspaces/launch-code-workspace-3.png"/>
+        </p>
+        <p>
+         Each user who launches the workspace will run their own isolated session. If two or more users will be using the same workspace, ensure that all users have
+         <code>
+          Viewer
+         </code>
+         permission or higher for the underlying code repository. See above for more information about a code workspaceâs
+         <a href="#backing-code-repository">
+          underlying code repository
+         </a>
+         .
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-advanced-settings" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#advanced-settings" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Advanced settings
+        </h3>
+        <p>
+         Advanced settings allow you to define idle time and the resource profile for your code workspace. These settings can be modified at any time in the
+         <strong>
+          Settings
+         </strong>
+         panel of the workspace accessible by selecting the gear icon in the top right corner.
+        </p>
+        <img alt="Advanced gear icon" node="[object Object]" src="/docs/resources/foundry/code-workspaces/advanced-gear.png?width=350" width="350"/>
+        <ul>
+         <li>
+          <strong>
+           Auto-shutdown
+          </strong>
+          <ul>
+           <li>
+            The auto-shutdown setting defines the period of time that your container will remain active. The workspace will automatically be shut down after this period of inactivity in order to reduce resource usage. After an auto-shutdown, packages and datasets will need to be redeployed to your container. Note that your code will persist after the auto-shutdown.
+           </li>
+           <li>
+            The default auto-shutdown period is 30 minutes. The maximum auto-shutdown setting is 6 hours, and the maximum session length is 24 hours.
+           </li>
+           <li>
+            Longer auto-shutdown settings can incur higher costs. We recommend setting a shorter auto-shutdown period to reduce cost, and to rely on code committed to Foundry rather than uncommitted changes which would be restored across sessions (see the
+            <a href="#code-workspace-lifecycle">
+             code workspace lifecycle documentation
+            </a>
+            below).
+           </li>
+          </ul>
+         </li>
+         <li>
+          <strong>
+           Compute Resources
+          </strong>
+          <ul>
+           <li>
+            Larger resource profiles can incur higher costs.
+           </li>
+          </ul>
+         </li>
+         <li>
+          <strong>
+           Network Policies
+          </strong>
+          <ul>
+           <li>
+            If enabled by your administrator, you will be able to select network policies to attach to your workspace in order to make external API calls from your workspace.
+           </li>
+          </ul>
+         </li>
+        </ul>
+        <p>
+         <img alt="Advanced settings" node="[object Object]" src="/docs/resources/foundry/code-workspaces/code-workspace-advanced-settings.png"/>
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-transforms" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#transforms" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Transforms
+        </h2>
+        <div class="ptcom-design__callout__5381em">
+         <svg class="ptcom-design__icon__5381em" fill="currentColor" height="20" role="img" viewbox="0 0 20 20" width="20">
+          <path d="M10,2a8,8,0,1,0,8,8A8,8,0,0,0,10,2Zm1,13H9V10H7V8h4ZM10,7a1,1,0,1,1,1-1A1,1,0,0,1,10,7Z">
+          </path>
+         </svg>
+         <p>
+          Users cannot publish transforms directly in an underlying code repository, since the repository is customized for use as infrastructure for Code Workspaces. All code must be published from the code workspace.
+         </p>
+        </div>
+        <h2 data-pagefind-weight="0.9" id="user-content-import-data" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#import-data" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Import data
+        </h2>
+        <p>
+         You can import data from sources in Foundry directly by navigating to the
+         <strong>
+          Data
+         </strong>
+         tab and then selecting
+         <strong>
+          Add dataset &gt; Import dataset
+         </strong>
+         . Any data that is imported from outside the code workspaceâs current project (including the userâs home folder) will require a reference to be added.
+        </p>
+        <p>
+         Alternatively, for data that has not yet been ingested into Foundry, select
+         <strong>
+          Upload and read local data
+         </strong>
+         to import data directly from your device.
+        </p>
+        <p>
+         <img alt="Import dataset dropdown" node="[object Object]" src="/docs/resources/foundry/code-workspaces/import-dataset.png"/>
+        </p>
+        <div class="ptcom-design__callout__5381em ptcom-design__warning__5381em">
+         <svg class="ptcom-design__icon__5381em" fill="currentColor" height="20" role="img" viewbox="0 0 20 20" width="20">
+          <path d="M11,2H9L2,15v2H18V15.5ZM10,15a1,1,0,1,1,1-1A1,1,0,0,1,10,15Zm1-3H9V6h2Z">
+          </path>
+         </svg>
+         <p>
+          Dataset views cannot be used as imported datasets in a code workspace. Instead, copy the dataset view to a new or existing dataset where necessary.
+         </p>
+        </div>
+        <h2 data-pagefind-weight="0.9" id="user-content-import-packages" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#import-packages" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Import packages
+        </h2>
+        <p>
+         You can import packages into your code workspace by navigating to the
+         <strong>
+          Packages
+         </strong>
+         tab in the left panel, or you can install packages directly using Conda or PyPI for JupyterÂ® and CRAN for RStudioÂ®.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-jupyterlab-packages" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#jupyterlab-packages" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         JupyterLabÂ® Packages
+        </h3>
+        <p>
+         JupyterLabÂ® workspaces support installation of packages from Conda or PyPI. By default, Code Workspaces exposes
+         <code>
+          conda-forge
+         </code>
+         and
+         <code>
+          pypi.org
+         </code>
+         . You can add other channels to a code workspace by adding them to the backing code repository and restarting your code workspace.
+        </p>
+        <p>
+         Conda/PyPI environments in JupyterLabÂ® can be consistently restored across workflows in JupyterLabÂ®, applications, or transforms using managed environments.
+        </p>
+        <p>
+         You can browse packages from the
+         <strong>
+          Packages
+         </strong>
+         tab and select the package you wish to install. This will automatically execute an installation command for you in a new JupyterLabÂ® terminal.
+        </p>
+        <p>
+         To install packages manually, you can use
+         <code>
+          maestro env conda install &lt;packages&gt;
+         </code>
+         for Conda packages and
+         <code>
+          maestro env pip install &lt;packages&gt;
+         </code>
+         for PyPI packages in the JupyterLabÂ® terminal.
+        </p>
+        <p>
+         Review
+         <a href="../../../docs/foundry/code-workspaces/./jupyterlab/#managed-condapypi-environments-in-jupyter-notebooks>
+          managed Conda/PyPI environments in JupyterÂ® Notebooks
+         </a>
+         for more information.
+        </p>
+        <div class="ptcom-design__callout__5381em ptcom-design__warning__5381em">
+         <svg class="ptcom-design__icon__5381em" fill="currentColor" height="20" role="img" viewbox="0 0 20 20" width="20">
+          <path d="M11,2H9L2,15v2H18V15.5ZM10,15a1,1,0,1,1,1-1A1,1,0,0,1,10,15Zm1-3H9V6h2Z">
+          </path>
+         </svg>
+         <p>
+          Installing packages directly with
+          <code>
+           mamba
+          </code>
+          and
+          <code>
+           pip
+          </code>
+          is now deprecated.
+         </p>
+        </div>
+        <h3 data-pagefind-weight="0.8" id="user-content-cran" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#cran" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         CRAN
+        </h3>
+        <p>
+         RStudioÂ® Workspaces support installation of packages from CRAN, Positâ¢ Package Manager, or Bioconductor. By default, Code Workspaces exposes all of
+         <a href="https://packagemanager.rstudio.com/client/#/">
+          Positâ¢ Public Package Manager â
+         </a>
+         as well as
+         <a href="https://bioconductor.org/">
+          Bioconductor â
+         </a>
+         . You can add other channels (such as MRAN) by adding them to the backing code repository and restarting your code workspace.
+        </p>
+        <p>
+         To install packages, you can use
+         <code>
+          renv
+         </code>
+         since
+         <code>
+          renv
+         </code>
+         supports authenticated CRAN channels.
+        </p>
+        <p>
+         You can browse packages from the
+         <strong>
+          Packages
+         </strong>
+         tab and select the package you wish to install. This will generate an installation command for you to copy-paste in RStudioÂ® Workbench and execute. Generally, CRAN packages are installed with
+         <code>
+          renv::install("&lt;package&gt;")
+         </code>
+         and Bioconductor packages with
+         <code>
+          renv::install("bioc::&lt;package&gt;")
+         </code>
+         .
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-publish-your-code" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#publish-your-code" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Publish your code
+        </h2>
+        <p>
+         In order for other users of the same workspace to view your code, you must publish your code to the branch you are working on.
+        </p>
+        <p>
+         Note that publishing your code will cause CI checks to run, which will publish a new version of every registered Code Workspace application. As a best practice, we recommend keeping code workspaces focused on a single type of task (such as building a application, analyzing data, writing data transformations, or building models), rather than attempting to accomplish multiple independent workflows in a single code workspace.
+        </p>
+        <p>
+         Unpublished changes can be viewed in the
+         <strong>
+          Source control
+         </strong>
+         side panel. Optionally supply a commit message and then select
+         <strong>
+          Sync changes
+         </strong>
+         to publish your code. When collapsed, the number of file changes is displayed over the source control icon.
+        </p>
+        <p>
+         <img alt="Source control side panel" node="[object Object]" src="/docs/resources/foundry/code-workspaces/source-control.png"/>
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-branch-your-code-workspace" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#branch-your-code-workspace" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Branch your code workspace
+        </h2>
+        <p>
+         You can branch your code workspace, check out branches, and perform other version control activities with the branch manager.
+        </p>
+        <p>
+         To create or find a branch, use the branch selector at the top of the screen. Selecting the branch selector opens a menu displaying the list of existing branches. Alternatively, a new branch can be created by selecting
+         <strong>
+          Create new branch
+         </strong>
+         . If you have unpublished code changes, you will be prompted to sync before checking out the selected branch.
+        </p>
+        <img alt="Branch selector" node="[object Object]" src="/docs/resources/foundry/code-workspaces/branch-selection.png?width=500" width="500"/>
+        <p>
+         In the same way as
+         <a href="../../../docs/foundry/code-workspaces/../data-integration/branching/>
+          branching elsewhere in Foundry
+         </a>
+         , the data available in a code workspace comes from the branch you are currently on (with
+         <a href="../../../docs/foundry/code-workspaces/../code-repositories/branch-settings/#fallback-branches>
+          fallbacks
+         </a>
+         ). If you write data to an output dataset, the data will be written to your current branch.
+        </p>
+        <p>
+         You can merge your branch into master by selecting
+         <strong>
+          Propose changes
+         </strong>
+         . After proposing changes, a pull request (PR) preview will appear.
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-share-your-code-workspace" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#share-your-code-workspace" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Share your code workspace
+        </h2>
+        <p>
+         You can share your code workspace by selecting
+         <strong>
+          Share
+         </strong>
+         in the upper-right corner of the interface.
+        </p>
+        <div class="ptcom-design__callout__5381em ptcom-design__warning__5381em">
+         <svg class="ptcom-design__icon__5381em" fill="currentColor" height="20" role="img" viewbox="0 0 20 20" width="20">
+          <path d="M11,2H9L2,15v2H18V15.5ZM10,15a1,1,0,1,1,1-1A1,1,0,0,1,10,15Zm1-3H9V6h2Z">
+          </path>
+         </svg>
+         <p>
+          If the code workspace and code repository are separate resources, you must also share the permissions on the underlying repository for others to see the code in your workspace.
+         </p>
+        </div>
+        <p>
+         Users with
+         <code>
+          Editor
+         </code>
+         or
+         <code>
+          Owner
+         </code>
+         roles on the project will be able to modify the settings of the code workspace. Users with
+         <code>
+          Viewer
+         </code>
+         roles on the project will be able to launch the workspace.
+        </p>
+        <img alt="Share button" node="[object Object]" src="/docs/resources/foundry/code-workspaces/share-button.png?width=500" width="500"/>
+        <h2 data-pagefind-weight="0.9" id="user-content-restart-a-code-workspace" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#restart-a-code-workspace" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Restart a code workspace
+        </h2>
+        <p>
+         You can manually restart a code workspace (for instance, to pick up configuration changes) by selecting
+         <strong>
+          Active &gt; Restart workspace
+         </strong>
+         in the upper-right corner of the interface.
+        </p>
+        <img alt="Restart workspace button" node="[object Object]" src="/docs/resources/foundry/code-workspaces/restart-button.png?width=500" width="500"/>
+        <p>
+         This will result in a new session in the initial state. The workspace will automatically restart with all the changes that were committed to the backing code repository. However, the workspace will not contain everything from the state present before the restart, including imported data, variables stored in memory, installed packages, and more.
+        </p>
+        <p>
+         Before restarting a workspace, the application will automatically create a checkpoint and prompt you to sync your latest changes.
+        </p>
+        <p>
+         You can select
+         <strong>
+          Active &gt; Restore checkpoint
+         </strong>
+         to restore the workspace to the state of a previous checkpoint. See the
+         <a href="#checkpoints">
+          checkpoints
+         </a>
+         section below for more information. Code Workspaces will not automatically restore the workspace to a previous checkpoint following a workspace restart.
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-code-workspace-lifecycle" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#code-workspace-lifecycle" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Code workspace lifecycle
+        </h2>
+        <p>
+         Users who open Code Workspaces for the first time will receive a blank workspace with the backing repository cloned in
+         <code>
+          /home/user/repo
+         </code>
+         .
+        </p>
+        <p>
+         Code Workspaces sessions are automatically shut down when there is no user activity, and can last at most 24 hours (see more about automatic shutdowns in the
+         <a href="#advanced-settings">
+          advanced settings
+         </a>
+         documentation).
+        </p>
+        <p>
+         When a session shuts down, all the relevant state is persisted in Foundry in a
+         <a href="#checkpoints">
+          checkpoint
+         </a>
+         and restored the next time the same user opens the code workspace. This allows users to pick up where they were at the time of shutdown.
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-save-work-in-a-code-workspace" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#save-work-in-a-code-workspace" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Save work in a code workspace
+        </h2>
+        <p>
+         Code Workspaces has two distinct ways to save existing work: manual code syncing and automated checkpointing.
+        </p>
+        <div class="ptcom-design__callout__5381em">
+         <svg class="ptcom-design__icon__5381em" fill="currentColor" height="20" role="img" viewbox="0 0 20 20" width="20">
+          <path d="M10,2a8,8,0,1,0,8,8A8,8,0,0,0,10,2Zm1,13H9V10H7V8h4ZM10,7a1,1,0,1,1,1-1A1,1,0,0,1,10,7Z">
+          </path>
+         </svg>
+         <p>
+          We recommend relying on code synced to the underlying code repository (with the required package installations as part of the code) rather than relying on workspace checkpoints. Code syncing will help ensure a resilient workflow and facilitate collaboration with other users who may not have access to a given checkpoint.
+         </p>
+        </div>
+        <h3 data-pagefind-weight="0.8" id="user-content-code-syncs" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#code-syncs" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Code syncs
+        </h3>
+        <p>
+         <strong>
+          Code syncing
+         </strong>
+         is a manual action and the recommended way to save existing work in a code workspace. Syncing code means committing your files to the backing code repository of the workspace. Any work saved through code syncing is permanently saved in the repository, and everything in the
+         <code>
+          /home/user/repo
+         </code>
+         folder is stored as part of that sync. Code syncing does not save existing states such as variable contents, installed packages on the environment, data, or code cell outputs. The sync history of the workspace can be consulted through the backing code repository of the workspace. We generally recommend to frequently sync your code to both maintain a history of changes and ensure all relevant work is properly and permanently stored.
+        </p>
+        <p>
+         To save all of your existing changes in a workspace, select
+         <strong>
+          Sync changes
+         </strong>
+         in the top right corner of the workspace. Once that succeeds, the changes are committed to the backing repository of the workspace, which you can access by selecting the gear icon in the top right corner then choosing
+         <strong>
+          Open code repository
+         </strong>
+         .
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-checkpoints" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#checkpoints" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Checkpoints
+        </h3>
+        <p>
+         <strong>
+          Checkpointing
+         </strong>
+         is a feature that automatically takes snapshots of the existing state of a workspace to be able to restore it across sessions. Unlike code syncs that only store committed files, checkpoints store all contents of
+         <code>
+          /home/user/repo
+         </code>
+         (including uncommitted code changes),
+         <code>
+          /home/user/libs
+         </code>
+         (including installed packages),
+         <code>
+          /home/user/envs
+         </code>
+         (Conda environments), and
+         <code>
+          /home/user/data
+         </code>
+         (extra data downloaded by the user). In the case of RStudioÂ®, variables stored in memory are stored in
+         <code>
+          /home/user/repo/.RData
+         </code>
+         .
+        </p>
+        <p>
+         By default, Code Workspaces saves a checkpoint of a given user's session every ten minutes. Checkpoints are not shared across users. Code Workspaces also creates a checkpoint before the workspace shuts down (through a
+         <a href="#restart-a-code-workspace">
+          manual restart
+         </a>
+         , a manual shutdown, or an automatic shutdown, for example). An inactive code workspace does not generate any new checkpoints, and any given checkpoint lasts up to a maximum of 30 days. As a result, since no valid checkpoints will be available, a workspace left untouched for more than 30 days will only be able to restore work from what was synced to the backing repository. Checkpoints are designed to be a safety net to persist the workspaces's state across sessions; checkpoints should not be relied on as a primary form of saving. We strongly recommend frequently syncing existing work in the workspace.
+        </p>
+        <p>
+         Restoring a checkpoint will restart the workspace and restore the home folder to how it was at the time the checkpoint was created.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-save-data-files" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#save-data-files" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Save data files
+        </h3>
+        <p>
+         In Foundry, code should be stored in repositories and data should be stored in datasets to ensure that data is properly secured and isolated from logic. However, you may often produce data files in your code, which can be very large. Having large files in your workspaceâs
+         <code>
+          /home/user/repo
+         </code>
+         folder will significantly slow down your workspaceâs startup time. Since these large files are not usually necessary for workspace functionality, Code Workspaces provides two subfolders in the
+         <code>
+          /home/user/repo
+         </code>
+         folder designed to hold data files:
+        </p>
+        <ol>
+         <li>
+          <strong>
+           <code>
+            data-checkpoint
+           </code>
+           :
+          </strong>
+          The recommended place to store data files that you want to save and restore across sessions. These files will be saved to checkpoints and restored in the background without blocking workspace startup. Additionally, this folder will be excluded from syncs to prevent committing large, unsecured data to the backing code repository.
+         </li>
+         <li>
+          <strong>
+           <code>
+            data-tmp
+           </code>
+           :
+          </strong>
+          The recommended place to store temporary files that you do not want to save across sessions. These files will not be saved to checkpoints or the backing code repository; they will instead be discarded when your workspace shuts down.
+         </li>
+        </ol>
+        <p>
+         If you want data to be available to published dashboards or transforms, or to other users, we recommend that you
+         <a href="../../../docs/foundry/code-workspaces/./data/#write-data>
+          persist data to a Foundry dataset
+         </a>
+         instead of saving it in your workspace. If you need a place to temporarily store data files before writing them to a dataset, you can use the
+         <code>
+          /foundry/outputs/
+         </code>
+         folder to ensure the files are not saved to a checkpoint or the code repository.
+        </p>
+        <p>
+         Code Workspaces will periodically scan files in the
+         <code>
+          /home/user/repo
+         </code>
+         folder and warn you if large data files that should be moved or persisted to a Foundry dataset are found.
+        </p>
+        <hr/>
+        <p>
+         <em>
+          RStudioÂ® and ShinyÂ® are trademarks of Positâ¢.
+         </em>
+        </p>
+        <p>
+         <em>
+          JupyterÂ®, JupyterLabÂ®, and the JupyterÂ® logos are trademarks or registered trademarks of NumFOCUS.
+         </em>
+        </p>
+        <p>
+         All third-party trademarks (including logos and icons) referenced remain the property of their respective owners. No affiliation or endorsement is implied.
+        </p>
+       </div>
+      </div>
+      <div class="ptcom-design__animatedLine__116w76e">
+       <div class="ptcom-design__animatedLineRule__116w76e">
+       </div>
+      </div>
+      <div class="ptcom-design__neighbours-container__w8fvw7">
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/code-workspaces/overview/>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7 ptcom-design__neighbours-link-arrow-reversed__w8fvw7" title="Previous page">
+          â
+         </span>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           PREVIOUS
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            Overview
+           </span>
+          </span>
+         </div>
+        </a>
+       </div>
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/code-workspaces/data/>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7 ptcom-design__neighbours-link-text-end-aligned__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           NEXT
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            Interact with data
+           </span>
+          </span>
+         </div>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7" title="Next page">
+          â
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+     <nav class="ptcom-design__toc__ko5zom ptcom-design__toc__1pf03m6">
+      <h2 class="ptcom-design__tocNavHeader__1pf03m6">
+       Contents
+      </h2>
+      <ul class="ptcom-design__tocList__1pf03m6">
+       <li class="ptcom-design__tocListItem__1pf03m6">
+        <a class="ptcom-design__tocLink__1pf03m6" href="#getting-started-with-code-workspaces">
+         Getting started with Code Workspaces
+        </a>
+        <ul class="ptcom-design__tocList__1pf03m6">
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#backing-code-repository">
+           Backing code repository
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#launch-a-code-workspace">
+           Launch a code workspace
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#transforms">
+           Transforms
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#import-data">
+           Import data
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#import-packages">
+           Import packages
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#publish-your-code">
+           Publish your code
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#branch-your-code-workspace">
+           Branch your code workspace
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#share-your-code-workspace">
+           Share your code workspace
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#restart-a-code-workspace">
+           Restart a code workspace
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#code-workspace-lifecycle">
+           Code workspace lifecycle
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#save-work-in-a-code-workspace">
+           Save work in a code workspace
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </nav>
+    </div>
+    <footer class="ptcom-design__footer__ko5zom">
+     <p>
+      Â© 2025 Palantir Technologies Inc. All rights reserved.
+     </p>
+     <div class="ptcom-design__statement-links__ko5zom">
+      <a href="https://www.palantir.com/cookie-statement/">
+       Cookies Statement â
+      </a>
+      <a href="https://www.palantir.com/privacy-and-security/">
+       Privacy Statement â
+      </a>
+     </div>
+     <button class="ptcom-design__button__ko5zom" id="ot-sdk-btn">
+      <div class="ot-sdk-show-settings">
+       Cookie Settings
+      </div>
+     </button>
+    </footer>
+   </div>
+  </div>
+  
+ </body>
+</html>

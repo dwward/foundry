@@ -1,0 +1,3098 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+  <meta content="1; mode=block" http-equiv="X-XSS-Protection"/>
+  <link href="/docs/icon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/docs/icon.svg" rel="shortcut icon" type="image/svg+xml"/>
+  <link href="https://www.gstatic.com" rel="dns-prefetch"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="dns-prefetch"/>
+  <meta content="Workshop layouts allow builders to configure how the user interface of a module is organized. The main layout components of a Workshop module (the..." name="description"/>
+  <link href="https://palantir.com/docs/foundry/workshop/concepts-layouts//" rel="canonical"/>
+  <meta content="Palantir" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://palantir.com/docs/foundry/workshop/concepts-layouts//" property="og:url"/>
+  <meta content="Palantir" property="og:site_name"/>
+  <meta content="https://palantir.com/docs/resources/homepage/iso-grid.png" name="image" property="og:image"/>
+  <meta content="Workshop layouts allow builders to configure how the user interface of a module is organized. The main layout components of a Workshop module (the..." property="og:description"/>
+  <meta content="Documentation | Palantir" name="twitter:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@palantirtech" name="twitter:site"/>
+  <link href="https://www.googletagmanager.com" rel="preconnect"/>
+  <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
+  <title>
+   Workshop â¢ Core concepts â¢ Layouts â¢ Palantir
+  </title>
+  <meta content="23" name="next-head-count"/>
+  <script data-nscript="beforeInteractive" type="text/javascript">
+   function OptanonWrapper() {}
+  </script>
+  <link as="style" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="preload"/>
+  <link data-n-g="" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="stylesheet"/>
+  <noscript data-n-css="">
+  </noscript>
+  <script defer="" nomodule="" src="/docs/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js">
+  </script>
+  <script data-document-language="true" data-domain-script="0c1270b7-3d02-4afa-bd15-f3c23839b75a" data-nscript="beforeInteractive" defer="" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/webpack-d50bf798bfb74151.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/framework-777d23e5800d4dc0.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/main-7bc202b68cac4a69.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/_app-87c1de53eb5f2af5.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5117-b9a97c6f03ed6079.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1059-7fd152d892580497.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5819-22ba01b9d8cbb33a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/8913-a71dbce8790fe614.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1472-56bad0c7930cc63a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/9537-3c0ceb8250403970.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/%5B...slug%5D-1bf87c642d9d87bc.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_buildManifest.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_ssgManifest.js">
+  </script>
+ </head>
+ <body>
+  <div data-reactroot="" id="__next">
+   <script id="docs-theme" nonce="**CSP_NONCE**">
+    (function() {
+                                    const theme = document.cookie.split('; ').find(row => row.startsWith('docsColorTheme='));
+                                    if (theme) {
+                                        document.body.className = theme.split('=')[1] + "Theme";
+                                    }
+                                })();
+   </script>
+   <noscript>
+    <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PSL84DJ" style="display:none;visibility:hidden" width="0">
+    </iframe>
+   </noscript>
+   <div class="ptcom-design__layoutWrapper__ko5zom ptcom-design__hasToc__ko5zom">
+    <div class="ptcom-design__navContainer__ko5zom ptcom-design__hasDropdownNav__ko5zom">
+     <div class="ptcom-design__cornerButtons__twowro">
+      <button aria-expanded="false" class="ptcom-design__button__16lyg8o" id="navBtn" title="Show Navigation">
+       <div class="ptcom-design__burger__16lyg8o hamburger hamburger--emphatic">
+        <span class="hamburger-box">
+         <span class="hamburger-inner">
+         </span>
+        </span>
+       </div>
+      </button>
+      <button aria-expanded="false" class="ptcom-design__button__67pw73" id="searchBtn" title="Search">
+       <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <title>
+         Search
+        </title>
+        <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+        </circle>
+        <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+        </path>
+       </svg>
+      </button>
+     </div>
+     <div class="ptcom-design__brandBar__ko5zom">
+      <div class="ptcom-design__logoContainer__ko5zom">
+       <div class="ptcom-design__navBrand__1aug2ec">
+        <a aria-label="Link to Palantir homepage" class="ptcom-design__branding__1aug2ec" data-axe="reviewed" href="../../../docs/ id="logo">
+         <svg class="ptcom-design__logo__1aug2ec" height="20" role="img" viewbox="0 0 83 20" width="83" xmlns="http://www.w3.org/2000/svg">
+          <title>
+           Palantir
+          </title>
+          <path d="M20.115 2.092h5.112c1.896 0 3.133.084 4.204 1.255.742.837 1.154 1.841 1.154 3.013 0 1.171-.412 2.176-1.236 3.012-.825.837-1.896 1.34-4.617 1.34H22.26v6.945h-2.144V2.092zm2.144 6.862h2.473c1.402 0 3.545-.084 3.545-2.678 0-2.427-1.979-2.427-3.133-2.427H22.26v5.105zm15.169 8.703c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.165-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zM36.026 12.3c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.989 0 1.813-.418 2.308-1.172.412-.753.495-1.338.495-2.845-.33.084-.66 0-1.155 0zM40.89 2.092h1.979v15.565H40.89V2.092zm10.553 15.565c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.164-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zm-1.32-5.356c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.99 0 1.814-.418 2.308-1.172.413-.753.495-1.338.495-2.845-.412.084-.66 0-1.154 0zm4.865-4.184V6.862h1.978v1.757c.248-.418.99-1.924 3.38-1.924.99 0 3.875.334 3.875 3.682v7.364H62.16v-6.862c0-.67-.082-1.34-.577-1.841-.495-.502-1.237-.753-1.896-.753-1.484 0-2.803 1.087-2.803 3.263v6.193h-1.979V8.117h.083zm9.893-1.255h1.896V4.519l1.978-.67v2.93h2.391v1.506h-2.39v6.443c0 .502 0 1.423 1.4 1.423.413 0 .825-.084.99-.084v1.59c-.33.084-.907.167-1.649.167-1.896 0-2.72-.586-2.72-2.343V8.284H64.88V6.862zm7.666-4.77h2.391v2.26h-2.39v-2.26zm.165 4.77h1.979v10.795h-1.979V6.862zm3.875 2.176c0-.753-.082-1.507-.082-2.176h1.978l.083 2.092c.412-1.506 1.648-2.008 2.555-2.092a9.379 9.379 0 011.402-.084v2.009c-.083 0-.248-.084-.412-.084h-.578c-2.39 0-2.885 1.422-2.885 3.263v5.774H76.67V9.037h-.083zM7.832 0C3.71 0 .33 3.431.33 7.615s3.38 7.615 7.502 7.615 7.502-3.43 7.502-7.615C15.334 3.431 11.954 0 7.832 0zm0 12.887c-2.886 0-5.194-2.343-5.194-5.272 0-2.929 2.308-5.272 5.194-5.272 2.885 0 5.194 2.343 5.194 5.272-.083 2.929-2.391 5.272-5.194 5.272zm6.677 1.674l-6.677 2.928-6.678-2.928L0 16.653 7.832 20l7.832-3.347-1.155-2.092z">
+          </path>
+         </svg>
+        </a>
+        <div class="ptcom-design__subnavLink__1aug2ec">
+         <li class="ptcom-design__item__vv201u ptcom-design__subNavListContainer__1wclymi" tabindex="0">
+          <div class="ptcom-design__pageGroupTitle__vv201u ptcom-design__subNavPickerDropdown__1wclymi">
+           <span>
+            Documentation
+           </span>
+           <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+            </polyline>
+           </svg>
+          </div>
+          <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__subNavList__1wclymi ptcom-design__pageGroupListFixedWidth__vv201u">
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/>
+             Documentation
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/apollo/>
+             Apollo
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/gotham/>
+             Gotham
+            </a>
+           </li>
+          </ul>
+         </li>
+        </div>
+       </div>
+      </div>
+      <div class="ptcom-design__searchContainer__ko5zom">
+       <div class="ptcom-design__container__11sdyh7">
+        <div class="ptcom-design__search__11sdyh7">
+         <div class="ptcom-design__searchIcon__11sdyh7">
+          <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            Search documentation
+           </title>
+           <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+           </circle>
+           <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+           </path>
+          </svg>
+         </div>
+         <form class="ptcom-design__inputForm__11sdyh7" method="GET">
+          <label class="ptcom-design__hiddenLabel__11sdyh7" for="query">
+           Search
+          </label>
+          <input autocomplete="off" class="ptcom-design__searchInput__11sdyh7" id="query" name="query" placeholder="Search documentation" type="search" value=""/>
+         </form>
+         <div class="ptcom-design__quickSearchRightSideContainer__11sdyh7">
+          <svg class="ptcom-design__quickSearchRightSideButton__11sdyh7" enable-background="new 0 0 16 16" id="Layer_1" version="1.1" viewbox="0 0 16 16" x="0px" y="0px">
+           <title>
+            karat
+           </title>
+           <g id="key_control_1_">
+            <g>
+             <path clip-rule="evenodd" d="M12.71,5.29l-4-4C8.53,1.11,8.28,1,8,1S7.47,1.11,7.29,1.29l-4,4
+                    C3.11,5.47,3,5.72,3,6c0,0.55,0.45,1,1,1c0.28,0,0.53-0.11,0.71-0.29L8,3.41l3.29,3.29C11.47,6.89,11.72,7,12,7c0.55,0,1-0.45,1-1
+                    C13,5.72,12.89,5.47,12.71,5.29z" fill-rule="evenodd">
+             </path>
+            </g>
+           </g>
+          </svg>
+          <p class="ptcom-design__addition__11sdyh7">
+           +
+          </p>
+          <p class="ptcom-design__quickSearchRightSideButton__11sdyh7">
+           K
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <a class="ptcom-design__altLink__ko5zom" href="../../../docs/foundry/api/v2/>
+       API Reference â
+      </a>
+      <a class="ptcom-design__button__10xiqev ptcom-design__feedbackButton__ko5zom ptcom-design__feedbackButton-WithToc__ko5zom">
+       Send feedback
+      </a>
+      <div class="ptcom-design__pickers__ko5zom">
+       <div class="ptcom-design__localePicker__958zz8 ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__958zz8">
+         <button class="ptcom-design__button__958zz8" title="Select a locale">
+          <span>
+           en
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__958zz8">
+         <button class="ptcom-design__button__958zz8 ptcom-design__active__958zz8" title="Select en locale">
+          <span>
+           en
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select jp locale">
+          <span>
+           jp
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select kr locale">
+          <span>
+           kr
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select zh locale">
+          <span>
+           zh
+          </span>
+         </button>
+        </div>
+       </div>
+       <div class="ptcom-design__themePicker__efbtyr ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr" title="Current theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr ptcom-design__active__efbtyr" title="Select light theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightBlueTheme__efbtyr" title="Select lightBlue theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightGoldTheme__efbtyr" title="Select lightGold theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkTheme__efbtyr" title="Select dark theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkMintTheme__efbtyr" title="Select darkMint theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkSalmonTheme__efbtyr" title="Select darkSalmon theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+     <ul class="ptcom-design__dropdownNav__vv201u ptcom-design__dropdownNav__ko5zom">
+      <li class="ptcom-design__item__vv201u ptcom-design__isSelected__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Capabilities
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/data-integration/overview/>
+          Data connectivity &amp; integration
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/model-integration/overview/>
+          Model connectivity &amp; development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/ontology/overview/>
+          Ontology building
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/dev-toolchain/overview/>
+          Developer toolchain
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/app-building/overview/>
+          Use case development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/analytics/overview/>
+          Analytics
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/devops/overview/>
+          Product delivery
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/security/overview/>
+          Security &amp; governance
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/administration/overview/>
+          Management &amp; enablement
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="ptcom-design__item__vv201u">
+       <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/getting-started/overview/>
+        Getting started
+       </a>
+      </li>
+      <li class="ptcom-design__item__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Platform updates
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__pageGroupListFixedWidth__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/>
+          Announcements
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/release-notes/>
+          Release notes
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+    <div class="ptcom-design__content__ko5zom ptcom-design__hasToc__ko5zom ptcom-design__hasDropdownNav__ko5zom ptcom-design__hasSidebarNav__ko5zom">
+     <div class="ptcom-design__sideBarWrapper__ko5zom">
+      <nav class="ptcom-design__sideBar__ko5zom ptcom-design__container__17amtsp">
+       <h2 class="ptcom-design__header__17amtsp ptcom-design__headerNavTitle__17amtsp">
+        Use case development
+       </h2>
+       <ul class="ptcom-design__navList__17amtsp">
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/app-building/overview/>
+          Overview
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/app-building/operational-apps/>
+          What is an operational application?
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/app-building/analytics-operations/>
+          Connecting analytics to operations
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/app-building/sentiment-analysis/>
+          Conduct sentiment analysis with AIP
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/app-building/curating-apps/>
+          Curating apps in Applications Portal
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/release-notes/?filters=app-building rel="noopener noreferrer" target="_blank">
+          Release notes â
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Application building
+         </div>
+        </li>
+        <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Workshop
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/getting-started/>
+            Getting started
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/example-applications/>
+            Example applications
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Core concepts
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp ptcom-design__isSelected__17amtsp" href="../../../docs/foundry/workshop/concepts-layouts/>
+              Layouts
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/concepts-widgets/>
+              Widgets
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/concepts-variables/>
+              Variables
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/concepts-events/>
+              Events
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/concepts-permissions/>
+              Permissions
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Actions
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/actions-overview/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/actions-use/>
+              Use Actions in Workshop
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Functions on objects (FOO)
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/functions-overview/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/functions-use/>
+              Use functions in Workshop
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Embed Workshop modules
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/embedding-workshop-modules-overview/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/embedded-modules/>
+              Widget: Embedded modules
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/loop-layouts/>
+              Loop layouts
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Variable types and usage
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/variable-transformations/>
+              Variable transformations
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/object-set-filter-variables/>
+              Object set filter variables
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/struct-variables/>
+              Struct variables
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/variable-backed-layouts/>
+              Variable-backed layouts
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/module-interface/>
+              Module interface
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/formatting/>
+            Formatting
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/performance-profiler/>
+            Performance Profiler
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/versions/>
+            Publishing and versioning
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/routing/>
+            Routing
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/state-saving/>
+            State saving
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/translations/>
+            Translations
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/read-only-dashboard/>
+            Set up a read-only dashboard
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Core display widgets
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-core-display/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-object-table/>
+              Object Table
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-object-list/>
+              Object List
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-object-view/>
+              Object View
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-property-list/>
+              Property List
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-links/>
+              Links
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-object-set-title/>
+              Object Set Title
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Visualization widgets
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-visualization/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-chart/>
+              Chart XY
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-vega-chart/>
+              Vega Chart
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-map/>
+              Map
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-gantt-chart/>
+              Gantt Chart
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-pie-chart/>
+              Pie Chart
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-stepper/>
+              Stepper
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-markdown/>
+              Markdown
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-metric-card/>
+              Metric Card
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-pivot-table/>
+              Pivot Table
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-timeline/>
+              Timeline
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-resource-list/>
+              Resource List
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-media-preview/>
+              Media Preview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-pdf-viewer/>
+              PDF Viewer
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-image-annotation/>
+              Image Annotation
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widget-free-form-analysis/>
+              Free-form Analysis
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-edits-history/>
+              Edit History
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-linked-compass-resources/>
+              Linked Compass Resources
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-action-log-timeline/>
+              Action Log Timeline
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-map-legacy/>
+              Map [Legacy]
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Filtering widgets
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-filtering/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-filter-list/>
+              Filter List
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-object-dropdown/>
+              Object Dropdown
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-string-selector/>
+              String Selector
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-date-time-picker/>
+              Date and Time Picker
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-text-input/>
+              Text Input
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-numeric-input/>
+              Numeric Input
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-exploration-filter-pills/>
+              Exploration Filter Pills
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-exploration-search-bar/>
+              Exploration Search Bar
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-prominent-terms/>
+              Prominent Terms [Beta]
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-user-select/>
+              User Select
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Event-trigger &amp; navigational widgets
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-event-navigational/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-button-group/>
+              Button Group
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-media-uploader/>
+              Media Uploader
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-comments/>
+              Comments
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-tabs/>
+              Tabs
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-inline-action-form/>
+              Inline Action
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             AIP widgets
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-aip-interactive/>
+              AIP Interactive
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-aip-generated-content/>
+              AIP Generated Content
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Embed Foundry applications
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-embed-foundry-apps/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-iframe/>
+              Custom widget via iframe
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Cross-application interactivity
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/drag-and-drop/>
+              Drag and drop
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-app-pairing/>
+              App Pairing
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/auto-refresh/>
+            Auto-refresh
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/time-series-properties/>
+            Time series properties
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/unsupported-object-properties/>
+            Unsupported object properties
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/marketplace-workshop/>
+            Add Workshop application to a Marketplace product [Beta]
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/changelog/>
+            Changelog panel
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/kiosk-mode/>
+            Kiosk mode
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/branching-rebasing/>
+            Rebasing and conflict resolution
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Scenarios
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/scenarios-overview/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/scenarios-getting-started/>
+              Getting started
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/scenarios-concepts/>
+              Core concepts
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/scenarios-select-model/>
+              Select a model
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/scenarios-configure-domain/>
+              Configure a domain
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/scenarios-save/>
+              Save scenarios
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/scenarios-load/>
+              Load scenarios
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/scenarios-apply/>
+              Apply scenarios
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-scenario-manager/>
+              Widget: Scenario Manager
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-scenario-selector/>
+              Widget: Scenario Selector
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-scenario-summary/>
+              Widget: Scenario Summary
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Mobile
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/mobile-overview/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/mobile-getting-started/>
+              Getting started
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/mobile-app-launcher/>
+              Application launcher
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/mobile-design/>
+              Design best practices
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/mobile-access/>
+              Network access and auth
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-mobile-navbar/>
+              Widget: Mobile Navigation Bar
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-qr-reader/>
+              Widget: QR Code Reader
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workshop/widgets-current-location/>
+              Widget: Current Location Manager
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Slate
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/navigation/>
+            Navigation
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/faq/>
+            FAQ
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Manage Slate applications
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/applications-types/>
+              Application types
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/applications-create/>
+              Create applications
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/applications-pages/>
+              Pages
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/applications-versioning/>
+              Manage application versions
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/applications-merging/>
+              Merge application changes
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/applications-import-export/>
+              Import, export, and duplicate applications
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/best-practices-user-interaction/>
+              Enable user interaction
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Read and write data
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/read-write-overview/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/applications-writeback/>
+              Write back data with Actions
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/concepts-queries/>
+              Read and write to data systems
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/concepts-object-sets/>
+              Create or retrieve object sets
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/concepts-object-context/>
+              Retrieve individual objects
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/concepts-osdk/>
+              Use the Ontology SDK (OSDK) in Slate [Beta]
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/concepts-foundry-functions/>
+              Use Foundry Functions in Slate
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/public-applications-data-upload/>
+              Upload data for public applications
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/references-writeback/>
+              Write back data to Phonograph
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Logic
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/logic-overview/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/applications-dependencies/>
+              View application dependencies
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/best-practices-app-functionality/>
+              Understand dependencies
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/concepts-functions/>
+              Define and run Slate functions
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/references-convert-rows-columns/>
+              Convert between row and column schemas
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/concepts-variables/>
+              Store values in variables
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/concepts-handlebars/>
+              Access values with Handlebars
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/references-helpers/>
+              Handlebar helpers
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/concepts-events/>
+              Configure Events and Actions
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/concepts-events-and-actions-index/>
+              Events and actions index
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Styles
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/style-overview/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/applications-style-text/>
+              Custom styles on widgets
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/concepts-styles/>
+              Configure and apply styles
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/styles-global-stylesheet/>
+              Global stylesheets [Experimental]
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/best-practices-complex-layouts/>
+              Build complex layouts
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Widgets
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/widgets-chart/>
+              Chart
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/widgets-container/>
+              Container
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/widgets-control/>
+              Control
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/widgets-platform/>
+              Platform
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/widgets-text/>
+              Text
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/widgets-time/>
+              Time
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/widgets-visualization/>
+              Visualization
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/widgets-advanced/>
+              Advanced
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Troubleshooting
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/applications-debug-problems/>
+              Debug applications
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/references-indexes/>
+              Optimize indexes and schema design
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/references-query-perf/>
+              Optimize queries in Postgres
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/slate/marketplace-slate/>
+            Add Slate application to a Marketplace product [Beta]
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           OSDK React applications
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk-react-applications/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk-react-applications/development/>
+            Development environment
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/ontology-sdk-react-applications/troubleshooting/>
+            Troubleshooting
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Workflow building
+         </div>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Agent Studio [Beta]
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/agent-studio/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/agent-studio/core-concepts/>
+            Core concepts
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/agent-studio/getting-started/>
+            Getting started
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/agent-studio/application-state/>
+            Application state
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/agent-studio/retrieval-context/>
+            Retrieval context
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/agent-studio/tools/>
+            Tools
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/agent-studio/marketplace/>
+            Distribute AIP Agents using Marketplace [Beta]
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/agent-studio/agents-as-functions/>
+            Agents as Functions
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Automate
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/getting-started/>
+            Getting started
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Condition
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/condition-time/>
+              Time condition
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/condition-objects/>
+              Object set conditions
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/condition-evaluation-latency/>
+              Evaluation latency
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Effects
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/effect-actions/>
+              Actions effect
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/effect-notification/>
+              Notification effect
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/manual-execution/>
+              Manual execution
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Settings
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/automation-administrators/>
+              Automation administrators
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/muting-pausing-expiry/>
+              Muting, pausing, and expiry
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/retries/>
+              Configuring retries
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/execution-settings/>
+              Execution settings
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Concepts
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/concept-activity/>
+              Activity
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/concept-notification-settings/>
+              Notification settings
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/concept-security-permissions/>
+              Security and permissions
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/integrations/>
+            Integrations
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Examples
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/example-weekly-report/>
+              Send a weekly report
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/example-relative-time-condition/>
+              Close tickets after a specified time
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/example-dynamic-contract-owner/>
+              Notify contract owner when status changes
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/limits/>
+            Limits
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/errors/>
+            Error reference
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/automate/marketplace-automate/>
+            Add automation to Marketplace product
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Carbon
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/getting-started/>
+            Getting started
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/example-workspaces/>
+            Example workspaces
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Workspaces
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/workspaces-overview/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/workspaces-create/>
+              Create a workspace
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/workspaces-edit/>
+              Edit a workspace
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/workspaces-updates/>
+              Configure workspace updates
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/workspaces-history/>
+              View version history
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/workspaces-navigation/>
+              Configure navigation between workspaces
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/restrict-workspace-nav/>
+              Restrict navigation out of a workspace
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Modules
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/modules-overview/>
+              Overview
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/modules-discovery/>
+              Configure module discovery
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/modules-navigation/>
+              Configure navigation between modules
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Permissions and access
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/permissions-configure/>
+              Configure permissions
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/permissions-default-workspace/>
+              Set a default workspace
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/permissions-landing-page/>
+              Set Carbon as the Foundry landing page
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Configuration reference
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/configuration-general/>
+              General configuration
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/configuration-home/>
+              Home configuration
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/configuration-menu-bar/>
+              Menu bar configuration
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/configuration-access/>
+              Access configuration
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Editing with code
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/code-example/>
+              YAML configuration example
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/code-reference/>
+              YAML configuration reference
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/dark-mode/>
+            Enable dark mode for an organization
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/carbon/marketplace-carbon-workspace/>
+            Add Carbon workspace to a Marketplace product [Beta]
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Solution Designer
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/solution-designer/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/solution-designer/navigation/>
+            Navigation
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/solution-designer/aip-architect/>
+            AIP Architect
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/solution-designer/tutorial-create-your-first-diagram/>
+            Tutorial: Create your first diagram
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/solution-designer/diagrams/>
+            Diagrams
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Use Cases [Sunset]
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/use-cases/use-case-overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/use-cases/navigation/>
+            Navigation
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/use-cases/getting-started/>
+            Getting started
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/use-cases/migrate-existing-project/>
+            Migrate an existing Project
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Resources
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/use-cases/view-resources/>
+              View resources
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/use-cases/add-application-resources/>
+              Add application resources
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/use-cases/edit-metadata/>
+            Edit metadata
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/use-cases/permission-use-case/>
+            Permission a use case
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Workflow Builder [Beta]
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workflow-builder/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/workflow-builder/understanding-workflows/>
+            Understanding workflows and usage
+           </a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="ptcom-design__bodyContainer__ko5zom" data-pagefind-filter="product:foundry" data-pagefind-meta="product:foundry">
+      <div class="ptcom-design__breadcrumbs__qq0wfv" data-pagefind-meta="breadcrumb:Use case development / Workshop / Core concepts / Layouts">
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" href="../../../docs/foundry/app-building/overview/>
+         Use case development
+        </a>
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" data-pagefind-weight="1" href="../../../docs/foundry/workshop/overview/>
+         Workshop
+        </a>
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        Core concepts
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" data-pagefind-weight="1" href="../../../docs/foundry/workshop/concepts-layouts/>
+         Layouts
+        </a>
+       </span>
+      </div>
+      <div data-pagefind-body="true">
+       <div class="ptcom-design__markdownDoc__1vbgce2">
+        <h1 data-pagefind-weight="1" id="user-content-layouts" level="1" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#layouts" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Layouts
+        </h1>
+        <p>
+         Workshop
+         <strong>
+          layouts
+         </strong>
+         allow builders to configure how the user interface of a module is organized. The main layout components of a Workshop module (the header, pages, sections, and overlays) are described in detail in the sections below. Layout elements may be edited by selecting the
+         <strong>
+          Layout
+         </strong>
+         sidebar panel and selecting the element to configure, or by selecting the element in the main module view.
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-header" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#header" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Header
+        </h2>
+        <p>
+         The header in a Workshop module serves as a persistent toolbar for module-wide titles, tabs, and buttons. When creating a new module, the module header will be visible at the top of the screen:
+        </p>
+        <p>
+         <img alt="Screenshot of a Workshop module header" node="[object Object]" src="/docs/resources/foundry/workshop/layout_header.png"/>
+        </p>
+        <p>
+         When the header is selected, the plus (
+         <strong>
+          +
+         </strong>
+         ) signs allow widgets such as tabs and button groups to be added to the header, making them easily accessible across all pages of a Workshop module. If the module header is hidden, it may be selected with the
+         <strong>
+          Header
+         </strong>
+         option that appears at the top of the list found in the
+         <strong>
+          Layout
+         </strong>
+         sidebar panel.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-configuration-options" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#configuration-options" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Configuration options
+        </h3>
+        <p>
+         Configuration options provided for a module header include:
+        </p>
+        <ul>
+         <li>
+          Toggle header visibility.
+         </li>
+         <li>
+          Set a title for the header. This title will also be used to set the browser tab or Carbon workspace tab name. If a title is not set, the Workshop module resource name will be used instead.
+         </li>
+         <li>
+          Choose a custom color for the title text.
+         </li>
+         <li>
+          Enable an application logo by choosing an icon or uploading an image.
+          <ul>
+           <li>
+            Icon: Choose an icon and an icon color.
+           </li>
+           <li>
+            Image: Select an image from your Palantir resources or upload one from your computer.
+            <ul>
+             <li>
+              Customize the image height.
+             </li>
+             <li>
+              Position the image: Choose left, center, or right for horizontal headers; choose top or bottom for vertical headers.
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li>
+          Toggle the ability for users to favorite the module in view mode.
+         </li>
+         <li>
+          Select a background color for the header.
+         </li>
+         <li>
+          Choose the header's orientation: horizontal (at the top) or vertical (on the left) of the module.
+         </li>
+         <li>
+          Set the header height for horizontal headers.
+         </li>
+        </ul>
+        <p>
+         <img alt="Configuration options for a Workshop module header" node="[object Object]" src="/docs/resources/foundry/workshop/module_header_config.png"/>
+        </p>
+        <p>
+         When configured, a horizontal header with a custom image can look like the following example:
+        </p>
+        <p>
+         <img alt="Screenshot of a horizontal module header, configured with a title, tabs, and an export button" node="[object Object]" src="/docs/resources/foundry/workshop/configured_horizontal_header.png"/>
+        </p>
+        <p>
+         You also have the option to configure a vertical header, which will be displayed on the left side of your module. Once you enable the vertical orientation, several additional settings will become available for customization:
+        </p>
+        <ul>
+         <li>
+          Set the width of the vertical header.
+         </li>
+         <li>
+          Enable collapsibility, with the option to set it as collapsed by default.
+         </li>
+         <li>
+          Add a custom image for the collapsed state, either by selecting from your Palantir resources or uploading from your computer.
+          <ul>
+           <li>
+            To display a collapsed image, you must first set up a header image as outlined above. If you opt for an icon instead, the chosen icon will appear in the collapsed state.
+           </li>
+          </ul>
+         </li>
+        </ul>
+        <p>
+         <img alt="Configuration options for a vertical module header" node="[object Object]" src="/docs/resources/foundry/workshop/vertical_module_header_config.png"/>
+        </p>
+        <p>
+         When enabling collapsed headers, the Button Group and Tabs widgets will also have collapsed states that will only show the icons; the text will be dropped in this state. All other widgets will be hidden when a module header is collapsed.
+        </p>
+        <p>
+         The example below shows a configured vertical module header:
+        </p>
+        <p>
+         <img alt="Screenshot of a vertical module header, configured with a title, tabs, and an export button" node="[object Object]" src="/docs/resources/foundry/workshop/vertical_configured.png"/>
+        </p>
+        <p>
+         And its collapsed state:
+        </p>
+        <p>
+         <img alt="Screenshot of a collapsed vertical module header, configured with a title, tabs, and an export button" node="[object Object]" src="/docs/resources/foundry/workshop/configured_vertical_collapsed.png"/>
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-pages" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#pages" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Pages
+        </h2>
+        <p>
+         Pages allow module builders to construct complex, multi-screen applications in Workshop. Each page is a blank canvas on which a module builder can configure a unique set of widgets to support the targeted workflow. Only the module header will persist between pages to provide an overarching toolbar for a given module.
+        </p>
+        <p>
+         In the example module header shown above, each tab in the Tabs widget could be configured to select a page, with each page configured with a different user workflow.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-add-a-page" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#add-a-page" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Add a page
+        </h3>
+        <p>
+         Pages can be added from within the
+         <strong>
+          Layout
+         </strong>
+         panel on the left side of the screen. To add a page, open the
+         <strong>
+          Layout
+         </strong>
+         panel, then select the plus (
+         <strong>
+          +
+         </strong>
+         ) sign on the top. Next, select the
+         <strong>
+          New page
+         </strong>
+         option, as shown below:
+        </p>
+        <p>
+         <img alt="The New Page option from the Layout panel in Workshop." node="[object Object]" src="/docs/resources/foundry/workshop/add_page.png"/>
+        </p>
+        <p>
+         Once added, the new page will be auto-selected within the
+         <strong>
+          Layout
+         </strong>
+         panel and you can begin configuring its contents. The below screenshot showcases the default, unconfigured page that is initialized with two vertically divided sections beneath the module-wide header:
+        </p>
+        <img alt="A workshop page is separated into two sections, with more layout options below." node="[object Object]" src="/docs/resources/foundry/workshop/configure_new_page.png?width=900" width="900"/>
+        <p>
+         You can also explore other layout templates using the layout template picker at the bottom of the page. You can preview what each layout would look like by hovering over its icon. If you would like to use a template, you can select that icon; the page layout will update to the one you selected.
+        </p>
+        <img alt="A Workshop page is formatted with an inbox-style layout." node="[object Object]" src="/docs/resources/foundry/workshop/page-template-preview.png?width=900" width="900"/>
+        <p>
+         When editing your application, pages are listed in the order in which they are created. Page order as seen in edit view has no impact on module behavior.
+        </p>
+        <p>
+         For more detail on how to add content to pages by adding and configuring sections, review the
+         <a href="#sections">
+          sections documentation
+         </a>
+         below.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-switching-pages-with-layout-events" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#switching-pages-with-layout-events" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Switching pages with Layout events
+        </h3>
+        <p>
+         To navigate users between the pages of a module, a builder can use a
+         <a href="../../../docs/foundry/workshop/./concepts-events/#layout-event>
+          Layout event
+         </a>
+         . This can be triggered from within widgets such as the Button Group or Tabs.
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-sections" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#sections" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Sections
+        </h2>
+        <p>
+         Sections are the components of each page and overlay that allow module builders to subdivide the user interface. Each section is configured to contain one or more widgets, or a layout, which itself may contain one or more sections.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-section-layouts" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#section-layouts" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Section layouts
+        </h3>
+        <p>
+         To access available layout options for a section, choose
+         <strong>
+          Set layout
+         </strong>
+         on any empty section in your module and examine the
+         <strong>
+          Layout
+         </strong>
+         options as shown below:
+        </p>
+        <p>
+         <img alt="Workshop layout selector" node="[object Object]" src="/docs/resources/foundry/workshop/layout_selector.png"/>
+        </p>
+        <p>
+         The currently supported Layout options include:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Columns:
+          </strong>
+          Enables sections to be split vertically to effectively create a new column in a module.
+         </li>
+         <li>
+          <strong>
+           Rows:
+          </strong>
+          Enables sections to be split horizontally to effectively create a new row in a module. The
+          <strong>
+           Enable scrolling
+          </strong>
+          option is available in the Rows layout.
+         </li>
+         <li>
+          <strong>
+           Tabs:
+          </strong>
+          Adds tabs to the top of a section and allows module builders to configure different configurations of widgets within each tab of a section.
+         </li>
+         <li>
+          <strong>
+           Flow:
+          </strong>
+          Turns the current section in a vertically scrolling container to allow module building to configure widgets that stretch beyond the displayed interface of a module.
+         </li>
+         <li>
+          <strong>
+           Toolbar:
+          </strong>
+          Configures sections to function as a horizontal toolbar optimized for smaller widgets like Button Groups or Metric Cards, along with single input widgets.
+         </li>
+         <li>
+          <strong>
+           Loop:
+          </strong>
+          Loop layouts allow a builder to loop over an object set, displaying an embedded module for each object in the set by using that object as an input. Learn more in the
+          <a href="../../../docs/foundry/workshop/./loop-layouts/>
+           loop layouts documentation
+          </a>
+          .
+         </li>
+        </ul>
+        <h3 data-pagefind-weight="0.8" id="user-content-duplicating-sections" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#duplicating-sections" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Duplicating sections
+        </h3>
+        <p>
+         Cut, copy, and paste options are available for whole sections and individual widgets within a module, providing tools for a faster module building experience.
+        </p>
+        <p>
+         When pasting sections or widgets, builders have two options for managing the new sectionâs or widgetâs input variables:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Paste with same input variable:
+          </strong>
+          Paste a new section or widget that reuses the copied sectionâs or widgetâs input variables.
+         </li>
+         <li>
+          <strong>
+           Paste with duplicate input variables:
+          </strong>
+          Pastes a new section or widget that uses newly created input variables that match the copied sectionâs or widgetâs input variables.
+         </li>
+        </ul>
+        <p>
+         <img alt="The cut, copy, and paste options for a section or widget are highlighted." node="[object Object]" src="/docs/resources/foundry/workshop/cut-copy-paste.png"/>
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-overlays" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#overlays" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Overlays
+        </h2>
+        <p>
+         Overlays may be used when certain sections should only appear when contextually relevant in a workflow. Overlays will appear as a layer on top of the selected page.
+        </p>
+        <p>
+         Similarly to pages, you can add overlays rom within the
+         <strong>
+          Layout
+         </strong>
+         panel on the left side of the screen. To add an overlay, select the (
+         <strong>
+          +
+         </strong>
+         ) sign on the top. Next, select the
+         <strong>
+          New overlay
+         </strong>
+         option, as shown below:
+        </p>
+        <p>
+         <img alt="The New overlay option from the Layout panel in Workshop." node="[object Object]" src="/docs/resources/foundry/workshop/add_overlay.png"/>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-configuration-options-1" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#configuration-options-1" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Configuration options
+        </h3>
+        <ul>
+         <li>
+          <strong>
+           Overlay name:
+          </strong>
+          This setting determines the name used to refer to this overlay throughout the Workshop editor. Notably, this is relevant in
+          <a href="../../../docs/foundry/workshop/./concepts-events/#layout-event>
+           Overlay events
+          </a>
+          .
+         </li>
+         <li>
+          <strong>
+           Show overlay header:
+          </strong>
+          This setting determines if the default overlay header should be shown. The overlay header comes with a default close button and provides the additional configuration options:
+          <ul>
+           <li>
+            <strong>
+             Title:
+            </strong>
+            This setting allows a title to be configured that will be shown in the header of the overlay.
+           </li>
+           <li>
+            <strong>
+             Icon:
+            </strong>
+            This setting allows an icon to be selected that will be shown to the left of the title in the header of the overlay.
+           </li>
+          </ul>
+         </li>
+         <li>
+          <strong>
+           Variable based visibility:
+          </strong>
+          This setting allows a Boolean variable to be selected which will determine if the overlay should be visible. This setting allows for overlays that are in an initially visible state when the module loads, as well as enabling advanced control over the overlay visibility state. This setting may also be useful when using overlays in combination with
+          <a href="../../../docs/foundry/workshop/./embedding-workshop-modules-overview/>
+           embedded modules
+          </a>
+          , as this allows the overlay state to be shared and set between a parent and child module through Set Variable Value events.
+          <a href="../../../docs/foundry/workshop/./concepts-events/>
+           Layout events
+          </a>
+          which change the overlay visibility state, will update the value of this variable.
+         </li>
+         <li>
+          <strong>
+           On close:
+          </strong>
+          This option allows a Workshop
+          <a href="../../../docs/foundry/workshop/./concepts-events/>
+           Event
+          </a>
+          to optionally be configured run when the overlay is closed. If
+          <strong>
+           Variable based visibility
+          </strong>
+          is configured with a Boolean variable that comes from an object property or variable transformation, this event can be used to reset the condition that lead to the overlay being in the open state.
+         </li>
+         <li>
+          <strong>
+           Close overlay on backdrop click:
+          </strong>
+          This toggle determines if the overlay should close as a result of a user selecting the area outside of the overlay.
+         </li>
+         <li>
+          <strong>
+           Add background behind overlay:
+          </strong>
+          This toggle determines if an opque background should be added behind the overlay. This is enabled by default and helps to bring a user's focus to the open overlay.
+         </li>
+        </ul>
+        <h3 data-pagefind-weight="0.8" id="user-content-overlay-types" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#overlay-types" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Overlay types
+        </h3>
+        <p>
+         Currently, Workshop supports two overlay types: drawers and modals. These types are explained in detail below.
+        </p>
+        <h4 id="user-content-drawers">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#drawers" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Drawers
+        </h4>
+        <p>
+         Drawers are overlays that slide out from the side of the screen. Available configuration options for drawer overlays include the following:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Position:
+          </strong>
+          Choose the right or left position to determine from which side of the screen the drawer will appear.
+         </li>
+         <li>
+          <strong>
+           Size:
+          </strong>
+          Set the width of the drawer.
+         </li>
+        </ul>
+        <h4 id="user-content-modals">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#modals" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Modals
+        </h4>
+        <p>
+         Modals are overlays that appear in the center of the screen.
+         <strong>
+          Size
+         </strong>
+         is the only available configuration option specific to modal overlays.
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-style-formatting" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#style-formatting" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Style formatting
+        </h2>
+        <p>
+         Workshop offers control over various style formatting settings to give application builders more customizability to the design and feel of their modules. Configuration options include header formatting, background colors, border styles, and more. These options are available at the page, section, and widget levels.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-header-formatting" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#header-formatting" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Header formatting
+        </h3>
+        <p>
+         Header formatting options can be added when the header is enabled on a section. There are three available:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Block:
+          </strong>
+          The section header is in its own container above the body.
+         </li>
+         <li>
+          <strong>
+           Contained:
+          </strong>
+          The section header appears to be contained within the body area.
+         </li>
+         <li>
+          <strong>
+           Floating:
+          </strong>
+          The section header appears above the body area and is visually on the background of the parent section.
+         </li>
+        </ul>
+        <img alt="Image demonstrating the three types of header formats available" node="[object Object]" src="/docs/resources/foundry/workshop/header_formatting_options.png?width=800" width="800"/>
+        <h3 data-pagefind-weight="0.8" id="user-content-background-colors" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#background-colors" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Background colors
+        </h3>
+        <p>
+         Background colors can be added to pages, sections, and widgets to help visually segment parts of a module. There are five shades available for both light mode and dark mode, and a transparent option.
+        </p>
+        <img alt="Background color options" node="[object Object]" src="/docs/resources/foundry/workshop/background_color_options.png?width=500" width="500"/>
+        <img alt="Background color examples" node="[object Object]" src="/docs/resources/foundry/workshop/background_color_examples.png?width=300" width="300"/>
+        <h3 data-pagefind-weight="0.8" id="user-content-border-styles" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#border-styles" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Border styles
+        </h3>
+        <p>
+         Border styles can be configured on sections and widgets, giving the appearance of different elevation levels within a module. There are four options available:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Bordered:
+          </strong>
+          The standard single outline around the section or widget.
+         </li>
+         <li>
+          <strong>
+           Outer drop shadow:
+          </strong>
+          A shadow outside the border to give the section or widget an elevated appearance.
+         </li>
+         <li>
+          <strong>
+           Inner shadow:
+          </strong>
+          A shadow inside the border to give the section or widget a depressed appearance.
+         </li>
+         <li>
+          <strong>
+           Borderless:
+          </strong>
+          No outline around the section or widget so it blends into the background.
+         </li>
+        </ul>
+        <img alt="Border style options" node="[object Object]" src="/docs/resources/foundry/workshop/border_style_options.png?width=500" width="500"/>
+        <img alt="Border style examples" node="[object Object]" src="/docs/resources/foundry/workshop/border_style_examples.png?width=300" width="300"/>
+        <h3 data-pagefind-weight="0.8" id="user-content-padding-controls" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#padding-controls" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Padding controls
+        </h3>
+        <p>
+         Padding can be configured for pages and sections to set a consistent amount of padding or space around all child components within. Padding adds space between components to provide separation and breathability to the module. There are five options available:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           No padding:
+          </strong>
+          The standard option with no padding added around child components.
+         </li>
+         <li>
+          <strong>
+           Compact:
+          </strong>
+          Adds 16 pixels of padding around child components.
+         </li>
+         <li>
+          <strong>
+           Regular:
+          </strong>
+          Adds 24 pixels of top/bottom padding and 48 pixels of left/right padding around child components.
+         </li>
+         <li>
+          <strong>
+           Large:
+          </strong>
+          Adds 40 pixels of top/bottom padding and 62 pixels of left/right padding around child components.
+         </li>
+         <li>
+          <strong>
+           Custom:
+          </strong>
+          Allows custom definitions of padding levels to be set around child components.
+         </li>
+        </ul>
+        <p>
+         <strong>
+          Inner section style:
+         </strong>
+         Optionally select one of various pre-defined section styles to be applied to all children sections:
+        </p>
+        <img alt="Demonstration of various styles of inner section padding style" node="[object Object]" src="/docs/resources/foundry/workshop/padding_control_inner_section_style_options.png?width=400" width="400"/>
+       </div>
+      </div>
+      <div class="ptcom-design__animatedLine__116w76e">
+       <div class="ptcom-design__animatedLineRule__116w76e">
+       </div>
+      </div>
+      <div class="ptcom-design__neighbours-container__w8fvw7">
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/workshop/example-applications/>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7 ptcom-design__neighbours-link-arrow-reversed__w8fvw7" title="Previous page">
+          â
+         </span>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           PREVIOUS
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            Example applications
+           </span>
+          </span>
+         </div>
+        </a>
+       </div>
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/workshop/concepts-widgets/>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7 ptcom-design__neighbours-link-text-end-aligned__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           NEXT
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            Widgets
+           </span>
+          </span>
+         </div>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7" title="Next page">
+          â
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+     <nav class="ptcom-design__toc__ko5zom ptcom-design__toc__1pf03m6">
+      <h2 class="ptcom-design__tocNavHeader__1pf03m6">
+       Contents
+      </h2>
+      <ul class="ptcom-design__tocList__1pf03m6">
+       <li class="ptcom-design__tocListItem__1pf03m6">
+        <a class="ptcom-design__tocLink__1pf03m6" href="#layouts">
+         Layouts
+        </a>
+        <ul class="ptcom-design__tocList__1pf03m6">
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#header">
+           Header
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#pages">
+           Pages
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#sections">
+           Sections
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#overlays">
+           Overlays
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#style-formatting">
+           Style formatting
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </nav>
+    </div>
+    <footer class="ptcom-design__footer__ko5zom">
+     <p>
+      Â© 2025 Palantir Technologies Inc. All rights reserved.
+     </p>
+     <div class="ptcom-design__statement-links__ko5zom">
+      <a href="https://www.palantir.com/cookie-statement/">
+       Cookies Statement â
+      </a>
+      <a href="https://www.palantir.com/privacy-and-security/">
+       Privacy Statement â
+      </a>
+     </div>
+     <button class="ptcom-design__button__ko5zom" id="ot-sdk-btn">
+      <div class="ot-sdk-show-settings">
+       Cookie Settings
+      </div>
+     </button>
+    </footer>
+   </div>
+  </div>
+  
+ </body>
+</html>

@@ -1,0 +1,3983 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+  <meta content="1; mode=block" http-equiv="X-XSS-Protection"/>
+  <link href="/docs/icon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/docs/icon.svg" rel="shortcut icon" type="image/svg+xml"/>
+  <link href="https://www.gstatic.com" rel="dns-prefetch"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="dns-prefetch"/>
+  <meta content="Audit log categories help to identify events of interest without enumerating every event. In audit.3, events must be logged under one of the..." name="description"/>
+  <link href="https://palantir.com/docs/foundry/security/audit-log-categories//" rel="canonical"/>
+  <meta content="Palantir" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://palantir.com/docs/foundry/security/audit-log-categories//" property="og:url"/>
+  <meta content="Palantir" property="og:site_name"/>
+  <meta content="https://palantir.com/docs/resources/homepage/iso-grid.png" name="image" property="og:image"/>
+  <meta content="Audit log categories help to identify events of interest without enumerating every event. In audit.3, events must be logged under one of the..." property="og:description"/>
+  <meta content="Documentation | Palantir" name="twitter:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@palantirtech" name="twitter:site"/>
+  <link href="https://www.googletagmanager.com" rel="preconnect"/>
+  <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
+  <title>
+   Security auditing â¢ Audit log categories â¢ Palantir
+  </title>
+  <meta content="23" name="next-head-count"/>
+  <script data-nscript="beforeInteractive" type="text/javascript">
+   function OptanonWrapper() {}
+  </script>
+  <link as="style" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="preload"/>
+  <link data-n-g="" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="stylesheet"/>
+  <noscript data-n-css="">
+  </noscript>
+  <script defer="" nomodule="" src="/docs/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js">
+  </script>
+  <script data-document-language="true" data-domain-script="0c1270b7-3d02-4afa-bd15-f3c23839b75a" data-nscript="beforeInteractive" defer="" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/webpack-d50bf798bfb74151.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/framework-777d23e5800d4dc0.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/main-7bc202b68cac4a69.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/_app-87c1de53eb5f2af5.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5117-b9a97c6f03ed6079.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1059-7fd152d892580497.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5819-22ba01b9d8cbb33a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/8913-a71dbce8790fe614.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1472-56bad0c7930cc63a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/9537-3c0ceb8250403970.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/%5B...slug%5D-1bf87c642d9d87bc.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_buildManifest.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_ssgManifest.js">
+  </script>
+ </head>
+ <body>
+  <div data-reactroot="" id="__next">
+   <script id="docs-theme" nonce="**CSP_NONCE**">
+    (function() {
+                                    const theme = document.cookie.split('; ').find(row => row.startsWith('docsColorTheme='));
+                                    if (theme) {
+                                        document.body.className = theme.split('=')[1] + "Theme";
+                                    }
+                                })();
+   </script>
+   <noscript>
+    <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PSL84DJ" style="display:none;visibility:hidden" width="0">
+    </iframe>
+   </noscript>
+   <div class="ptcom-design__layoutWrapper__ko5zom">
+    <div class="ptcom-design__navContainer__ko5zom ptcom-design__hasDropdownNav__ko5zom">
+     <div class="ptcom-design__cornerButtons__twowro">
+      <button aria-expanded="false" class="ptcom-design__button__16lyg8o" id="navBtn" title="Show Navigation">
+       <div class="ptcom-design__burger__16lyg8o hamburger hamburger--emphatic">
+        <span class="hamburger-box">
+         <span class="hamburger-inner">
+         </span>
+        </span>
+       </div>
+      </button>
+      <button aria-expanded="false" class="ptcom-design__button__67pw73" id="searchBtn" title="Search">
+       <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <title>
+         Search
+        </title>
+        <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+        </circle>
+        <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+        </path>
+       </svg>
+      </button>
+     </div>
+     <div class="ptcom-design__brandBar__ko5zom">
+      <div class="ptcom-design__logoContainer__ko5zom">
+       <div class="ptcom-design__navBrand__1aug2ec">
+        <a aria-label="Link to Palantir homepage" class="ptcom-design__branding__1aug2ec" data-axe="reviewed" href="../../../docs/ id="logo">
+         <svg class="ptcom-design__logo__1aug2ec" height="20" role="img" viewbox="0 0 83 20" width="83" xmlns="http://www.w3.org/2000/svg">
+          <title>
+           Palantir
+          </title>
+          <path d="M20.115 2.092h5.112c1.896 0 3.133.084 4.204 1.255.742.837 1.154 1.841 1.154 3.013 0 1.171-.412 2.176-1.236 3.012-.825.837-1.896 1.34-4.617 1.34H22.26v6.945h-2.144V2.092zm2.144 6.862h2.473c1.402 0 3.545-.084 3.545-2.678 0-2.427-1.979-2.427-3.133-2.427H22.26v5.105zm15.169 8.703c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.165-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zM36.026 12.3c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.989 0 1.813-.418 2.308-1.172.412-.753.495-1.338.495-2.845-.33.084-.66 0-1.155 0zM40.89 2.092h1.979v15.565H40.89V2.092zm10.553 15.565c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.164-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zm-1.32-5.356c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.99 0 1.814-.418 2.308-1.172.413-.753.495-1.338.495-2.845-.412.084-.66 0-1.154 0zm4.865-4.184V6.862h1.978v1.757c.248-.418.99-1.924 3.38-1.924.99 0 3.875.334 3.875 3.682v7.364H62.16v-6.862c0-.67-.082-1.34-.577-1.841-.495-.502-1.237-.753-1.896-.753-1.484 0-2.803 1.087-2.803 3.263v6.193h-1.979V8.117h.083zm9.893-1.255h1.896V4.519l1.978-.67v2.93h2.391v1.506h-2.39v6.443c0 .502 0 1.423 1.4 1.423.413 0 .825-.084.99-.084v1.59c-.33.084-.907.167-1.649.167-1.896 0-2.72-.586-2.72-2.343V8.284H64.88V6.862zm7.666-4.77h2.391v2.26h-2.39v-2.26zm.165 4.77h1.979v10.795h-1.979V6.862zm3.875 2.176c0-.753-.082-1.507-.082-2.176h1.978l.083 2.092c.412-1.506 1.648-2.008 2.555-2.092a9.379 9.379 0 011.402-.084v2.009c-.083 0-.248-.084-.412-.084h-.578c-2.39 0-2.885 1.422-2.885 3.263v5.774H76.67V9.037h-.083zM7.832 0C3.71 0 .33 3.431.33 7.615s3.38 7.615 7.502 7.615 7.502-3.43 7.502-7.615C15.334 3.431 11.954 0 7.832 0zm0 12.887c-2.886 0-5.194-2.343-5.194-5.272 0-2.929 2.308-5.272 5.194-5.272 2.885 0 5.194 2.343 5.194 5.272-.083 2.929-2.391 5.272-5.194 5.272zm6.677 1.674l-6.677 2.928-6.678-2.928L0 16.653 7.832 20l7.832-3.347-1.155-2.092z">
+          </path>
+         </svg>
+        </a>
+        <div class="ptcom-design__subnavLink__1aug2ec">
+         <li class="ptcom-design__item__vv201u ptcom-design__subNavListContainer__1wclymi" tabindex="0">
+          <div class="ptcom-design__pageGroupTitle__vv201u ptcom-design__subNavPickerDropdown__1wclymi">
+           <span>
+            Documentation
+           </span>
+           <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+            </polyline>
+           </svg>
+          </div>
+          <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__subNavList__1wclymi ptcom-design__pageGroupListFixedWidth__vv201u">
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/>
+             Documentation
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/apollo/>
+             Apollo
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/gotham/>
+             Gotham
+            </a>
+           </li>
+          </ul>
+         </li>
+        </div>
+       </div>
+      </div>
+      <div class="ptcom-design__searchContainer__ko5zom">
+       <div class="ptcom-design__container__11sdyh7">
+        <div class="ptcom-design__search__11sdyh7">
+         <div class="ptcom-design__searchIcon__11sdyh7">
+          <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            Search documentation
+           </title>
+           <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+           </circle>
+           <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+           </path>
+          </svg>
+         </div>
+         <form class="ptcom-design__inputForm__11sdyh7" method="GET">
+          <label class="ptcom-design__hiddenLabel__11sdyh7" for="query">
+           Search
+          </label>
+          <input autocomplete="off" class="ptcom-design__searchInput__11sdyh7" id="query" name="query" placeholder="Search documentation" type="search" value=""/>
+         </form>
+         <div class="ptcom-design__quickSearchRightSideContainer__11sdyh7">
+          <svg class="ptcom-design__quickSearchRightSideButton__11sdyh7" enable-background="new 0 0 16 16" id="Layer_1" version="1.1" viewbox="0 0 16 16" x="0px" y="0px">
+           <title>
+            karat
+           </title>
+           <g id="key_control_1_">
+            <g>
+             <path clip-rule="evenodd" d="M12.71,5.29l-4-4C8.53,1.11,8.28,1,8,1S7.47,1.11,7.29,1.29l-4,4
+                    C3.11,5.47,3,5.72,3,6c0,0.55,0.45,1,1,1c0.28,0,0.53-0.11,0.71-0.29L8,3.41l3.29,3.29C11.47,6.89,11.72,7,12,7c0.55,0,1-0.45,1-1
+                    C13,5.72,12.89,5.47,12.71,5.29z" fill-rule="evenodd">
+             </path>
+            </g>
+           </g>
+          </svg>
+          <p class="ptcom-design__addition__11sdyh7">
+           +
+          </p>
+          <p class="ptcom-design__quickSearchRightSideButton__11sdyh7">
+           K
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <a class="ptcom-design__altLink__ko5zom" href="../../../docs/foundry/api/v2/>
+       API Reference â
+      </a>
+      <a class="ptcom-design__button__10xiqev ptcom-design__feedbackButton__ko5zom">
+       Send feedback
+      </a>
+      <div class="ptcom-design__pickers__ko5zom">
+       <div class="ptcom-design__localePicker__958zz8 ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__958zz8">
+         <button class="ptcom-design__button__958zz8" title="Select a locale">
+          <span>
+           en
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__958zz8">
+         <button class="ptcom-design__button__958zz8 ptcom-design__active__958zz8" title="Select en locale">
+          <span>
+           en
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select jp locale">
+          <span>
+           jp
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select kr locale">
+          <span>
+           kr
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select zh locale">
+          <span>
+           zh
+          </span>
+         </button>
+        </div>
+       </div>
+       <div class="ptcom-design__themePicker__efbtyr ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr" title="Current theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr ptcom-design__active__efbtyr" title="Select light theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightBlueTheme__efbtyr" title="Select lightBlue theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightGoldTheme__efbtyr" title="Select lightGold theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkTheme__efbtyr" title="Select dark theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkMintTheme__efbtyr" title="Select darkMint theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkSalmonTheme__efbtyr" title="Select darkSalmon theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+     <ul class="ptcom-design__dropdownNav__vv201u ptcom-design__dropdownNav__ko5zom">
+      <li class="ptcom-design__item__vv201u ptcom-design__isSelected__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Capabilities
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/data-integration/overview/>
+          Data connectivity &amp; integration
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/model-integration/overview/>
+          Model connectivity &amp; development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/ontology/overview/>
+          Ontology building
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/dev-toolchain/overview/>
+          Developer toolchain
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/app-building/overview/>
+          Use case development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/analytics/overview/>
+          Analytics
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/devops/overview/>
+          Product delivery
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/security/overview/>
+          Security &amp; governance
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/administration/overview/>
+          Management &amp; enablement
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="ptcom-design__item__vv201u">
+       <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/getting-started/overview/>
+        Getting started
+       </a>
+      </li>
+      <li class="ptcom-design__item__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Platform updates
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__pageGroupListFixedWidth__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/>
+          Announcements
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/release-notes/>
+          Release notes
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+    <div class="ptcom-design__content__ko5zom ptcom-design__hasDropdownNav__ko5zom ptcom-design__hasSidebarNav__ko5zom">
+     <div class="ptcom-design__sideBarWrapper__ko5zom">
+      <nav class="ptcom-design__sideBar__ko5zom ptcom-design__container__17amtsp">
+       <h2 class="ptcom-design__header__17amtsp ptcom-design__headerNavTitle__17amtsp">
+        Security &amp; governance
+       </h2>
+       <ul class="ptcom-design__navList__17amtsp">
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/overview/>
+          Overview
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/shared-security-responsibility-model/>
+          Shared security responsibility model
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/security-glossary/>
+          Security glossary
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/release-notes/?filters=security rel="noopener noreferrer" target="_blank">
+          Release notes â
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Platform security
+         </div>
+        </li>
+        <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Getting started
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/securing-a-data-foundation/>
+            Securing a data foundation
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/securing-a-business-application/>
+            Securing a business application
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/protecting-sensitive-data/>
+            Protecting sensitive data
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/cross-organization-collaboration/>
+            Cross-Organization collaboration
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/checking-permissions/>
+            Checking permissions
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/requesting-justification-for-sensitive-actions/>
+            Requesting justification for sensitive actions
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Concepts
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/orgs-and-spaces/>
+            Organizations and spaces
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/projects-and-roles/>
+            Projects and roles
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/portfolios/>
+            Portfolios
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/users-and-groups/>
+            Users and groups
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/markings/>
+            Markings
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/cover-pages/>
+            Cover pages
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/project-constraints/>
+            Project constraints
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/restricted-views/>
+            Restricted Views
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/classification-based-access-controls/>
+            Classification-based Access Controls
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Management
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-orgs-and-spaces/>
+            Manage Organizations and spaces
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-roles/>
+            Manage roles
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-users/>
+            Manage users
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-groups/>
+            Manage groups
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-markings/>
+            Manage markings
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-project-constraints/>
+            Manage Project constraints
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-project-templates/>
+            Manage Project templates
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-restricted-views/>
+            Manage Restricted Views
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/disabling-propagate-view-requirements/>
+            Migrate from and disable "Propagate view requirements" setting [Planned deprecation]
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/disabling-ignore-inherited-permissions/>
+            Migrate from and disable "Ignore inherited permissions" setting [Planned deprecation]
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Third-party applications
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/third-party-apps-overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/manage-3pa/>
+            Managing third-party applications
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/register-3pa/>
+            Registering third-party applications
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/enabling-3pa-access/>
+            Enabling third-party application access
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/authorizing-3pa-access/>
+            Authorizing third-party application access
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/danger-zone-actions/>
+            Danger zone actions
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/writing-oauth2-clients/>
+            Writing OAuth2 clients for Foundry
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/user-generated-tokens/>
+            User-generated tokens
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/3pa-api-guidance/>
+            Foundry third-party application &amp; API guidance
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/data-protection-and-governance/>
+          Data protection and governance
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/download-controls/>
+          Download controls
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Applications
+         </div>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Approvals
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/approvals/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/approvals/review-a-request/>
+            Review a request
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Checkpoints
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/checkpoints/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/checkpoints/core-concepts/>
+            Core concepts
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/checkpoints/checkpoint-types/>
+            Checkpoint types
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/checkpoints/configure-checkpoints/>
+            Configure checkpoints
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/checkpoints/review-checkpoint-records/>
+            Review checkpoint records
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/checkpoints/checkpoints-marketplace/>
+            Add checkpoint configurations to a Marketplace product [Beta]
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Cipher
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/core-concepts/>
+            Core concepts
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/getting-started/>
+            Getting started
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Workflows
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/apply-operations/>
+              Apply operations on columns of datasets
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/decrypt-individual-values/>
+              Decrypt individual values across applications
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/ciphertext-in-functions-and-actions/>
+              Use CipherText properties in Functions and Actions
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/example-use-case/>
+              Example use case
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/cipher-marketplace/>
+              Add Cipher to a Marketplace product [Beta]
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/visual-obfuscation/>
+              Use Cipher for visual obfuscation
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Compass
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/quicksearch/>
+            Quicksearch
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/create-a-project/>
+            Create a Project
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/tags/>
+            Tags
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/manually-upload-data/>
+            Manually upload data
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/move-and-share-resources/>
+            Move and share resources
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/use-project-navigation-panel/>
+            Use Project navigation panel
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/use-project-details-panel/>
+            Use Project details panel
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/data-catalog/>
+            Data Catalog
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Sensitive Data Scanner
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/core-concepts/>
+            Core concepts
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/create-a-sensitive-data-scan/>
+            Create a sensitive data scan
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/create-match-conditions/>
+            Create match conditions
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/create-match-actions/>
+            Create match actions
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/best-practices/>
+            Best practices
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/media-set-scanning/>
+            Media set scanning [Beta]
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Data Lifetime [Beta]
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/core-concepts-data-lifetime/>
+            Core concepts
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/getting-started/>
+            Getting started
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Workflows
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/deletion-policies-implications/>
+              Implications of deletion policies
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/creating-a-deletion-policy/>
+              Create a deletion policy
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/removing-a-policy/>
+              Remove a deletion policy
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/view-changes-applied-policy/>
+              View policy activity history
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/policy-overrides/>
+              Create a policy override
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/FAQ/>
+              FAQ
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Enterprise security
+         </div>
+        </li>
+        <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Security auditing
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/audit-logs-overview/>
+            Audit logging overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp ptcom-design__isSelected__17amtsp" href="../../../docs/foundry/security/audit-log-categories/>
+            Audit log categories
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/monitor-audit-logs/>
+            Monitoring audit logs
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/single-sign-on-security/>
+          Protecting identity
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Infrastructure security
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/protect-foundry-installation/>
+          Protecting your self-hosted Foundry installation
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/protect-data-connector-installation/>
+          Protecting your on-premise Foundry Data Connector
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/protect-tokens-api-keys/>
+          Protecting tokens and API keys
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/protect-phishing/>
+          Protecting against phishing
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/protect-malicious-files/>
+          Protecting against malicious files
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/monitor-for-vulnerabilities/>
+          Monitoring for vulnerabilities
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/report-security-concerns/>
+          Reporting security concerns
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="ptcom-design__bodyContainer__ko5zom" data-pagefind-filter="product:foundry" data-pagefind-meta="product:foundry">
+      <div class="ptcom-design__breadcrumbs__qq0wfv" data-pagefind-meta="breadcrumb:Security &amp; governance / Security auditing / Audit log categories">
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" href="../../../docs/foundry/security/overview/>
+         Security &amp; governance
+        </a>
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        Security auditing
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" data-pagefind-weight="1" href="../../../docs/foundry/security/audit-log-categories/>
+         Audit log categories
+        </a>
+       </span>
+      </div>
+      <div data-pagefind-body="true">
+       <div class="ptcom-design__markdownDoc__1vbgce2">
+        <h1 data-pagefind-weight="1" id="user-content-audit-log-categories" level="1" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#audit-log-categories" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Audit log categories
+        </h1>
+        <p>
+         Audit log categories help to identify events of interest without enumerating every event. In
+         <code>
+          audit.3
+         </code>
+         , events must be logged under one of the categories in the table below.
+         <a href="../../../docs/foundry/security/./audit-logs-overview/#audit2-logs>
+          <code>
+           audit.2
+          </code>
+          logs
+         </a>
+         may use the same categories but they are not enforced and usage is considered best effort. Refer to
+         <a href="../../../docs/foundry/security/./audit-logs-overview/>
+          Audit logging overview
+         </a>
+         for more information about the differences between the
+         <code>
+          audit.2
+         </code>
+         and
+         <code>
+          audit.3
+         </code>
+         schema.
+        </p>
+        <p>
+         An example auditing workflow using categories could be:
+        </p>
+        <ol>
+         <li>
+          Identify the audit categories of interest, such as
+          <code>
+           dataLoad
+          </code>
+          .
+         </li>
+         <li>
+          Use Foundry pipelines or a SIEM to search all audit logs that contain any of these events. In pseudo-code:
+         </li>
+        </ol>
+        <pre><code>allLogs.filter { log -&gt; interestingCategories.any { log.categories.contains(X) } }
+</code></pre>
+        <ol start="3">
+         <li>
+          For each of these logs, the
+          <code>
+           request_params
+          </code>
+          and
+          <code>
+           result_params
+          </code>
+          reflect the specific information submitted and viewed by a user. The request and response params are split to allow the consumer to differentiate between parameters that are provided by request and those that are part of the response as the result of the interaction.
+         </li>
+        </ol>
+        <p>
+         For example, if your log contains the
+         <code>
+          dataLoad
+         </code>
+         category, then the
+         <code>
+          request_params
+         </code>
+         and/or the
+         <code>
+          result_params
+         </code>
+         will contain contain a list of all the resources loaded by the user during this interaction.
+        </p>
+        <p>
+         Below are the available audit log categories.
+        </p>
+        <div class="ptcom-design__tableContainer__1vbgce2" data-pagefind-weight="0.5">
+         <table>
+          <thead>
+           <tr>
+            <th>
+             Audit Log Category
+            </th>
+            <th>
+             Category Description
+            </th>
+            <th>
+             Request Fields
+            </th>
+            <th>
+             Response Fields
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             <code>
+              appConfigAccess
+             </code>
+            </td>
+            <td>
+             Load application-specific configuration. These may be tied to a user or resource.
+            </td>
+            <td>
+             <code>
+              accessedAppConfigIds
+             </code>
+             <br/>
+             docs: The application resources that were accessed in this event.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              accessAppConfigDescription
+             </code>
+             <br/>
+             docs: A description of the configuration access.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              appConfigCreate
+             </code>
+            </td>
+            <td>
+             Create application-specific configuration. These may be tied to a user or resource.
+            </td>
+            <td>
+             <code>
+              createAppConfigDescription
+             </code>
+             <br/>
+             docs: A description of the configuration creation.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              createdAppConfigIds
+             </code>
+             <br/>
+             docs: The application resources that were created in this event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              appConfigDelete
+             </code>
+            </td>
+            <td>
+             Delete application-specific configuration. These may be tied to a user or resource.
+            </td>
+            <td>
+             <code>
+              deletedAppConfigIds
+             </code>
+             <br/>
+             docs: The ApplicationResouces that were deleted in this event.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              deleteAppConfigDescription
+             </code>
+             <br/>
+             docs: A description of the configuration deletion.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              appConfigSearch
+             </code>
+            </td>
+            <td>
+             Search for application-specific configuration. These may be tied to a user or resource.
+             <code>
+              appConfigSearch
+             </code>
+             should be used when the exact result values of a request are unknown, or variable.
+            </td>
+            <td>
+             <code>
+              appConfigSearchQuery
+             </code>
+             <br/>
+             docs: The search-query that this event is running.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              appConfigSearchResults
+             </code>
+             <br/>
+             docs: The search-results that are returned to the user in this event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              appConfigUpdate
+             </code>
+            </td>
+            <td>
+             Update application-specific configuration. These may be tied to a user or resource.
+            </td>
+            <td>
+             <code>
+              updatedAppConfigIds
+             </code>
+             <br/>
+             docs: The application resources that were updated in this event.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              updateAppConfigDescription
+             </code>
+             <br/>
+             docs: A description of the configuration update.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              assetFileLoad
+             </code>
+            </td>
+            <td>
+             Loads a file from a static asset its full coordinate, such as group, artifact, and version.
+            </td>
+            <td>
+             <code>
+              requestMavenCoordinate
+             </code>
+             <br/>
+             docs: Maven coordinate for the asset requested. Might not include groupId or version.
+             <br/>
+             type: required
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              responseMavenCoordinate
+             </code>
+             <br/>
+             docs: The full maven coordinate for the returned asset.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              authenticationCheck
+             </code>
+            </td>
+            <td>
+             Checks authentication status via a programmatic or manual authentication event, such as token validation.
+            </td>
+            <td>
+             <code>
+              authenticationCheckTargets
+             </code>
+             <br/>
+             docs: The identifiers that auth is being checked against.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              authenticationCheckResult
+             </code>
+             <br/>
+             docs: Whether this authentication check succeeded or not.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              authenticationCheckResultMessage
+             </code>
+             <br/>
+             docs: Further details on this authentication check result.
+             <br/>
+             type: optional
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              authorizationCheck
+             </code>
+            </td>
+            <td>
+             Checks authorization status via a programmatic or manual authorization event, like checking permissions.
+            </td>
+            <td>
+             <code>
+              authorizationCheckTargets
+             </code>
+             <br/>
+             docs: The identifiers that auth is being checked against.
+             <br/>
+             type: optional
+             <br/>
+             <br/>
+             <code>
+              authorizationCheckOperations
+             </code>
+             <br/>
+             docs: The values within the authorization attempt, such as the permission being checked for.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              authorizationCheckSucceededTargets
+             </code>
+             <br/>
+             docs: Targets that passed authorization.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              authorizationCheckFailedTargets
+             </code>
+             <br/>
+             docs: Targets that failed authorization.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              authorizationCheckResultMessage
+             </code>
+             <br/>
+             docs: Further details on this authorization check result.
+             <br/>
+             type: optional
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              bulkDataImport
+             </code>
+            </td>
+            <td>
+             Bulk imports to the platform. Differs from
+             <code>
+              dataImport
+             </code>
+             in that the direct relationship between destinations and origins may not be known.
+            </td>
+            <td>
+             <code>
+              bulkImportedFiles
+             </code>
+             <br/>
+             docs: The files that were imported
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              bulkImportDestinations
+             </code>
+             <br/>
+             docs: The destination for the bulk imports.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              cancelCodeExecution
+             </code>
+            </td>
+            <td>
+             Cancellation of an existing code execution.
+            </td>
+            <td>
+             <code>
+              cancelledExecutedResources
+             </code>
+             <br/>
+             docs: The specific resources that were being executed before cancellation. For example, this could be a modelUUID or a buildRID.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              cancelledExecutedResourceEnvironment
+             </code>
+             <br/>
+             docs: The encompasssing environment for the resources that were being executed before cancellation. For example, this could be a liveRID or a workbookRID.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              codeExecution
+             </code>
+            </td>
+            <td>
+             Occurrence of code execution, which might not write results to a
+             <code>
+              dataResource
+             </code>
+             .
+            </td>
+            <td>
+             <code>
+              executedResourceEnvironment
+             </code>
+             <br/>
+             docs: The encompasssing environment for the resources that were executed. For example, this could be a liveRID or a workbookRID.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              executedResources
+             </code>
+             <br/>
+             docs: The specific resources that were executed. For example, this could be a modelUUID or a buildRID or if run on a container, pass in the identifier of the container.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              configureInfra
+             </code>
+            </td>
+            <td>
+             A user configures some infrastructure like a node or a service.
+            </td>
+            <td>
+             <code>
+              configureInfraTargets
+             </code>
+             <br/>
+             docs: The SystemResources that are being configured.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              configureInfraRequestId
+             </code>
+             <br/>
+             docs: The request-id of this configuration event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              containerLaunch
+             </code>
+            </td>
+            <td>
+             Registers the preparation of a compute environment. This should be emitted when, for example, a Spark module is launched. If possible, pass in a location identifier of the compute environment like a host name.
+            </td>
+            <td>
+             <code>
+              requestedContainerIdsToLaunch
+             </code>
+             <br/>
+             docs: The IDs of the resources that were requested to be launched.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              launchedContainerIds
+             </code>
+             <br/>
+             docs: The IDs of the resources that were launched.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              containerLoad
+             </code>
+            </td>
+            <td>
+             Registers the load of a compute environment. This should be emitted when, for example, a spark module is read. If possible, pass in a location identifier of the compute environment like a host name.
+            </td>
+            <td>
+             <code>
+              requestedContainerLoadIds
+             </code>
+             <br/>
+             docs: The IDs of the resources that were requested.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              loadedContainerLoadIds
+             </code>
+             <br/>
+             docs: The IDs of the resources that were loaded.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              containerSearch
+             </code>
+            </td>
+            <td>
+             Registers the search of compute environments. This should be emitted when, for example, spark module list is read.
+            </td>
+            <td>
+             <code>
+              containerSearchQuery
+             </code>
+             <br/>
+             docs: The search-query that this event is running.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              containerSearchResults
+             </code>
+             <br/>
+             docs: The search-results that are returned to the user in this event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              containerStop
+             </code>
+            </td>
+            <td>
+             Registers the shutdown of a compute environment. If possible, pass in a human readable reason for the shutdown, for example "failure" or "user request".
+            </td>
+            <td>
+             <code>
+              stoppedContainerIds
+             </code>
+             <br/>
+             docs: The IDs of the resources that were stopped.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              containerStopReason
+             </code>
+             <br/>
+             docs: The reason why the resource was stopped.
+             <br/>
+             type: optional
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              createInfra
+             </code>
+            </td>
+            <td>
+             A user creates some infrastructure like a node or a service.
+            </td>
+            <td>
+             <code>
+              createInfraTargets
+             </code>
+             <br/>
+             docs: The SystemResources that are being created.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              createdInfraResources
+             </code>
+             <br/>
+             docs: The SystemResources that were created. This should have a more explicit identifier.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataCreate
+             </code>
+            </td>
+            <td>
+             Indicates the addition of some new entry of data into the platform where it did not exist prior. This event may be reflected as a
+             <code>
+              dataPromote
+             </code>
+             in a separate service if it is logged in the landing service.
+            </td>
+            <td>
+             <code>
+              createdResources
+             </code>
+             <br/>
+             docs: The DataResources that were created in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataDelete
+             </code>
+            </td>
+            <td>
+             Related to the deletion of data, independent of the granularity of that deletion.
+            </td>
+            <td>
+             <code>
+              deletedResources
+             </code>
+             <br/>
+             docs: The DataResources that were deleted in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataExport
+             </code>
+            </td>
+            <td>
+             Export of data from the platform. Use for things like downloading data from the platform, such as a system external to Palantir, csv file and more. If data was exported to another Palantir system, use the
+             <code>
+              dataPromote
+             </code>
+             category.
+            </td>
+            <td>
+             <code>
+              downloadedResources
+             </code>
+             <br/>
+             docs: All resources that were downloaded in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              downloadedSize
+             </code>
+             <br/>
+             docs: The size, in bytes, of the downloaded data.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataImport
+             </code>
+            </td>
+            <td>
+             Imports to the platform. Unlike
+             <code>
+              dataPromote
+             </code>
+             ,
+             <code>
+              dataImport
+             </code>
+             refers only to data being ingested from outside the platform. This means that a
+             <code>
+              dataImport
+             </code>
+             in Palantir Gotham could show up as a
+             <code>
+              dataPromote
+             </code>
+             in a separate service.
+            </td>
+            <td>
+             <code>
+              importedFilename
+             </code>
+             <br/>
+             docs: The filename of the imported data.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              importedFileType
+             </code>
+             <br/>
+             docs: The filetype of the imported data.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              importParentResourceId
+             </code>
+             <br/>
+             docs: The parent of the destination resource.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              importResourceId:
+             </code>
+             <br/>
+             docs: The destination resource for the imported data.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              importedSize
+             </code>
+             <br/>
+             docs: The total size, in bytes, of the imported data.
+             <br/>
+             type: optional
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataLoad
+             </code>
+            </td>
+            <td>
+             Refers to the loading of data to be returned to a user. For purely back-end loads, use
+             <code>
+              internal
+             </code>
+             .
+            </td>
+            <td>
+             <code>
+              loadedResources
+             </code>
+             <br/>
+             docs: The DataResources that were loaded in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataMerge
+             </code>
+            </td>
+            <td>
+             Refers to the combination of two datasources into one. This would be triggered by a JOIN in Contour or a Resolution event in Palantir Gotham.
+            </td>
+            <td>
+             <code>
+              resourcesToMerge
+             </code>
+             <br/>
+             docs: The resources that were merged in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              mergedResult
+             </code>
+             <br/>
+             docs: The resultant DataResource from the merging of the resources.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataPromote
+             </code>
+            </td>
+            <td>
+             Indicates that a user promoted data to an external Palantir system, Gotham or otherwise.
+            </td>
+            <td>
+             <code>
+              promotionDestinations
+             </code>
+             <br/>
+             docs: The destinations to which the DataResources were promoted to.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              promotionDescription
+             </code>
+             <br/>
+             docs: A description of this promotion event.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              promotedResources
+             </code>
+             <br/>
+             docs: The resources that were promoted to another system.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataSearch
+             </code>
+            </td>
+            <td>
+             Searches of datasets, objects, or other searches for data within the system.
+            </td>
+            <td>
+             <code>
+              dataSearchQuery
+             </code>
+             <br/>
+             docs: The query that this search is executing.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              dataSearchContext
+             </code>
+             <br/>
+             docs: Further information to contextualize the current query. This information is unstructured and should not be relied upon beyond informing auditors.
+             <br/>
+             type
+             <!-- -->
+             &lt;common.ResourceContext&gt;
+            </td>
+            <td>
+             <code>
+              dataSearchResults
+             </code>
+             <br/>
+             docs: All resources that were presented to the user by this search result.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataShareCreate
+             </code>
+            </td>
+            <td>
+             Creation of a share of data. For example, when creating a link that grants access to resources on visit.
+            </td>
+            <td>
+             <code>
+              dataShareCreateId
+             </code>
+             <br/>
+             docs: An optional identifier for this share, if available.
+             <br/>
+             type: optional
+             <br/>
+             <br/>
+             <code>
+              dataShareCreateTargets
+             </code>
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataShareDisable
+             </code>
+            </td>
+            <td>
+             Deactivation of a mechanism to share data. For example, the disabling of a link that grants access to resources on visit.
+            </td>
+            <td>
+             <code>
+              dataShareDisableId
+             </code>
+             <br/>
+             docs: An optional identifier for this share, if available.
+             <br/>
+             type: optional
+             <br/>
+             <br/>
+             <code>
+              dataShareDisableTargets
+             </code>
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataShare
+             </code>
+            </td>
+            <td>
+             Discretionary share of data.
+            </td>
+            <td>
+             <code>
+              dataShareId
+             </code>
+             <br/>
+             docs: An optional identifier for this share, if available.
+             <br/>
+             type: optional
+             <br/>
+             <br/>
+             <code>
+              dataShareTargets
+             </code>
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              dataShareReason
+             </code>
+             <br/>
+             docs: A human-readable reason this data was shared (e.g. "visited a share link").
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataTransform
+             </code>
+            </td>
+            <td>
+             Transform one or more DataResources in some way.
+            </td>
+            <td>
+             <code>
+              transformTargets
+             </code>
+             <br/>
+             docs: The resources that were transformed.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              transformDescription
+             </code>
+             <br/>
+             docs: A description of the transformation that was performed.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              dataUpdate
+             </code>
+            </td>
+            <td>
+             Updates or attempted updates of data.  This is a catch-all field and we recommend using
+             <code>
+              dataTransform
+             </code>
+             or
+             <code>
+              dataMerge
+             </code>
+             instead.
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              apiGatewayRequest
+             </code>
+            </td>
+            <td>
+             A request to an API gateway.
+             <br/>
+             <br/>
+             User actions may result in requests that are fulfilled by an API gateway. Use this audit log to view the name or origin of the request. To get more information about this user action, find other audit logs associated with this request by filtering to logs with the same
+             <code>
+              traceId
+             </code>
+             field. To find audit logs for requests made by the API gateway when fulfilling the user-initiated request, further filter to logs that have a
+             <code>
+              userAgent
+             </code>
+             field starting with the
+             <code>
+              service
+             </code>
+             name in this audit log.
+            </td>
+            <td>
+             <code>
+              operationNames
+             </code>
+             <br/>
+             docs: The name of the request. If a batch request, this may include multiple names.
+             <br/>
+             type: optional
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              infraLogsAccess
+             </code>
+            </td>
+            <td>
+             User requests logs from an infrastructure resource like a node or a service.
+            </td>
+            <td>
+             <code>
+              infraLogsAccessTarget
+             </code>
+             <br/>
+             docs: The SystemResource from which logs are being requested.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              infraLogsAccessRequestId
+             </code>
+             <br/>
+             docs: The request-id of this access request event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              internal
+             </code>
+            </td>
+            <td>
+             Catch-all for all internal events.  These typically are low signal for audit users.
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              logicAccess
+             </code>
+            </td>
+            <td>
+             Access of logic. For example, viewing a Contour analysis.
+            </td>
+            <td>
+             <code>
+              accessedLogicResources
+             </code>
+             <br/>
+             docs: All LogicResources accessed in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              logicCreate
+             </code>
+            </td>
+            <td>
+             Creation of new logic. For example, when a new Contour board is created.
+            </td>
+            <td>
+            </td>
+            <td>
+             <code>
+              createdLogicResources
+             </code>
+             <br/>
+             docs: All LogicResources created in this event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              logicDelete
+             </code>
+            </td>
+            <td>
+             Deletion of logic. For example, deleting a Contour board.
+            </td>
+            <td>
+             <code>
+              deletedLogicResources
+             </code>
+             <br/>
+             docs: All LogicResources deleted in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              logicSearch
+             </code>
+            </td>
+            <td>
+             Search of some logic. For example, searching for a Contour analysis.
+            </td>
+            <td>
+             <code>
+              logicSearchQuery
+             </code>
+             <br/>
+             docs: The query that this search is executing.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              logicSearchResults
+             </code>
+             <br/>
+             docs: All underlying LogicResources returned by this search request.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              logicUpdate
+             </code>
+            </td>
+            <td>
+             An update to existing logic. For example, when a user saves a file, a push to a stemma repo occurs, or the logic of an existing Contour board is updated.
+            </td>
+            <td>
+             <code>
+              updatedLogicResources
+             </code>
+             <br/>
+             docs: All LogicResources updated in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              managementGroups
+             </code>
+            </td>
+            <td>
+             Changes to group membership should always go through here.
+            </td>
+            <td>
+             <code>
+              groupPatches
+             </code>
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              managementPermissions
+             </code>
+            </td>
+            <td>
+             Anything that changes permissions on the platform.  These logs should use the
+             <code>
+              result_params
+             </code>
+             <code>
+              changes
+             </code>
+             field to enumerate the precise change that occurred. Examples include sharing a resource or changing a resource's provenance.
+            </td>
+            <td>
+             <code>
+              resourcesWithPermissionsChanges
+             </code>
+             <br/>
+             docs: The resources affected by the change in permissions
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              permissionChangeContext
+             </code>
+             <br/>
+             docs: Further information to contextualise changed resources
+             <br/>
+             type: optional
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              managementUsers
+             </code>
+            </td>
+            <td>
+             Changes and modifications to what users exist or their personal information.  For events related to user permissions, use
+             <code>
+              managementPermissions
+             </code>
+             .  For events where a user is added or removed from a group, use
+             <code>
+              managementGroups
+             </code>
+             .
+            </td>
+            <td>
+             <code>
+              managedUserIds
+             </code>
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              managementTokens
+             </code>
+            </td>
+            <td>
+             Specific action related to token management, such as enabling, disabling, or revoking tokens.
+            </td>
+            <td>
+             <code>
+              managedTokens
+             </code>
+             <br/>
+             docs: All tokens affected by the change.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              managementMarkings
+             </code>
+            </td>
+            <td>
+             Anything that modifies access to mandatory controls.
+            </td>
+            <td>
+             <code>
+              markingPatches
+             </code>
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              mandatoryControlManagement
+             </code>
+            </td>
+            <td>
+             Privileged action affecting mandatory controls in the system. Replaced by
+             <code>
+              managementMarkings
+             </code>
+             in
+             <code>
+              audit.3
+             </code>
+             .
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              mandatoryControlApplication
+             </code>
+            </td>
+            <td>
+             Privileged action affecting mandatory controls in the system. Replaced by
+             <code>
+              managementPermissions
+             </code>
+             in
+             <code>
+              audit.3
+             </code>
+             .
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              metaDataAccess
+             </code>
+            </td>
+            <td>
+             Refers to the loading of metadata. Metadata is data
+             <em>
+              about
+             </em>
+             data; for example, various API-accessible metrics that describe data within a pipeline, like counts, dataset names, transaction IDs and more. As such, metadata may not have its own identifier but instead will be related to the data that it describes.
+            </td>
+            <td>
+             <code>
+              accessedMetaDataResources
+             </code>
+             <br/>
+             docs: The underlying DataResources that the accessed metadata describes.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              accessedMetaDataDescription
+             </code>
+             <br/>
+             docs: A description of the metadata access.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              metaDataCreate
+             </code>
+            </td>
+            <td>
+             The creation of metadata. Metadata is data
+             <em>
+              about
+             </em>
+             data; for example, various API-accessible metrics that describe data within a pipeline, like counts, dataset names, transaction IDs and more.
+            </td>
+            <td>
+             <code>
+              createdMetaDataDescription
+             </code>
+             <br/>
+             docs: A description of the metadata creation.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              createdMetaDataResources
+             </code>
+             <br/>
+             docs: The underlying DataResources that the created metadata describes.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              metaDataDelete
+             </code>
+            </td>
+            <td>
+             The deletion of metadata. Metadata is data
+             <em>
+              about
+             </em>
+             data; for example, various API-accessible metrics that describe data within a pipeline, like counts, dataset names, transaction IDs and more.
+            </td>
+            <td>
+             <code>
+              deletedMetaDataResources
+             </code>
+             <br/>
+             docs: The underlying DataResources that the deleted metadata describes.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              deletedMetaDataDescription
+             </code>
+             <br/>
+             docs: A description of the metadata deletion.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              metaDataSearch
+             </code>
+            </td>
+            <td>
+             Search of metadata associated with a dataset, objects, or other searches for metadata within the system.
+            </td>
+            <td>
+             <code>
+              metaDataSearchQuery
+             </code>
+             <br/>
+             docs: The query that this search is executing.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              metaDataSearchResults
+             </code>
+             <br/>
+             docs: All underlying resources that had metadata presented to the user by this search result.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              metaDataUpdate
+             </code>
+            </td>
+            <td>
+             The updating of metadata. MetaData is data
+             <em>
+              about
+             </em>
+             data; for example, various API-accessible metrics that describe data within a pipeline, like counts, dataset names, transaction IDs and more.
+            </td>
+            <td>
+             <code>
+              updatedMetaDataResources
+             </code>
+             <br/>
+             docs: The underlying DataResources that the updated metadata describes.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              updatedMetaDataDescription
+             </code>
+             <br/>
+             docs: A description of the metadata update.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              monitorAccess
+             </code>
+            </td>
+            <td>
+             Access of a monitor, for example viewing details about how it works.
+            </td>
+            <td>
+             <code>
+              accessedMonitorResources
+             </code>
+             <br/>
+             docs: The MonitorResources that were accessed in this event.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              accessedMonitorDescription
+             </code>
+             <br/>
+             docs: A description of the monitor access.
+             <br/>
+             type: optional
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              monitorCreate
+             </code>
+            </td>
+            <td>
+             Creation of a monitor.
+            </td>
+            <td>
+             <code>
+              createdMonitorDescription
+             </code>
+             <br/>
+             docs: A description of the monitor creation.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              createdMonitorResources
+             </code>
+             <br/>
+             docs: The MonitorResources that were created in this event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              monitorDelete
+             </code>
+            </td>
+            <td>
+             Deletion of a monitor.
+            </td>
+            <td>
+             <code>
+              deletedMonitorResources
+             </code>
+             <br/>
+             docs: The MonitorResources that were deleted in this event.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              deletedMonitorDescription
+             </code>
+             <br/>
+             docs: A description of the monitor deletion.
+             <br/>
+             type: optional
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              monitorRun
+             </code>
+            </td>
+            <td>
+             Execution of a particular monitor, potentially triggering actions or notifications.
+            </td>
+            <td>
+             <code>
+              runMonitorTargets
+             </code>
+             <br/>
+             docs: The MonitorResources that were ran in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              monitorSearch
+             </code>
+            </td>
+            <td>
+             Searching for a monitor.
+            </td>
+            <td>
+             <code>
+              monitorSearchQuery
+             </code>
+             <br/>
+             docs: The search-query that this event is running.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              monitorSearchResults
+             </code>
+             <br/>
+             docs: The search-results that are returned to the user in this event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              monitorUpdate
+             </code>
+            </td>
+            <td>
+             Update a monitor, potentially changing how it behaves.
+            </td>
+            <td>
+             <code>
+              updatedMonitorResources
+             </code>
+             <br/>
+             docs: The MonitorResources that were updated in this event.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              updatedMonitorDescription
+             </code>
+             <br/>
+             docs: A description of the monitor update.
+             <br/>
+             type: optional
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              oauth2InitiateAuthFlow
+             </code>
+            </td>
+            <td>
+             Start the OAuth 2.0 Authorization Code flow with the external OAuth 2.0 server.
+            </td>
+            <td>
+             <code>
+              oauth2InitiateAuthFlowUser
+             </code>
+             <br/>
+             docs: The user for whom this oauth2 flow is being started.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              oauth2InitiateAuthClientId
+             </code>
+             <br/>
+             docs: The client-id the oauth2 flow is being performed for.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              onBehalfOf
+             </code>
+            </td>
+            <td>
+             The request was made on behalf of other users, usually by a service user.
+            </td>
+            <td>
+             <code>
+              onBehalfOfUserIds
+             </code>
+             <br/>
+             docs: The upstream users. The first user ID is the most upstream user.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ontologyDataLoad
+             </code>
+            </td>
+            <td>
+             The loading of ontology data to be returned to a user.
+            </td>
+            <td>
+             <code>
+              ontologyDataLoadContext
+             </code>
+             <br/>
+             docs: Further context to identify this load request, such as the owning RID.
+             <br/>
+             type: optional
+             <br/>
+             <br/>
+             <code>
+              requestedOntologyDataResources
+             </code>
+             <br/>
+             docs: The OntologyDataResources that were requested in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              loadedOntologyDataResources
+             </code>
+             <br/>
+             docs: The OntologyDataResources that were loaded in this event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ontologyDataTransform
+             </code>
+            </td>
+            <td>
+             The modification of ontology data via patches or edits.
+            </td>
+            <td>
+             <code>
+              ontologyDataTransformTargets
+             </code>
+             <br/>
+             docs: The OntologyDataResources that the user intends to transform.
+             <br/>
+             type: optional
+             <br/>
+             <br/>
+             <code>
+              ontologyDataTransformContext
+             </code>
+             <br/>
+             docs: Further context to identify this transform request.
+             <br/>
+             type: optional
+             <br/>
+             <br/>
+             <code>
+              ontologyDataTransformDescription
+             </code>
+             <br/>
+             docs: A description of the transformation that was performed.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              transformedOntologyDataResources
+             </code>
+             <br/>
+             docs: The OntologyDataResources that were transformed by the request.
+             <br/>
+             type: optional
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ontologyDataSearch
+             </code>
+            </td>
+            <td>
+             Search of ontology data within the system.
+            </td>
+            <td>
+             <code>
+              ontologyDataSearchContext
+             </code>
+             <br/>
+             docs: Further context to identify this load request, such as the owning RID.
+             <br/>
+             type: optional
+             <br/>
+             <br/>
+             <code>
+              searchedOntologyLogicResources
+             </code>
+             <br/>
+             docs: The logical selections included in this search.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              ontologyDataSearchResults
+             </code>
+             <br/>
+             docs: All resources that were presented to the user by this search result.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ontologyLogicAccess
+             </code>
+            </td>
+            <td>
+             Access of ontology logic. For example, viewing an object set or sets.
+            </td>
+            <td>
+             <code>
+              requestedOntologyLogicResources
+             </code>
+             <br/>
+             docs: The OntologyLogicResources that were requested.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              loadedOntologyLogicResources
+             </code>
+             <br/>
+             docs: The OntologyLogicResources that were present in the response.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ontologyLogicCreate
+             </code>
+            </td>
+            <td>
+             Creation of new ontology logic. For example, when a new object set is created.
+            </td>
+            <td>
+             <code>
+              createOntologyLogicContext
+             </code>
+             <br/>
+             docs: Further context to narrow down an identifier, or further identify this request. For example, owning RID, or parent Compass RID. This includes a "type" context identifying the type represented by this request, for example, temporary object set, permanent object set, versioned object set, and more.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              createdOntologyLogicResources
+             </code>
+             <br/>
+             docs: All LogicResources created in this event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ontologyLogicDelete
+             </code>
+            </td>
+            <td>
+             Deletion of ontology logic, for example a new object set.
+            </td>
+            <td>
+             <code>
+              deleteOntologyLogicContext
+             </code>
+             <br/>
+             docs: Further context to narrow down an identifier, or further identify this request. For example, owning RID, or parent Compass RID. This includes a "type" context identifying the type represented by this request, for example, temporary object set, permanent object set, versioned object set, and more.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              deletedOntologyLogicResources
+             </code>
+             <br/>
+             docs: All LogicResources deleted in this event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ontologyLogicUpdate
+             </code>
+            </td>
+            <td>
+             Update ontology logic, for example saving a new version of an object set.
+            </td>
+            <td>
+             <code>
+              updateOntologyLogicContext
+             </code>
+             <br/>
+             docs: Further context to narrow down an identifier, or further identify this request. For example, owning RID, or parent Compass RID. This includes a "type" context identifying the type represented by this request, for example, temporary object set, permanent object set, versioned object set, and more.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              updatedOntologyLogicResources
+             </code>
+             <br/>
+             docs: All LogicResources updated in this event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ontologyMetaDataCreate
+             </code>
+            </td>
+            <td>
+             The creation of OntologyMetaDataResources.
+            </td>
+            <td>
+            </td>
+            <td>
+             <code>
+              createdOntologyMetaDataResources
+             </code>
+             <br/>
+             docs: All OntologyMetaDataResources created in this event.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ontologyMetaDataDelete
+             </code>
+            </td>
+            <td>
+             The deletion of OntologyMetaDataResources.
+            </td>
+            <td>
+             <code>
+              deletedOntologyMetaDataResources
+             </code>
+             <br/>
+             docs: All OntologyMetaDataResources deleted in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ontologyMetaDataLoad
+             </code>
+            </td>
+            <td>
+             The loading of Ontology MetaData to be returned to a user.
+            </td>
+            <td>
+             <code>
+              requestedOntologyMetaDataResources
+             </code>
+             <br/>
+             docs: The OntologyMetadataResources that were requested.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              loadedOntologyMetaDataResources
+             </code>
+             <br/>
+             docs: The OntologyMetaDataResources that were present in the response.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ontologyMetaDataSearch
+             </code>
+            </td>
+            <td>
+             Search for OntologyMetaDataResources that meet criteria.
+            </td>
+            <td>
+             <code>
+              ontologyMetaDataSearchedResources
+             </code>
+             <br/>
+             docs: The OntologyMetaDataResources included in the search query.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              ontologyMetaDataSearchContext
+             </code>
+             <br/>
+             docs: Further context to the search query - such as DatasourceType.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              ontologyMetaDataSearchResults
+             </code>
+             <br/>
+             docs: All OntologyMetaDataResources that were returned to the user.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ontologyMetaDataUpdate
+             </code>
+            </td>
+            <td>
+             The modification of OntologyMetaDataResources.
+            </td>
+            <td>
+             <code>
+              updatedOntologyMetaDataResources
+             </code>
+             <br/>
+             docs: All OntologyMetaDataResources updated in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              passThrough
+             </code>
+            </td>
+            <td>
+             A category where the set of auditable parameters is determined at runtime, typically by an external system
+            </td>
+            <td>
+             <code>
+              passThroughRequestParams
+             </code>
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              passThroughResponseParams
+             </code>
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              requestAccess
+             </code>
+            </td>
+            <td>
+             The loading of a request.
+            </td>
+            <td>
+             <code>
+              accessedRequestIds
+             </code>
+             <br/>
+             docs: The requests that were accessed in this request.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              accessedRequestDescription
+             </code>
+             <br/>
+             docs: A description of the request access.
+             <br/>
+             type: optional
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              requestApprove
+             </code>
+            </td>
+            <td>
+             Approving a request, or part of a request. A request may require multiple approvals before it can be performed.
+            </td>
+            <td>
+             <code>
+              approvedRequestIds
+             </code>
+             <br/>
+             docs: The requests that are being approved
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              approveRequestUserId
+             </code>
+             <br/>
+             docs: The user that approved the request
+             <br/>
+             type: optional
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              requestCancel
+             </code>
+            </td>
+            <td>
+             Canceling the request so that it will no longer be performed, such as closing a pull request.
+            </td>
+            <td>
+             <code>
+              canceledRequestIds
+             </code>
+             <br/>
+             docs: The requests that are being canceled
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              requestCreate
+             </code>
+            </td>
+            <td>
+             The creation of a request. Requests represent an action that has not yet been taken and may require approval, such as a pull request, access request, or checkpoint.
+            </td>
+            <td>
+             <code>
+              createdRequestAffectedResources
+             </code>
+             <br/>
+             docs: The resources that are directly affected by the request. For example, for an update request this would be the updated resource, and for a create request this could be the parent resource.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              createdRequestDescription
+             </code>
+             <br/>
+             docs: A description of the request creation.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              createdRequestIds
+             </code>
+             <br/>
+             docs: The requests that were created in this request
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              requestDisapprove
+             </code>
+            </td>
+            <td>
+             Disapproving a request.
+            </td>
+            <td>
+             <code>
+              disapprovedRequestIds
+             </code>
+             <br/>
+             docs: The requests that are being disapproved.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              disapproveRequestUserId
+             </code>
+             <br/>
+             docs: The user that disapproved the request.
+             <br/>
+             type: optional
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              requestExecute
+             </code>
+            </td>
+            <td>
+             Executing the action associated with a request, such as merging a pull request or applying an access request.
+            </td>
+            <td>
+             <code>
+              executedRequestIds
+             </code>
+             <br/>
+             docs: The requests that are being executed.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              executeRequestAffectedResources
+             </code>
+             <br/>
+             docs: The resources that were affected by this request. This may not include all of the resources that were provided when creating the request.
+             <br/>
+             type: optional
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              requestSearch
+             </code>
+            </td>
+            <td>
+             Searching for requests.
+            </td>
+            <td>
+             <code>
+              requestSearchQuery
+             </code>
+             <br/>
+             docs: The search-query that this event is running.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              requestSearchResults
+             </code>
+             <br/>
+             docs: The search-results that are returned to the user in this event.
+             <br/>
+             type
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              requestUpdate
+             </code>
+            </td>
+            <td>
+             The update of an existing request.
+            </td>
+            <td>
+             <code>
+              updatedRequestIds
+             </code>
+             <br/>
+             docs: The requests that were updated in this request
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              updatedRequestDescription
+             </code>
+             <br/>
+             docs: A description of the request update.
+             <br/>
+             type: optional
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              restartInfra
+             </code>
+            </td>
+            <td>
+             Restarts some infrastructure like a node or a service.
+            </td>
+            <td>
+             <code>
+              restartedResources
+             </code>
+             <br/>
+             docs: All SystemResources that were restarted in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              reviewInfraAction
+             </code>
+            </td>
+            <td>
+             A user approves or denies an action within the infrastructure space, such as configuring a node, a service and more.
+            </td>
+            <td>
+             <code>
+              reviewInfraActionRequestId
+             </code>
+             <br/>
+             docs: The request-id of this review.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              reviewInfraActionUser
+             </code>
+             <br/>
+             docs: The user who reviewed this action.
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              reviewInfraActionWasApproved
+             </code>
+             <br/>
+             docs: Whether the review was approved.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              secretCreate
+             </code>
+            </td>
+            <td>
+             Create a secret string.
+            </td>
+            <td>
+             <code>
+              createdSecretType
+             </code>
+             <br/>
+             docs: The kind of secrets that were created
+             <br/>
+             type: required
+            </td>
+            <td>
+             <code>
+              createdSecretIdentifiers
+             </code>
+             <br/>
+             docs: The identifiers of the secrets that were created.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              secretDeprecate
+             </code>
+            </td>
+            <td>
+             Mark a secret as deprecated.
+            </td>
+            <td>
+             <code>
+              deprecatedSecretIdentifier
+             </code>
+             <br/>
+             docs: The identifier of the secret that was deprecated.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              secretLoad
+             </code>
+            </td>
+            <td>
+             Retrieve a secret from the backing store.
+            </td>
+            <td>
+             <code>
+              loadedSecretIdentifiers
+             </code>
+             <br/>
+             docs: The identifiers of the secrets that were loaded.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              secretUse
+             </code>
+            </td>
+            <td>
+             Use a secret via a backend endpoint.
+            </td>
+            <td>
+             <code>
+              usedSecretOperation
+             </code>
+             <br/>
+             docs: The operation used for the secret.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              usedSecretIdentifiers
+             </code>
+             <br/>
+             docs: The identifiers of the secrets that were used.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              systemManagement
+             </code>
+            </td>
+            <td>
+             Modification of or access to metadata that determines the layout and configuration of applications on the environment. Replaced by
+             <code>
+              appConfigCreate/Access/Update/Delete/Search
+             </code>
+             in
+             <code>
+              audit.3
+             </code>
+             .
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              tokenAccess
+             </code>
+            </td>
+            <td>
+             Accessing a previously generated token.
+            </td>
+            <td>
+            </td>
+            <td>
+             <code>
+              accessedTokens
+             </code>
+             <br/>
+             docs: A description of how these tokens were accessed, for auditor-context.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              tokenGeneration
+             </code>
+            </td>
+            <td>
+             Action that leads to generation of a new token.
+            </td>
+            <td>
+             <code>
+              generateTokensDescription
+             </code>
+             <br/>
+             docs: A description of how these tokens were generated, for auditor-context.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              generatedTokens
+             </code>
+             <br/>
+             docs: All tokens that were generated
+             <br/>
+             type: optional
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              tokenRevoke
+             </code>
+            </td>
+            <td>
+             Action that leads to the deletion of tokens.
+            </td>
+            <td>
+             <code>
+              revokeTokensDescription
+             </code>
+             <br/>
+             docs: A description of how these tokens were generated, for auditor-context.
+             <br/>
+             type: optional
+            </td>
+            <td>
+             <code>
+              revokedTokens
+             </code>
+             <br/>
+             docs: All tokens that were revoked.
+             <br/>
+             type: required
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              upgradeInfra
+             </code>
+            </td>
+            <td>
+             Some infrastructure was upgraded, including downgrades.
+            </td>
+            <td>
+             <code>
+              upgradedResources
+             </code>
+             <br/>
+             docs: All SystemResources that were upgraded in this event.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              userJustify
+             </code>
+            </td>
+            <td>
+             Event when a user specifies a purpose justification for taking an action.
+            </td>
+            <td>
+             <code>
+              userJustifyId
+             </code>
+             <br/>
+             docs: The user justifying the action.
+             <br/>
+             type: required
+             <br/>
+             <br/>
+             <code>
+              userJustification
+             </code>
+             <br/>
+             docs: The user's justification for taking the action. Multiple justifications can be provided.
+             <br/>
+             type: required
+            </td>
+            <td>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              userLogin
+             </code>
+            </td>
+            <td>
+             Login events of users.
+            </td>
+            <td>
+            </td>
+            <td>
+             <code>
+              loginUserId
+             </code>
+             <br/>
+             type: optional
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              userLogout
+             </code>
+            </td>
+            <td>
+             Logout events of users.
+            </td>
+            <td>
+             <code>
+              logoutUserId
+             </code>
+             <br/>
+             type: optional
+            </td>
+            <td>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+      </div>
+      <div class="ptcom-design__animatedLine__116w76e">
+       <div class="ptcom-design__animatedLineRule__116w76e">
+       </div>
+      </div>
+      <div class="ptcom-design__neighbours-container__w8fvw7">
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/security/audit-logs-overview/>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7 ptcom-design__neighbours-link-arrow-reversed__w8fvw7" title="Previous page">
+          â
+         </span>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           PREVIOUS
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            Audit logging overview
+           </span>
+          </span>
+         </div>
+        </a>
+       </div>
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/security/monitor-audit-logs/>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7 ptcom-design__neighbours-link-text-end-aligned__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           NEXT
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            Monitoring audit logs
+           </span>
+          </span>
+         </div>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7" title="Next page">
+          â
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <footer class="ptcom-design__footer__ko5zom">
+     <p>
+      Â© 2025 Palantir Technologies Inc. All rights reserved.
+     </p>
+     <div class="ptcom-design__statement-links__ko5zom">
+      <a href="https://www.palantir.com/cookie-statement/">
+       Cookies Statement â
+      </a>
+      <a href="https://www.palantir.com/privacy-and-security/">
+       Privacy Statement â
+      </a>
+     </div>
+     <button class="ptcom-design__button__ko5zom" id="ot-sdk-btn">
+      <div class="ot-sdk-show-settings">
+       Cookie Settings
+      </div>
+     </button>
+    </footer>
+   </div>
+  </div>
+  
+ </body>
+</html>

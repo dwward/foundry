@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+  <meta content="1; mode=block" http-equiv="X-XSS-Protection"/>
+  <link href="/docs/icon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/docs/icon.svg" rel="shortcut icon" type="image/svg+xml"/>
+  <link href="https://www.gstatic.com" rel="dns-prefetch"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="dns-prefetch"/>
+  <meta content="Date published: 2023-05-26 REST API webhooks are now generally available. You can now build webhooks using a direct cloud connection and with a..." name="description"/>
+  <link href="https://palantir.com/docs/foundry/announcements/2023-05//" rel="canonical"/>
+  <meta content="Palantir" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://palantir.com/docs/foundry/announcements/2023-05//" property="og:url"/>
+  <meta content="Palantir" property="og:site_name"/>
+  <meta content="https://palantir.com/docs/resources/homepage/iso-grid.png" name="image" property="og:image"/>
+  <meta content="Date published: 2023-05-26 REST API webhooks are now generally available. You can now build webhooks using a direct cloud connection and with a..." property="og:description"/>
+  <meta content="Documentation | Palantir" name="twitter:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@palantirtech" name="twitter:site"/>
+  <link href="https://www.googletagmanager.com" rel="preconnect"/>
+  <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
+  <title>
+   2023 â¢ May 2023 â¢ Palantir
+  </title>
+  <meta content="23" name="next-head-count"/>
+  <script data-nscript="beforeInteractive" type="text/javascript">
+   function OptanonWrapper() {}
+  </script>
+  <link as="style" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="preload"/>
+  <link data-n-g="" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="stylesheet"/>
+  <noscript data-n-css="">
+  </noscript>
+  <script defer="" nomodule="" src="/docs/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js">
+  </script>
+  <script data-document-language="true" data-domain-script="0c1270b7-3d02-4afa-bd15-f3c23839b75a" data-nscript="beforeInteractive" defer="" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/webpack-d50bf798bfb74151.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/framework-777d23e5800d4dc0.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/main-7bc202b68cac4a69.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/_app-87c1de53eb5f2af5.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5117-b9a97c6f03ed6079.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1059-7fd152d892580497.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5819-22ba01b9d8cbb33a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/8913-a71dbce8790fe614.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1472-56bad0c7930cc63a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/9537-3c0ceb8250403970.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/%5B...slug%5D-1bf87c642d9d87bc.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_buildManifest.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_ssgManifest.js">
+  </script>
+ </head>
+ <body>
+  <div data-reactroot="" id="__next">
+   <script id="docs-theme" nonce="**CSP_NONCE**">
+    (function() {
+                                    const theme = document.cookie.split('; ').find(row => row.startsWith('docsColorTheme='));
+                                    if (theme) {
+                                        document.body.className = theme.split('=')[1] + "Theme";
+                                    }
+                                })();
+   </script>
+   <noscript>
+    <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PSL84DJ" style="display:none;visibility:hidden" width="0">
+    </iframe>
+   </noscript>
+   <div class="ptcom-design__layoutWrapper__ko5zom ptcom-design__hasToc__ko5zom">
+    <div class="ptcom-design__navContainer__ko5zom ptcom-design__hasDropdownNav__ko5zom">
+     <div class="ptcom-design__cornerButtons__twowro">
+      <button aria-expanded="false" class="ptcom-design__button__16lyg8o" id="navBtn" title="Show Navigation">
+       <div class="ptcom-design__burger__16lyg8o hamburger hamburger--emphatic">
+        <span class="hamburger-box">
+         <span class="hamburger-inner">
+         </span>
+        </span>
+       </div>
+      </button>
+      <button aria-expanded="false" class="ptcom-design__button__67pw73" id="searchBtn" title="Search">
+       <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <title>
+         Search
+        </title>
+        <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+        </circle>
+        <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+        </path>
+       </svg>
+      </button>
+     </div>
+     <div class="ptcom-design__brandBar__ko5zom">
+      <div class="ptcom-design__logoContainer__ko5zom">
+       <div class="ptcom-design__navBrand__1aug2ec">
+        <a aria-label="Link to Palantir homepage" class="ptcom-design__branding__1aug2ec" data-axe="reviewed" href="../../../docs/ id="logo">
+         <svg class="ptcom-design__logo__1aug2ec" height="20" role="img" viewbox="0 0 83 20" width="83" xmlns="http://www.w3.org/2000/svg">
+          <title>
+           Palantir
+          </title>
+          <path d="M20.115 2.092h5.112c1.896 0 3.133.084 4.204 1.255.742.837 1.154 1.841 1.154 3.013 0 1.171-.412 2.176-1.236 3.012-.825.837-1.896 1.34-4.617 1.34H22.26v6.945h-2.144V2.092zm2.144 6.862h2.473c1.402 0 3.545-.084 3.545-2.678 0-2.427-1.979-2.427-3.133-2.427H22.26v5.105zm15.169 8.703c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.165-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zM36.026 12.3c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.989 0 1.813-.418 2.308-1.172.412-.753.495-1.338.495-2.845-.33.084-.66 0-1.155 0zM40.89 2.092h1.979v15.565H40.89V2.092zm10.553 15.565c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.164-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zm-1.32-5.356c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.99 0 1.814-.418 2.308-1.172.413-.753.495-1.338.495-2.845-.412.084-.66 0-1.154 0zm4.865-4.184V6.862h1.978v1.757c.248-.418.99-1.924 3.38-1.924.99 0 3.875.334 3.875 3.682v7.364H62.16v-6.862c0-.67-.082-1.34-.577-1.841-.495-.502-1.237-.753-1.896-.753-1.484 0-2.803 1.087-2.803 3.263v6.193h-1.979V8.117h.083zm9.893-1.255h1.896V4.519l1.978-.67v2.93h2.391v1.506h-2.39v6.443c0 .502 0 1.423 1.4 1.423.413 0 .825-.084.99-.084v1.59c-.33.084-.907.167-1.649.167-1.896 0-2.72-.586-2.72-2.343V8.284H64.88V6.862zm7.666-4.77h2.391v2.26h-2.39v-2.26zm.165 4.77h1.979v10.795h-1.979V6.862zm3.875 2.176c0-.753-.082-1.507-.082-2.176h1.978l.083 2.092c.412-1.506 1.648-2.008 2.555-2.092a9.379 9.379 0 011.402-.084v2.009c-.083 0-.248-.084-.412-.084h-.578c-2.39 0-2.885 1.422-2.885 3.263v5.774H76.67V9.037h-.083zM7.832 0C3.71 0 .33 3.431.33 7.615s3.38 7.615 7.502 7.615 7.502-3.43 7.502-7.615C15.334 3.431 11.954 0 7.832 0zm0 12.887c-2.886 0-5.194-2.343-5.194-5.272 0-2.929 2.308-5.272 5.194-5.272 2.885 0 5.194 2.343 5.194 5.272-.083 2.929-2.391 5.272-5.194 5.272zm6.677 1.674l-6.677 2.928-6.678-2.928L0 16.653 7.832 20l7.832-3.347-1.155-2.092z">
+          </path>
+         </svg>
+        </a>
+        <div class="ptcom-design__subnavLink__1aug2ec">
+         <li class="ptcom-design__item__vv201u ptcom-design__subNavListContainer__1wclymi" tabindex="0">
+          <div class="ptcom-design__pageGroupTitle__vv201u ptcom-design__subNavPickerDropdown__1wclymi">
+           <span>
+            Documentation
+           </span>
+           <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+            </polyline>
+           </svg>
+          </div>
+          <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__subNavList__1wclymi ptcom-design__pageGroupListFixedWidth__vv201u">
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/>
+             Documentation
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/apollo/>
+             Apollo
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/gotham/>
+             Gotham
+            </a>
+           </li>
+          </ul>
+         </li>
+        </div>
+       </div>
+      </div>
+      <div class="ptcom-design__searchContainer__ko5zom">
+       <div class="ptcom-design__container__11sdyh7">
+        <div class="ptcom-design__search__11sdyh7">
+         <div class="ptcom-design__searchIcon__11sdyh7">
+          <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            Search documentation
+           </title>
+           <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+           </circle>
+           <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+           </path>
+          </svg>
+         </div>
+         <form class="ptcom-design__inputForm__11sdyh7" method="GET">
+          <label class="ptcom-design__hiddenLabel__11sdyh7" for="query">
+           Search
+          </label>
+          <input autocomplete="off" class="ptcom-design__searchInput__11sdyh7" id="query" name="query" placeholder="Search documentation" type="search" value=""/>
+         </form>
+         <div class="ptcom-design__quickSearchRightSideContainer__11sdyh7">
+          <svg class="ptcom-design__quickSearchRightSideButton__11sdyh7" enable-background="new 0 0 16 16" id="Layer_1" version="1.1" viewbox="0 0 16 16" x="0px" y="0px">
+           <title>
+            karat
+           </title>
+           <g id="key_control_1_">
+            <g>
+             <path clip-rule="evenodd" d="M12.71,5.29l-4-4C8.53,1.11,8.28,1,8,1S7.47,1.11,7.29,1.29l-4,4
+                    C3.11,5.47,3,5.72,3,6c0,0.55,0.45,1,1,1c0.28,0,0.53-0.11,0.71-0.29L8,3.41l3.29,3.29C11.47,6.89,11.72,7,12,7c0.55,0,1-0.45,1-1
+                    C13,5.72,12.89,5.47,12.71,5.29z" fill-rule="evenodd">
+             </path>
+            </g>
+           </g>
+          </svg>
+          <p class="ptcom-design__addition__11sdyh7">
+           +
+          </p>
+          <p class="ptcom-design__quickSearchRightSideButton__11sdyh7">
+           K
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <a class="ptcom-design__altLink__ko5zom" href="../../../docs/foundry/api/v2/>
+       API Reference â
+      </a>
+      <a class="ptcom-design__button__10xiqev ptcom-design__feedbackButton__ko5zom ptcom-design__feedbackButton-WithToc__ko5zom">
+       Send feedback
+      </a>
+      <div class="ptcom-design__pickers__ko5zom">
+       <div class="ptcom-design__localePicker__958zz8 ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__958zz8">
+         <button class="ptcom-design__button__958zz8" title="Select a locale">
+          <span>
+           en
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__958zz8">
+         <button class="ptcom-design__button__958zz8 ptcom-design__active__958zz8" title="Select en locale">
+          <span>
+           en
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select jp locale">
+          <span>
+           jp
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select kr locale">
+          <span>
+           kr
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select zh locale">
+          <span>
+           zh
+          </span>
+         </button>
+        </div>
+       </div>
+       <div class="ptcom-design__themePicker__efbtyr ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr" title="Current theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr ptcom-design__active__efbtyr" title="Select light theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightBlueTheme__efbtyr" title="Select lightBlue theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightGoldTheme__efbtyr" title="Select lightGold theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkTheme__efbtyr" title="Select dark theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkMintTheme__efbtyr" title="Select darkMint theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkSalmonTheme__efbtyr" title="Select darkSalmon theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+     <ul class="ptcom-design__dropdownNav__vv201u ptcom-design__dropdownNav__ko5zom">
+      <li class="ptcom-design__item__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Capabilities
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/data-integration/overview/>
+          Data connectivity &amp; integration
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/model-integration/overview/>
+          Model connectivity &amp; development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/ontology/overview/>
+          Ontology building
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/dev-toolchain/overview/>
+          Developer toolchain
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/app-building/overview/>
+          Use case development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/analytics/overview/>
+          Analytics
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/devops/overview/>
+          Product delivery
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/security/overview/>
+          Security &amp; governance
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/administration/overview/>
+          Management &amp; enablement
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="ptcom-design__item__vv201u">
+       <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/getting-started/overview/>
+        Getting started
+       </a>
+      </li>
+      <li class="ptcom-design__item__vv201u ptcom-design__isSelected__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Platform updates
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__pageGroupListFixedWidth__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/>
+          Announcements
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/release-notes/>
+          Release notes
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+    <div class="ptcom-design__content__ko5zom ptcom-design__hasToc__ko5zom ptcom-design__hasDropdownNav__ko5zom ptcom-design__hasSidebarNav__ko5zom">
+     <div class="ptcom-design__sideBarWrapper__ko5zom">
+      <nav class="ptcom-design__sideBar__ko5zom ptcom-design__container__17amtsp">
+       <h2 class="ptcom-design__header__17amtsp ptcom-design__headerNavTitle__17amtsp">
+        Announcements
+       </h2>
+       <ul class="ptcom-design__navList__17amtsp">
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2025-04/>
+          April 2025
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2025-03/>
+          March 2025
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2025-02/>
+          February 2025
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2025-01/>
+          January 2025
+         </a>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           2024
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-12/>
+            December 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-11/>
+            November 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-10/>
+            October 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-09/>
+            September 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-08/>
+            August 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-07/>
+            July 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-06/>
+            June 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-05/>
+            May 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-04/>
+            April 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-03/>
+            March 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-02/>
+            February 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-01/>
+            January 2024
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           2023
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-12/>
+            December 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-11/>
+            November 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-10/>
+            October 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-09/>
+            September 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-08/>
+            August 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-07/>
+            July 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-06/>
+            June 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp ptcom-design__isSelected__17amtsp" href="../../../docs/foundry/announcements/2023-05/>
+            May 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-04/>
+            April 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-03/>
+            March 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-02/>
+            February 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-01/>
+            January 2023
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           2022
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-12/>
+            December 2022
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-11/>
+            November 2022
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-10/>
+            October 2022
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-09/>
+            September 2022
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-08/>
+            August 2022
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/release-notes/ rel="noopener noreferrer" target="_blank">
+          Release notes â
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="ptcom-design__bodyContainer__ko5zom" data-pagefind-filter="product:foundry" data-pagefind-meta="product:foundry">
+      <div class="ptcom-design__breadcrumbs__qq0wfv" data-pagefind-meta="breadcrumb:Announcements / 2023 / May 2023">
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" href="../../../docs/foundry/announcements/>
+         Announcements
+        </a>
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        2023
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" data-pagefind-weight="1" href="../../../docs/foundry/announcements/2023-05/>
+         May 2023
+        </a>
+       </span>
+      </div>
+      <div data-pagefind-body="true">
+       <div class="ptcom-design__markdownDoc__1vbgce2">
+        <h1 data-pagefind-weight="1" id="user-content-announcements" level="1" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#announcements" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Announcements
+        </h1>
+        <h2 data-pagefind-weight="0.9" id="user-content-announcing-rest-api-source-with-support-for-webhooks" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#announcing-rest-api-source-with-support-for-webhooks" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Announcing REST API Source with support for Webhooks
+        </h2>
+        <p>
+         <em>
+          Date published: 2023-05-26
+         </em>
+        </p>
+        <p>
+         REST API webhooks are now generally available. You can now build webhooks using a direct cloud connection and with a dedicated user interface for building requests. Additionally, agents are also supported for REST API sources, and separately, you may specify multiple domains if you wish to construct chained webhook requests that are executed consecutively. The new source shows up as "REST API" on the Source Creation page and an in-platform tutorial explains how to use webhooks with this source type. The
+         <a href="../../../docs/foundry/announcements/../data-connection/webhooks-setup/#tutorial>
+          webhooks tutorial
+         </a>
+         has been updated, along with a
+         <a href="../../../docs/foundry/announcements/../available-connectors/rest-apis/>
+          disambiguation page
+         </a>
+         covering all options for REST connections.
+        </p>
+        <p>
+         <em>
+          Note that direct-connection for the REST API source requires
+          <a href="../../../docs/foundry/announcements/../administration/configure-egress/#network-egress-policies>
+           network egress management
+          </a>
+          via control panel to be enabled on your environment. Contact your administrator for any questions regarding egress management for your environment.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-use-rest-api-webhooks" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#use-rest-api-webhooks" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Use REST API webhooks
+        </h3>
+        <p>
+         To use a REST API webhook, start by creating a âREST APIâ source in Data Connection. Then, provide the base URL and auth mechanism, along with the egress or agent configuration.
+In addition to taking advantage of the new support for cloud runtime and direct connection, you may also consider using agents or as necessary, specify multiple domains to construct chained webhook requests that are executed consecutively.
+        </p>
+        <p>
+         <img alt="Creating a webhook source" node="[object Object]" src="/docs/resources/foundry/announcements/rest-api-webhook.png"/>
+        </p>
+        <p>
+         After creating a source, you can use the new request builder to construct webhooks, which can then be wired up to Actions or Workshop. The request builder supports:
+        </p>
+        <ul>
+         <li>
+          Parameterization of relative URL path, headers, query parameters, and body.
+         </li>
+         <li>
+          Body provided as form input, form-url-encoded, raw JSON, or binary attachment.
+         </li>
+         <li>
+          Test connections from the Data Connection UI.
+         </li>
+         <li>
+          Chained requests, including extracting values from the response of a request to be used in subsequent requests.
+         </li>
+         <li>
+          OAuth2 authorization using outbound apps. Contact your Palantir representative to enable.
+         </li>
+        </ul>
+        <p>
+         <img alt="Using the request builder to construct webhooks" node="[object Object]" src="/docs/resources/foundry/announcements/request-configuration.png"/>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-syncs-exports-and-other-capabilities-that-involve-rest-apis" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#syncs-exports-and-other-capabilities-that-involve-rest-apis" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Syncs, exports, and other capabilities that involve REST APIs
+        </h3>
+        <p>
+         Currently, the REST API source type only supports webhooks. If you are using webhooks, you should use the new
+         <a href="../../../docs/foundry/announcements/../available-connectors/rest-apis/>
+          REST API source
+         </a>
+         .
+        </p>
+        <ul>
+         <li>
+          For conducting syncs or exports to an Internet-accessible source, you should use
+          <a href="../../../docs/foundry/announcements/../data-connection/external-transforms/>
+           External Transforms
+          </a>
+          .
+         </li>
+         <li>
+          Otherwise, for syncs or exports to an on-premise source, continue using
+          <a href="../../../docs/foundry/announcements/../data-connection/webhooks-reference/#rest-api-legacy>
+           magritte-rest-v2
+          </a>
+          .
+         </li>
+        </ul>
+        <h2 data-pagefind-weight="0.9" id="user-content-code-workspaces-the-power-of-foundry-now-accessible-with-third-party-ides" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#code-workspaces-the-power-of-foundry-now-accessible-with-third-party-ides" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Code Workspaces: The power of Foundry, now accessible with third-party IDEs
+        </h2>
+        <p>
+         <em>
+          Date published: 2023-05-26
+         </em>
+        </p>
+        <p>
+         With Code Workspaces, data scientists, analysts, statisticians, and ML engineers can use the JupyterLabÂ® and RStudioÂ® Workbench IDEs in combination with the benefits of the Palantir Foundry platform. Code Workspaces brings the power of the Foundry
+         <a href="../../../docs/foundry/announcements/../ontology/overview/>
+          Ontology
+         </a>
+         and Palantir's first-class security, branching, and resource management capabilities to data science and machine-learning workflows.
+        </p>
+        <p>
+         <img alt="Example of Code Workspaces UI" node="[object Object]" src="/docs/resources/foundry/announcements/jupyter-code-workspace.png"/>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-foundry-security-with-familiar-third-party-ides" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#foundry-security-with-familiar-third-party-ides" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Foundry security with familiar third-party IDEs
+        </h3>
+        <p>
+         Code Workspaces creates an experience that is familiar for users while maintaining Foundryâs robust
+         <a href="../../../docs/foundry/announcements/../security/overview/>
+          security features
+         </a>
+         . Instead of downloading data to a local notebook or manually building connectors from a data lake to your HPC or SaaS ML platform, you can now work on your data directly in Foundry and decrease data transfer complexity and the risk of data spillage. The third-party IDEs supported by Foundry are bound to the core components of Foundry security: restricting access to a dataset in Foundry will restrict access for Code Workspaces IDEs as well, ensuring consistent permissions across tools.
+        </p>
+        <p>
+         Foundry users can now read and write data from Foundry using JupyterLabÂ® or RStudioÂ® Workbench, install packages, and leverage version control. This integration enables
+         <a href="../../../docs/foundry/announcements/../data-lineage/overview/>
+          data lineage
+         </a>
+         and branching for dashboards along with purpose-built enterprise-level privacy and security features. Production and development workflows can now be performed in the same platform in isolation, accelerating operationalization: for instance, you can build a dashboard on one branch using that branch's data, and merge into the main branch once the dashboard has been properly validated.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-data-science-with-the-power-of-foundry" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#data-science-with-the-power-of-foundry" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Data science with the power of Foundry
+        </h3>
+        <p>
+         Foundry users can use Code Workspaces to collaborate, iterate, and build faster to get to workflow operationalization. Code Workspaces also supports Python- and R-related dashboard and workflow building.
+        </p>
+        <p>
+         By hosting everything within Foundry, the collaboration experience is smooth for teams that may be working on one code base at any time. Similar to the Git workflow, users with various technical backgrounds can propose changes on branches based on permissions. All users can benefit from the data lineage for dashboards view and a polished edit-concurrency experience. Furthermore, data scientists can benefit from intuitive package and resource profile management in the unified Code Workspaces interface.
+        </p>
+        <p>
+         <img alt="Example of branching in Code Workspaces" node="[object Object]" src="/docs/resources/foundry/announcements/checkout-branch.png"/>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-when-should-i-use-code-workspaces" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#when-should-i-use-code-workspaces" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         When should I use Code Workspaces?
+        </h3>
+        <p>
+         Code Workspaces gives platform administrators an easily-deployed, fully-managed, secure, and production-ready way to provide JupyterLabÂ® and RStudioÂ® Workbench to users with Foundryâs data governance and compliance with FedRAMP, GxP, and other standards built in. With Code Workspaces, users can securely connect to existing internal systems and build analyses, models, dashboards, or entire workflows on data with Foundryâs access controls and data permissioning.
+        </p>
+        <p>
+         With the introduction of Code Workspaces, operationalization is just a step away. Using familiar IDEs, you can now consume and publish models to the Ontology, and build governance-compliant dashboards developed on branches that can be automatically refreshed when new data is available.
+        </p>
+        <p>
+         To start building, review the
+         <a href="../../../docs/foundry/announcements/../code-workspaces/overview/>
+          Code Workspaces documentation
+         </a>
+         .
+        </p>
+        <hr/>
+        <p>
+         RStudioÂ® and ShinyÂ® are trademarks of Positâ¢.
+        </p>
+        <p>
+         JupyterÂ®, JupyterLabÂ®, and the JupyterÂ® logos are trademarks or registered trademarks of NumFOCUS.
+        </p>
+        <p>
+         All third-party trademarks (including logos and icons) referenced remain the property of their respective owners. No affiliation or endorsement is implied.
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-object-storage-v2-is-generally-available" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#object-storage-v2-is-generally-available" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Object Storage v2 is Generally Available
+        </h2>
+        <p>
+         <em>
+          Date published: 2023-05-26
+         </em>
+        </p>
+        <p>
+         Palantir is proud to announce the general availability of Foundry's next generation ontology architecture.
+         <a href="../../../docs/foundry/announcements/../object-backend/overview/>
+          Object Storage v2 (OSv2)
+         </a>
+         is a total re-architecting of the backend infrastructure that powers the Foundry Ontology. OSv2 is meant to replace the
+         <a href="../../../docs/foundry/announcements/../object-databases/object-storage-v1/>
+          Object Storage V1 (Phonograph)
+         </a>
+         architecture in the long term and provides flexibility to back object storage with multiple data storage types in parallel to unlock query patterns, performance, or scale considerations as Foundry evolves.
+        </p>
+        <p>
+         OSv2 brings many new features to Foundry along with significant improvements in scale and performance and an architecture to support ongoing growth and investment in the Foundry Ontology.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-scale-performance-and-latency-improvements" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#scale-performance-and-latency-improvements" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Scale, performance, and latency improvements
+        </h3>
+        <p>
+         Object Storage v2 comes with a number of improvements to scale, performance, and latency in Foundry:
+        </p>
+        <ul>
+         <li>
+          Significantly improved performance for Ontology data indexing through incremental object indexing for all object types by default.
+         </li>
+         <li>
+          Increased indexing scale on the order of tens of billions of object instances for a single object type.
+         </li>
+         <li>
+          Increased user edit throughput, enabling up to 10,000 objects to be edited in a single Action. If you need to enable a higher limit, contact Palantir Support to create a change request for your enrollment.
+         </li>
+         <li>
+          Reduced user edit latency, faster observation of user edits in frontend applications, and near real-time automated propagation of user edits to
+          <a href="../../../docs/foundry/announcements/../object-edits/materializations/>
+           materialized object datasets
+          </a>
+          .
+         </li>
+        </ul>
+        <p>
+         <img alt="Improved performance for Ontology data indexing and user edits" node="[object Object]" src="/docs/resources/foundry/announcements/performance-improvements.png"/>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-new-capabilities" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#new-capabilities" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         New capabilities
+        </h3>
+        <p>
+         New capabilities in OSv2 include:
+        </p>
+        <ul>
+         <li>
+          The ability to
+          <a href="../../../docs/foundry/announcements/../object-edits/schema-migrations/>
+           migrate existing user edits
+          </a>
+          after a breaking schema change in an object type definition.
+         </li>
+        </ul>
+        <p>
+         <img alt="User edits can now be migrated" node="[object Object]" src="/docs/resources/foundry/announcements/user-edits.png"/>
+        </p>
+        <ul>
+         <li>
+          More granular object permissions with
+          <a href="../../../docs/foundry/announcements/../object-permissioning/multi-datasource-objects/>
+           multi-datasource object types
+          </a>
+          , supporting column/property level permissions.
+         </li>
+        </ul>
+        <p>
+         <img alt="Multi-datasource object types" node="[object Object]" src="/docs/resources/foundry/announcements/mdos.png"/>
+        </p>
+        <p>
+         Other new capabilities include:
+        </p>
+        <ul>
+         <li>
+          Automated module refresh support in Workshop when explicitly configured object types receive new data or user edits.
+         </li>
+         <li>
+          Limitless paging endpoints to enable Ontology consumers to load more than 10K objects, particularly valuable for application developers interacting with Foundry Ontology through APIs.
+         </li>
+        </ul>
+        <h3 data-pagefind-weight="0.8" id="user-content-migrating-to-osv2" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#migrating-to-osv2" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Migrating to OSv2
+        </h3>
+        <p>
+         Foundry offers a robust
+         <a href="../../../docs/foundry/announcements/../object-backend/osv1-osv2-migration/>
+          self-service migration tooling
+         </a>
+         in Ontology Manager for selectively migrating object types from Object Storage V1 (Phonograph) to OSv2 without any downtime. Object Storage V1 (Phonograph) is not deprecated or removed, though OSv2 is recommended for any new object types due to its superior feature set and long-term product roadmap.
+        </p>
+        <p>
+         <img alt="Migrating to object storage V2" node="[object Object]" src="/docs/resources/foundry/announcements/migrationg-osv2.png"/>
+        </p>
+        <p>
+         Read more in the
+         <a href="../../../docs/foundry/announcements/../object-backend/overview/>
+          Object Storage v2
+         </a>
+         documentation.
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-consumer-only-mode-for-foundry-access" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#consumer-only-mode-for-foundry-access" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Consumer-only mode for Foundry access
+        </h2>
+        <p>
+         <em>
+          Date published: 2023-05-26
+         </em>
+        </p>
+        <p>
+         Configure a simplified experience for single-application users with Foundry's new consumer-only mode. Foundry now supports a robust configuration to constrain the experience of certain user groups to only the custom applications to which they've been given permission. In this restricted view, the navigational sidebar is not shown because those users are not meant to leave those particular applications.
+        </p>
+        <p>
+         In the Control Panel
+         <a href="../../../docs/foundry/announcements/../administration/configure-workspaces/>
+          Foundry Suite
+         </a>
+         configuration, there is now a configuration to
+         <strong>
+          Restrict platform access
+         </strong>
+         . By default, this configuration is set to "Everyone in this organization", which maintains the current behavior.
+        </p>
+        <p>
+         <img alt="Example UI showing option to restrict platform access" node="[object Object]" src="/docs/resources/foundry/announcements/restrict-platform-access.png"/>
+        </p>
+        <p>
+         Alternatively, platform access can now be given only to specific groups leaving other users with access to only the consumer-facing applications built in Slate or Workshop to which they have explicitly been granted access. Without platform access, these users will no longer see a Foundry sidebar nor will they be able to navigate to other parts of Foundry.
+        </p>
+        <p>
+         <img alt="Example UI showing option to grant access to selected user groups" node="[object Object]" src="/docs/resources/foundry/announcements/select-user-groups.png"/>
+        </p>
+        <p>
+         This configuration makes it possible to provide a truly stand-alone experience for custom applications for users who do not need to access the entirety of Foundry. For more information and guidance to configure this type of restricted access, review the Control Panel
+         <a href="../../../docs/foundry/announcements/../administration/configure-workspaces/>
+          Workspaces
+         </a>
+         documentation.
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-introducing-quicksearch-fast-search-and-navigation" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#introducing-quicksearch-fast-search-and-navigation" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Introducing Quicksearch: Fast search and navigation
+        </h2>
+        <p>
+         <em>
+          Date published: 2023-05-11
+         </em>
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../compass/quicksearch/>
+          Quicksearch
+         </a>
+         is a new tool for search, navigation, and discovery, built to make finding resources and navigating throughout Foundry fast and delightful. There are two new modes for Quicksearch interactions:
+        </p>
+        <ol>
+         <li>
+          <strong>
+           Jump-to mode
+          </strong>
+          provides a short list of personalized results based on recent history to directly navigate Foundry and switch between platform applications, custom applications, objects, datasets, and other resources.
+         </li>
+         <li>
+          <strong>
+           Full results mode
+          </strong>
+          helps find content and discover what exists in Foundry. Perform searches of Foundry apps, objects, datasets, and other resources with advanced filters, rich metadata, and improved result ranking to highlight the most relevant results.
+         </li>
+        </ol>
+        <img alt="Video introduction to Quicksearch" node="[object Object]" src="/docs/resources/foundry/announcements/quicksearch-annoucement.gif?width=700" width="700"/>
+        <h4 id="user-content-jump-to-mode">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#jump-to-mode" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Jump-to mode
+        </h4>
+        <p>
+         Navigate Foundry at the speed of thought without ever reaching for the mouse using Quicksearch keyboard shortcuts and jump-mode:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Easy to access:
+          </strong>
+          Open Quicksearch by selecting
+          <strong>
+           Search...
+          </strong>
+          in the Foundry sidebar or with the keyboard shortcut
+          <code>
+           *Ctrl+J
+          </code>
+          (Windows) or
+          <code>
+           Cmd + J
+          </code>
+          (macOS).
+         </li>
+         <li>
+          <strong>
+           Easy to access:
+          </strong>
+          To open Quicksearch, select
+          <strong>
+           Search...
+          </strong>
+          in the Foundry sidebar, or use
+          <code>
+           Ctrl + J
+          </code>
+          on Windows or
+          <code>
+           â + J
+          </code>
+          on macOS.
+         </li>
+         <li>
+          <strong>
+           Navigation-focused:
+          </strong>
+          The initial dialog and dropdown are navigation-oriented. Start typing to receive suggestions. Use the keyboard to jump to any Foundry page in seconds.
+         </li>
+         <li>
+          <strong>
+           Search only on titles:
+          </strong>
+          Jump-to mode only searches on titles of apps, resources, and objects. To search additional fields and metadata, use the full results mode.
+         </li>
+         <li>
+          <strong>
+           Single click to full results:
+          </strong>
+          From the dialog and dropdown, press
+          <code>
+           Enter/Return
+          </code>
+          or filter by
+          <strong>
+           Apps
+          </strong>
+          ,
+          <strong>
+           Objects
+          </strong>
+          ,
+          <strong>
+           Datasets
+          </strong>
+          , or
+          <strong>
+           Files
+          </strong>
+          to move to advanced search mode.
+         </li>
+         <li>
+          <strong>
+           Personalized results:
+          </strong>
+          Results in Quicksearch are personalized by your recently accessed or favorited resources, and more.
+         </li>
+        </ul>
+        <img alt="Quicksearch results dropdown view" node="[object Object]" src="/docs/resources/foundry/announcements/quicksearch-dropdown-results.png?width=700" width="700"/>
+        <h4 id="user-content-full-results-view">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#full-results-view" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Full results view
+        </h4>
+        <p>
+         Explore Foundry data, applications, and resources to uncover relevant work products:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Discovery-focused:
+          </strong>
+          Designed for searching and discovering, users can compare multiple search results to find the resources most useful to them.
+         </li>
+         <li>
+          <strong>
+           Search on various fields:
+          </strong>
+          Search for descriptions, column names, file paths, and more. Additionally, filter by creator, tags, Projects, folders, and more.
+         </li>
+         <li>
+          <strong>
+           Tabs:
+          </strong>
+          The interface includes a top results tab and four tabs to filter by
+          <strong>
+           Apps
+          </strong>
+          ,
+          <strong>
+           Objects
+          </strong>
+          ,
+          <strong>
+           Datasets
+          </strong>
+          , or
+          <strong>
+           Files
+          </strong>
+         </li>
+         <li>
+          <strong>
+           Metadata:
+          </strong>
+          Users can view information on each result to evaluate whether the resource is relevant to them. Search by keyword highlights, file path, view count, last updated time, key security metadata, and more.
+         </li>
+         <li>
+          <strong>
+           Ranking:
+          </strong>
+          Results are ranked based on an algorithm that contains text matching and other boost parameters.
+         </li>
+         <li>
+          <strong>
+           Filters:
+          </strong>
+          Filters are provided for advanced searches. Additionally, by selecting the filter tabs from the initial search dropdown, users can perform complex filter searches ( for example, âall reports under project X that were created by meâ).
+         </li>
+         <li>
+          <strong>
+           Permissions:
+          </strong>
+          Quicksearch respects all existing permissions in Foundry. Content with
+          <code>
+           Discover
+          </code>
+          permissions would open a
+          <code>
+           Request access
+          </code>
+          message. Users will not see content to which they do not have access.
+         </li>
+        </ul>
+        <img alt="A side-by-side view of Quicksearch results in a top results and filtered results view." node="[object Object]" src="/docs/resources/foundry/announcements/quicksearch-full-mode.png?width=700" width="700"/>
+        <h2 data-pagefind-weight="0.9" id="user-content-introducing-applications-portal" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#introducing-applications-portal" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Introducing Applications Portal
+        </h2>
+        <p>
+         <em>
+          Date published: 2023-05-11
+         </em>
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../app-building/curating-apps/>
+          Applications Portal
+         </a>
+         is a new tool for discovery and quick access to all apps in Foundry, including core Foundry platform apps and trusted custom apps promoted to the portal by platform administrators.
+        </p>
+        <p>
+         The Application Portal is launched from the Foundry sidebar and opens to a view of all applications, with additional categories for navigating both platform apps and promoted custom applications. Favoriting an application with a â­ will pin the application to the sidebar for quick access.
+        </p>
+        <img alt="Apps portal core applications view" node="[object Object]" src="/docs/resources/foundry/announcements/apps-portal-core.png?width=700" width="700"/>
+        <h4 id="user-content-curate-the-applications-portal">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#curate-the-applications-portal" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Curate the Applications Portal
+        </h4>
+        <p>
+         The Applications Portal has two engagement modes:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Basic (out-of-the-box):
+          </strong>
+          A tool to discover and learn about all Foundry platform applications. No admin work is required. The applications portal is an integral tool in the left sidebar, even without any promoted custom apps.
+         </li>
+         <li>
+          <strong>
+           Advanced (curation-based):
+          </strong>
+          An admin, Palantir representative, or customer governance team promotes all trusted custom apps to the Applications Portal.
+         </li>
+        </ul>
+        <p>
+         For more details on the permissions and workflow for promoting applications, review the
+         <a href="../../../docs/foundry/announcements/../app-building/curating-apps/>
+          Applications Portal
+         </a>
+         documentation.
+        </p>
+        <img alt="Apps portal promoted applications view" node="[object Object]" src="/docs/resources/foundry/announcements/apps-portal-promoted.png?width=700" width="700"/>
+        <h2 data-pagefind-weight="0.9" id="user-content-introducing-approvals-platform-change-management" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#introducing-approvals-platform-change-management" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Introducing Approvals: Platform change management
+        </h2>
+        <p>
+         <em>
+          Date published: 2023-05-04
+         </em>
+        </p>
+        <h4 id="user-content-approvals-introduces-new-compliance-governance-and-peer-review-workflows-in-foundry">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#approvals-introduces-new-compliance-governance-and-peer-review-workflows-in-foundry" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Approvals introduces new compliance, governance, and peer-review workflows in Foundry
+        </h4>
+        <p>
+         Manage requests, approvals, and platform changes with the Approvals application. With a focus on increasing time-to-value, Approvals facilitates compliance, governance, and peer-review workflows for your organization by allowing you to set up a review process while providing an easily-accessible audit history.
+        </p>
+        <p>
+         <img alt="The process for requesting approvals" node="[object Object]" src="/docs/resources/foundry/announcements/approvals-requester-flow.gif"/>
+        </p>
+        <h4 id="user-content-manage-requests-for-permission-changes-in-one-inbox">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#manage-requests-for-permission-changes-in-one-inbox" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Manage requests for permission changes in one inbox
+        </h4>
+        <p>
+         The Approvals application allows administrators to set up user requests consisting of one or multiple tasks (individual actions) in Foundry for review by respective approvers, all from a common inbox. Users can select from a list of tasks for approval by the appropriate reviewers. Additionally, users are encouraged to select an existing group to join when making a Project access request, optimizing for an administratorâs ability to centrally organize permissions management through Group settings under Platform settings.
+        </p>
+        <p>
+         Once all tasks under a request are approved, Foundry completes the request automatically, saving administrators the need to perform a manual adjustment to apply the decision and the effort required to verify the correct setting was completed.
+        </p>
+        <p>
+         Approvals not only addresses the specific issue of collecting and managing Project access requests, but also lays a foundation for centralizing other approval workflows for access and change management processes currently distributed throughout Foundry.
+        </p>
+        <img alt="Approvals access request window" node="[object Object]" src="/docs/resources/foundry/announcements/approvals-access-request.png?width=700" width="700"/>
+        <h4 id="user-content-contextual-decisions-from-rich-ui">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#contextual-decisions-from-rich-ui" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Contextual decisions from rich UI
+        </h4>
+        <p>
+         Using Approvals, Organizations obtain greater insight into the lineage for data access decisioning for audit purposes. Furthermore, reviewers, such as administrators and Project owners, can be assigned to specific tasks that relate to their area of oversight and responsibility.
+        </p>
+        <p>
+         When a request is filed by a user, in-platform notification and emails are automatically dispatched to the responsible reviewer. Requests are considered directly from within the Approvals user interface, and where necessary, reviewers can leave a comment or ask for clarification on specific tasks for a userâs response. Upon the approval of a request, Foundry enacts the change automatically without needing additional manual changes.
+        </p>
+        <p>
+         <img alt="The process for approving requests" node="[object Object]" src="/docs/resources/foundry/announcements/approvals-approver-flow.gif"/>
+        </p>
+        <h4 id="user-content-when-should-i-use-approvals">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#when-should-i-use-approvals" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         When should I use Approvals?
+        </h4>
+        <p>
+         Approvals is designed for Organizations that require a clear process for users to obtain approval to resources with the permissions being automatically granted upon administrator or owner review. Additional Approvals request types such as Ontology proposals and reference additions are slated for future release.
+        </p>
+        <p>
+         The Approvals application is enabled on all stacks by default. Where custom workflows exist, we highly recommend adapting them to the Approvals application to take advantage of its improved workflow implementation.
+        </p>
+        <p>
+         Review the
+         <a href="../../../docs/foundry/announcements/../approvals/overview/>
+          documentation on setting up approvals
+         </a>
+         to get started.
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-additional-highlights" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#additional-highlights" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Additional highlights
+        </h2>
+        <h4 id="user-content-analytics--contour">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#analytics--contour" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Analytics | Contour
+        </h4>
+        <p>
+         <strong>
+          Board titles
+         </strong>
+         | You can now give Contour boards a title to help identify them.
+        </p>
+        <p>
+         <img alt="Sample title for a Contour bar chart" node="[object Object]" src="/docs/resources/foundry/announcements/contour-board-titles.png"/>
+        </p>
+        <h4 id="user-content-data-integration--pipeline-builder">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#data-integration--pipeline-builder" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Data Integration | Pipeline Builder
+        </h4>
+        <p>
+         <strong>
+          Introducing approvals in proposals
+         </strong>
+         | Users can now choose to protect production critical Main branches in Pipeline Builder by requiring user approval before adopting a change. To do so, pipeline owners can enable the setting in
+         <a href="../../../docs/foundry/announcements/../pipeline-builder/branches-overview/#branch-protection>
+          Branches setting
+         </a>
+         for the selected pipeline. Following standard best practices, only editors that did not contribute to the proposal may approve the change.
+        </p>
+       </div>
+      </div>
+      <div class="ptcom-design__animatedLine__116w76e">
+       <div class="ptcom-design__animatedLineRule__116w76e">
+       </div>
+      </div>
+      <div class="ptcom-design__neighbours-container__w8fvw7">
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/announcements/2023-06/>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7 ptcom-design__neighbours-link-arrow-reversed__w8fvw7" title="Previous page">
+          â
+         </span>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           PREVIOUS
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            June 2023
+           </span>
+          </span>
+         </div>
+        </a>
+       </div>
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/announcements/2023-04/>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7 ptcom-design__neighbours-link-text-end-aligned__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           NEXT
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            April 2023
+           </span>
+          </span>
+         </div>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7" title="Next page">
+          â
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+     <nav class="ptcom-design__toc__ko5zom ptcom-design__toc__1pf03m6">
+      <h2 class="ptcom-design__tocNavHeader__1pf03m6">
+       Contents
+      </h2>
+      <ul class="ptcom-design__tocList__1pf03m6">
+       <li class="ptcom-design__tocListItem__1pf03m6">
+        <a class="ptcom-design__tocLink__1pf03m6" href="#announcements">
+         Announcements
+        </a>
+        <ul class="ptcom-design__tocList__1pf03m6">
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#announcing-rest-api-source-with-support-for-webhooks">
+           Announcing REST API Source with support for Webhooks
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#code-workspaces-the-power-of-foundry-now-accessible-with-third-party-ides">
+           Code Workspaces: The power of Foundry, now accessible with third-party IDEs
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#object-storage-v2-is-generally-available">
+           Object Storage v2 is Generally Available
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#consumer-only-mode-for-foundry-access">
+           Consumer-only mode for Foundry access
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#introducing-quicksearch-fast-search-and-navigation">
+           Introducing Quicksearch: Fast search and navigation
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#introducing-applications-portal">
+           Introducing Applications Portal
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#introducing-approvals-platform-change-management">
+           Introducing Approvals: Platform change management
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#additional-highlights">
+           Additional highlights
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </nav>
+    </div>
+    <footer class="ptcom-design__footer__ko5zom">
+     <p>
+      Â© 2025 Palantir Technologies Inc. All rights reserved.
+     </p>
+     <div class="ptcom-design__statement-links__ko5zom">
+      <a href="https://www.palantir.com/cookie-statement/">
+       Cookies Statement â
+      </a>
+      <a href="https://www.palantir.com/privacy-and-security/">
+       Privacy Statement â
+      </a>
+     </div>
+     <button class="ptcom-design__button__ko5zom" id="ot-sdk-btn">
+      <div class="ot-sdk-show-settings">
+       Cookie Settings
+      </div>
+     </button>
+    </footer>
+   </div>
+  </div>
+  
+ </body>
+</html>

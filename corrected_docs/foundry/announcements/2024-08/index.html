@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+  <meta content="1; mode=block" http-equiv="X-XSS-Protection"/>
+  <link href="/docs/icon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/docs/icon.svg" rel="shortcut icon" type="image/svg+xml"/>
+  <link href="https://www.gstatic.com" rel="dns-prefetch"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="dns-prefetch"/>
+  <meta content="REMINDER: Sign up for the Foundry Newsletter to receive a summary of new products, features, and improvements across the platform directly to your..." name="description"/>
+  <link href="https://palantir.com/docs/foundry/announcements/2024-08//" rel="canonical"/>
+  <meta content="Palantir" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://palantir.com/docs/foundry/announcements/2024-08//" property="og:url"/>
+  <meta content="Palantir" property="og:site_name"/>
+  <meta content="https://palantir.com/docs/resources/homepage/iso-grid.png" name="image" property="og:image"/>
+  <meta content="REMINDER: Sign up for the Foundry Newsletter to receive a summary of new products, features, and improvements across the platform directly to your..." property="og:description"/>
+  <meta content="Documentation | Palantir" name="twitter:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@palantirtech" name="twitter:site"/>
+  <link href="https://www.googletagmanager.com" rel="preconnect"/>
+  <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
+  <title>
+   2024 â¢ August 2024 â¢ Palantir
+  </title>
+  <meta content="23" name="next-head-count"/>
+  <script data-nscript="beforeInteractive" type="text/javascript">
+   function OptanonWrapper() {}
+  </script>
+  <link as="style" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="preload"/>
+  <link data-n-g="" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="stylesheet"/>
+  <noscript data-n-css="">
+  </noscript>
+  <script defer="" nomodule="" src="/docs/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js">
+  </script>
+  <script data-document-language="true" data-domain-script="0c1270b7-3d02-4afa-bd15-f3c23839b75a" data-nscript="beforeInteractive" defer="" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/webpack-d50bf798bfb74151.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/framework-777d23e5800d4dc0.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/main-7bc202b68cac4a69.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/_app-87c1de53eb5f2af5.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5117-b9a97c6f03ed6079.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1059-7fd152d892580497.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5819-22ba01b9d8cbb33a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/8913-a71dbce8790fe614.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1472-56bad0c7930cc63a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/9537-3c0ceb8250403970.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/%5B...slug%5D-1bf87c642d9d87bc.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_buildManifest.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_ssgManifest.js">
+  </script>
+ </head>
+ <body>
+  <div data-reactroot="" id="__next">
+   <script id="docs-theme" nonce="**CSP_NONCE**">
+    (function() {
+                                    const theme = document.cookie.split('; ').find(row => row.startsWith('docsColorTheme='));
+                                    if (theme) {
+                                        document.body.className = theme.split('=')[1] + "Theme";
+                                    }
+                                })();
+   </script>
+   <noscript>
+    <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PSL84DJ" style="display:none;visibility:hidden" width="0">
+    </iframe>
+   </noscript>
+   <div class="ptcom-design__layoutWrapper__ko5zom ptcom-design__hasToc__ko5zom">
+    <div class="ptcom-design__navContainer__ko5zom ptcom-design__hasDropdownNav__ko5zom">
+     <div class="ptcom-design__cornerButtons__twowro">
+      <button aria-expanded="false" class="ptcom-design__button__16lyg8o" id="navBtn" title="Show Navigation">
+       <div class="ptcom-design__burger__16lyg8o hamburger hamburger--emphatic">
+        <span class="hamburger-box">
+         <span class="hamburger-inner">
+         </span>
+        </span>
+       </div>
+      </button>
+      <button aria-expanded="false" class="ptcom-design__button__67pw73" id="searchBtn" title="Search">
+       <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <title>
+         Search
+        </title>
+        <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+        </circle>
+        <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+        </path>
+       </svg>
+      </button>
+     </div>
+     <div class="ptcom-design__brandBar__ko5zom">
+      <div class="ptcom-design__logoContainer__ko5zom">
+       <div class="ptcom-design__navBrand__1aug2ec">
+        <a aria-label="Link to Palantir homepage" class="ptcom-design__branding__1aug2ec" data-axe="reviewed" href="../../../docs/ id="logo">
+         <svg class="ptcom-design__logo__1aug2ec" height="20" role="img" viewbox="0 0 83 20" width="83" xmlns="http://www.w3.org/2000/svg">
+          <title>
+           Palantir
+          </title>
+          <path d="M20.115 2.092h5.112c1.896 0 3.133.084 4.204 1.255.742.837 1.154 1.841 1.154 3.013 0 1.171-.412 2.176-1.236 3.012-.825.837-1.896 1.34-4.617 1.34H22.26v6.945h-2.144V2.092zm2.144 6.862h2.473c1.402 0 3.545-.084 3.545-2.678 0-2.427-1.979-2.427-3.133-2.427H22.26v5.105zm15.169 8.703c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.165-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zM36.026 12.3c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.989 0 1.813-.418 2.308-1.172.412-.753.495-1.338.495-2.845-.33.084-.66 0-1.155 0zM40.89 2.092h1.979v15.565H40.89V2.092zm10.553 15.565c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.164-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zm-1.32-5.356c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.99 0 1.814-.418 2.308-1.172.413-.753.495-1.338.495-2.845-.412.084-.66 0-1.154 0zm4.865-4.184V6.862h1.978v1.757c.248-.418.99-1.924 3.38-1.924.99 0 3.875.334 3.875 3.682v7.364H62.16v-6.862c0-.67-.082-1.34-.577-1.841-.495-.502-1.237-.753-1.896-.753-1.484 0-2.803 1.087-2.803 3.263v6.193h-1.979V8.117h.083zm9.893-1.255h1.896V4.519l1.978-.67v2.93h2.391v1.506h-2.39v6.443c0 .502 0 1.423 1.4 1.423.413 0 .825-.084.99-.084v1.59c-.33.084-.907.167-1.649.167-1.896 0-2.72-.586-2.72-2.343V8.284H64.88V6.862zm7.666-4.77h2.391v2.26h-2.39v-2.26zm.165 4.77h1.979v10.795h-1.979V6.862zm3.875 2.176c0-.753-.082-1.507-.082-2.176h1.978l.083 2.092c.412-1.506 1.648-2.008 2.555-2.092a9.379 9.379 0 011.402-.084v2.009c-.083 0-.248-.084-.412-.084h-.578c-2.39 0-2.885 1.422-2.885 3.263v5.774H76.67V9.037h-.083zM7.832 0C3.71 0 .33 3.431.33 7.615s3.38 7.615 7.502 7.615 7.502-3.43 7.502-7.615C15.334 3.431 11.954 0 7.832 0zm0 12.887c-2.886 0-5.194-2.343-5.194-5.272 0-2.929 2.308-5.272 5.194-5.272 2.885 0 5.194 2.343 5.194 5.272-.083 2.929-2.391 5.272-5.194 5.272zm6.677 1.674l-6.677 2.928-6.678-2.928L0 16.653 7.832 20l7.832-3.347-1.155-2.092z">
+          </path>
+         </svg>
+        </a>
+        <div class="ptcom-design__subnavLink__1aug2ec">
+         <li class="ptcom-design__item__vv201u ptcom-design__subNavListContainer__1wclymi" tabindex="0">
+          <div class="ptcom-design__pageGroupTitle__vv201u ptcom-design__subNavPickerDropdown__1wclymi">
+           <span>
+            Documentation
+           </span>
+           <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+            </polyline>
+           </svg>
+          </div>
+          <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__subNavList__1wclymi ptcom-design__pageGroupListFixedWidth__vv201u">
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/>
+             Documentation
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/apollo/>
+             Apollo
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/gotham/>
+             Gotham
+            </a>
+           </li>
+          </ul>
+         </li>
+        </div>
+       </div>
+      </div>
+      <div class="ptcom-design__searchContainer__ko5zom">
+       <div class="ptcom-design__container__11sdyh7">
+        <div class="ptcom-design__search__11sdyh7">
+         <div class="ptcom-design__searchIcon__11sdyh7">
+          <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            Search documentation
+           </title>
+           <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+           </circle>
+           <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+           </path>
+          </svg>
+         </div>
+         <form class="ptcom-design__inputForm__11sdyh7" method="GET">
+          <label class="ptcom-design__hiddenLabel__11sdyh7" for="query">
+           Search
+          </label>
+          <input autocomplete="off" class="ptcom-design__searchInput__11sdyh7" id="query" name="query" placeholder="Search documentation" type="search" value=""/>
+         </form>
+         <div class="ptcom-design__quickSearchRightSideContainer__11sdyh7">
+          <svg class="ptcom-design__quickSearchRightSideButton__11sdyh7" enable-background="new 0 0 16 16" id="Layer_1" version="1.1" viewbox="0 0 16 16" x="0px" y="0px">
+           <title>
+            karat
+           </title>
+           <g id="key_control_1_">
+            <g>
+             <path clip-rule="evenodd" d="M12.71,5.29l-4-4C8.53,1.11,8.28,1,8,1S7.47,1.11,7.29,1.29l-4,4
+                    C3.11,5.47,3,5.72,3,6c0,0.55,0.45,1,1,1c0.28,0,0.53-0.11,0.71-0.29L8,3.41l3.29,3.29C11.47,6.89,11.72,7,12,7c0.55,0,1-0.45,1-1
+                    C13,5.72,12.89,5.47,12.71,5.29z" fill-rule="evenodd">
+             </path>
+            </g>
+           </g>
+          </svg>
+          <p class="ptcom-design__addition__11sdyh7">
+           +
+          </p>
+          <p class="ptcom-design__quickSearchRightSideButton__11sdyh7">
+           K
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <a class="ptcom-design__altLink__ko5zom" href="../../../docs/foundry/api/v2/>
+       API Reference â
+      </a>
+      <a class="ptcom-design__button__10xiqev ptcom-design__feedbackButton__ko5zom ptcom-design__feedbackButton-WithToc__ko5zom">
+       Send feedback
+      </a>
+      <div class="ptcom-design__pickers__ko5zom">
+       <div class="ptcom-design__localePicker__958zz8 ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__958zz8">
+         <button class="ptcom-design__button__958zz8" title="Select a locale">
+          <span>
+           en
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__958zz8">
+         <button class="ptcom-design__button__958zz8 ptcom-design__active__958zz8" title="Select en locale">
+          <span>
+           en
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select jp locale">
+          <span>
+           jp
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select kr locale">
+          <span>
+           kr
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select zh locale">
+          <span>
+           zh
+          </span>
+         </button>
+        </div>
+       </div>
+       <div class="ptcom-design__themePicker__efbtyr ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr" title="Current theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr ptcom-design__active__efbtyr" title="Select light theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightBlueTheme__efbtyr" title="Select lightBlue theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightGoldTheme__efbtyr" title="Select lightGold theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkTheme__efbtyr" title="Select dark theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkMintTheme__efbtyr" title="Select darkMint theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkSalmonTheme__efbtyr" title="Select darkSalmon theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+     <ul class="ptcom-design__dropdownNav__vv201u ptcom-design__dropdownNav__ko5zom">
+      <li class="ptcom-design__item__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Capabilities
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/data-integration/overview/>
+          Data connectivity &amp; integration
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/model-integration/overview/>
+          Model connectivity &amp; development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/ontology/overview/>
+          Ontology building
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/dev-toolchain/overview/>
+          Developer toolchain
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/app-building/overview/>
+          Use case development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/analytics/overview/>
+          Analytics
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/devops/overview/>
+          Product delivery
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/security/overview/>
+          Security &amp; governance
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/administration/overview/>
+          Management &amp; enablement
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="ptcom-design__item__vv201u">
+       <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/getting-started/overview/>
+        Getting started
+       </a>
+      </li>
+      <li class="ptcom-design__item__vv201u ptcom-design__isSelected__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Platform updates
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__pageGroupListFixedWidth__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/>
+          Announcements
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/release-notes/>
+          Release notes
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+    <div class="ptcom-design__content__ko5zom ptcom-design__hasToc__ko5zom ptcom-design__hasDropdownNav__ko5zom ptcom-design__hasSidebarNav__ko5zom">
+     <div class="ptcom-design__sideBarWrapper__ko5zom">
+      <nav class="ptcom-design__sideBar__ko5zom ptcom-design__container__17amtsp">
+       <h2 class="ptcom-design__header__17amtsp ptcom-design__headerNavTitle__17amtsp">
+        Announcements
+       </h2>
+       <ul class="ptcom-design__navList__17amtsp">
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2025-04/>
+          April 2025
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2025-03/>
+          March 2025
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2025-02/>
+          February 2025
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2025-01/>
+          January 2025
+         </a>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           2024
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-12/>
+            December 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-11/>
+            November 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-10/>
+            October 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-09/>
+            September 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp ptcom-design__isSelected__17amtsp" href="../../../docs/foundry/announcements/2024-08/>
+            August 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-07/>
+            July 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-06/>
+            June 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-05/>
+            May 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-04/>
+            April 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-03/>
+            March 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-02/>
+            February 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-01/>
+            January 2024
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           2023
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-12/>
+            December 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-11/>
+            November 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-10/>
+            October 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-09/>
+            September 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-08/>
+            August 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-07/>
+            July 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-06/>
+            June 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-05/>
+            May 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-04/>
+            April 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-03/>
+            March 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-02/>
+            February 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-01/>
+            January 2023
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           2022
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-12/>
+            December 2022
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-11/>
+            November 2022
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-10/>
+            October 2022
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-09/>
+            September 2022
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-08/>
+            August 2022
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/release-notes/ rel="noopener noreferrer" target="_blank">
+          Release notes â
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="ptcom-design__bodyContainer__ko5zom" data-pagefind-filter="product:foundry" data-pagefind-meta="product:foundry">
+      <div class="ptcom-design__breadcrumbs__qq0wfv" data-pagefind-meta="breadcrumb:Announcements / 2024 / August 2024">
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" href="../../../docs/foundry/announcements/>
+         Announcements
+        </a>
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        2024
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" data-pagefind-weight="1" href="../../../docs/foundry/announcements/2024-08/>
+         August 2024
+        </a>
+       </span>
+      </div>
+      <div data-pagefind-body="true">
+       <div class="ptcom-design__markdownDoc__1vbgce2">
+        <h1 data-pagefind-weight="1" id="user-content-announcements" level="1" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#announcements" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Announcements
+        </h1>
+        <p>
+         <strong>
+          REMINDER:
+         </strong>
+         Sign up for the Foundry Newsletter to receive a summary of new products, features, and improvements across the platform directly to your inbox. For more information on how to subscribe, see the
+         <a href="../../../docs/foundry/announcements/../announcements/2023-11/#foundry-newsletter-and-product-feedback-channels-available-for-sign-up-now-ga>
+          Foundry Newsletter and Product Feedback channels announcement
+         </a>
+         .
+        </p>
+        <p>
+         Share your thoughts about these announcements in our
+         <a href="https://community.palantir.com/c/announcements/6">
+          Developer Community Forum â
+         </a>
+         .
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-introducing-interfaces-a-new-ontology-type-beta" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#introducing-interfaces-a-new-ontology-type-beta" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Introducing interfaces, a new Ontology type [Beta]
+        </h2>
+        <p>
+         Date published: 2024-08-27
+        </p>
+        <p>
+         We are excited to announce the new
+         <strong>
+          interface
+         </strong>
+         Ontology type, a primitive that allows users to describe the shape of an object type and its capabilities. Interfaces provide object type polymorphism, allowing for consistent modeling of and interaction with object types that share a common shape.
+        </p>
+        <p>
+         Interfaces are composed of
+         <a href="../../../docs/foundry/announcements/../object-link-types/shared-property-overview/>
+          shared properties
+         </a>
+         ,
+         <a href="../../../docs/foundry/announcements/../interfaces/interface-link-types-overview/>
+          interface link types,
+         </a>
+         and
+         <a href="../../../docs/foundry/announcements/../interfaces/interface-metadata/>
+          metadata
+         </a>
+         about the interface. An interface can be implemented by multiple object types and can be extended to allow for composability of interfaces.
+        </p>
+        <p>
+         <img alt="An example Facility interface in Ontology Manager." node="[object Object]" src="/docs/resources/foundry/announcements/interfaces1.png"/>
+        </p>
+        <p>
+         <em>
+          An example
+          <code>
+           Facility
+          </code>
+          interface in Ontology Manager.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-the-power-of-interfaces" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#the-power-of-interfaces" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         The power of interfaces
+        </h3>
+        <p>
+         For data integrators, an interface can represent a pipeline target for integrating similar but distinct object types. For application developers, an interface can serve as an API surface for accessing all implementing object types.
+        </p>
+        <ul>
+         <li>
+          Object Set Service searches against the interface will return matching objects of the implementing object type.
+         </li>
+         <li>
+          Users can interact with objects of the implementing object type using both their local API names when typed as the concrete object type and the interface API names for properties and links when typed as the interface type.
+         </li>
+        </ul>
+        <p>
+         In short, implementing an interface allows downstream applications to interact with any and all implementing objects through the interface definition. This allows users to write application code using the interface as an API layer, instead of requiring the application to support every implementing object type individually. Additionally, by using the interface as an application API layer, new object types can be added to the application by having them implement the application interface without requiring code changes to explicitly support the new object type.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-example-interface-scheduling" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#example-interface-scheduling" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Example interface: Scheduling
+        </h3>
+        <p>
+         A common use case for interfaces is to indicate that an object type has a certain capability, for example to indicate that an object represents a schedulable event. By implementing the
+         <code>
+          Schedulable Event
+         </code>
+         interface, an object can be used by Ontology-aware apps for dynamic scheduling workflows, calendar management, and more.
+        </p>
+        <p>
+         <img alt="An example Schedulable Event interface, implemented on the Flight object type with shared Start Time and End Time properties." node="[object Object]" src="/docs/resources/foundry/announcements/interfaces2.png"/>
+        </p>
+        <p>
+         <em>
+          An example
+          <code>
+           Schedulable Event
+          </code>
+          interface, implemented on the
+          <code>
+           Flight
+          </code>
+          object type with shared
+          <code>
+           Start Time
+          </code>
+          and
+          <code>
+           End Time
+          </code>
+          properties.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-get-started-with-interfaces" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#get-started-with-interfaces" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Get started with interfaces
+        </h3>
+        <p>
+         To add interfaces to your Ontology, you can
+         <a href="../../../docs/foundry/announcements/../interfaces/create-interface/>
+          create
+         </a>
+         new interfaces or
+         <a href="../../../docs/foundry/announcements/../interfaces/extend-interface/>
+          extend
+         </a>
+         existing ones in Ontology Manager. Once you have an interface, you can then
+         <a href="../../../docs/foundry/announcements/../interfaces/implement-interface/>
+          implement
+         </a>
+         that interface with an object type of the appropriate shape or
+         <a href="../../../docs/foundry/announcements/../interfaces/edit-interface-definition/>
+          edit
+         </a>
+         it to better fit your Organization as your Ontology evolves.
+        </p>
+        <p>
+         Once your interface is declared, you can package and install them with
+         <a href="../../../docs/foundry/announcements/../marketplace/overview/>
+          Marketplace,
+         </a>
+         implement them in
+         <a href="../../../docs/foundry/announcements/../pipeline-builder/overview/>
+          Pipeline Builder,
+         </a>
+         and use them as your API in
+         <a href="../../../docs/foundry/announcements/../ontology-sdk/overview/>
+          Ontology SDK
+         </a>
+         applications.
+        </p>
+        <p>
+         To learn more about interfaces and how to use them, review our
+         <a href="../../../docs/foundry/announcements/../interfaces/interface-overview/>
+          interface documentation
+         </a>
+         .
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-whats-next-on-the-development-roadmap" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#whats-next-on-the-development-roadmap" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         What's next on the development roadmap?
+        </h3>
+        <p>
+         As we work to make interface types generally available, we will extend support for interfaces as inputs to Actions, Functions, and Workshop widgets.
+        </p>
+        <h2 data-pagefind-weight="0.9" id="user-content-introducing-folders-for-node-organization-in-pipeline-builder" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#introducing-folders-for-node-organization-in-pipeline-builder" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Introducing folders for node organization in Pipeline Builder
+        </h2>
+        <p>
+         Date published: 2024-08-22
+        </p>
+        <p>
+         To improve your navigation and editing experience, you can now create folders and subfolders in Pipeline Builder. Creating folders is intuitive; you can group nodes by selecting them on the graph or highlighting them in the
+         <strong>
+          Pipeline file tree
+         </strong>
+         sidebar. A hierarchical file structure, also known as a file tree, will be created for your pipeline with additional visibility and node targeting options based on selected folders.
+        </p>
+        <p>
+         <img alt="A pipeline with nodes organized into various folders and subfolders." node="[object Object]" src="/docs/resources/foundry/announcements/ifn1.png"/>
+        </p>
+        <p>
+         <em>
+          A pipeline with nodes organized into various folders and subfolders.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-narrow-pipeline-scope-and-display-relevant-nodes" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#narrow-pipeline-scope-and-display-relevant-nodes" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Narrow pipeline scope and display relevant nodes
+        </h3>
+        <p>
+         You can toggle the visibility of nodes in a subset of folders to narrow the scope of your pipeline by choosing one of the visibility options shown below:
+        </p>
+        <p>
+         <img alt="Only the nodes in the Blue Folder are displayed on the graph, with folder visibility options in the top right." node="[object Object]" src="/docs/resources/foundry/announcements/ifn2.png"/>
+        </p>
+        <p>
+         <em>
+          Only the nodes in the
+          <strong>
+           Blue Folder
+          </strong>
+          are displayed on the graph, with folder visibility options in the top right.
+         </em>
+        </p>
+        <p>
+         Additionally, you can quickly target relevant nodes on the graph by selecting the target icon to the right of the folder name. Leverage these new organization and visibility features to make the management of large and complex pipelines more efficient and streamlined.
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../pipeline-builder/management-file-tree/>
+          Learn more about folders in Pipeline Builder.
+         </a>
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-increase-pipeline-reliability-with-unit-tests-in-pipeline-builder" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#increase-pipeline-reliability-with-unit-tests-in-pipeline-builder" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Increase pipeline reliability with unit tests in Pipeline Builder
+        </h2>
+        <p>
+         Date published: 2024-08-20
+        </p>
+        <p>
+         We are happy to announce that you can now implement unit tests for pipelines in Pipeline Builder. Unit tests serve as a valuable tool for debugging, detecting breaking changes, and ultimately ensuring higher quality pipelines. Create and run unit tests directly from Pipeline Builder to detect issues early and deploy your pipelines with added confidence.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-what-is-a-unit-test" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#what-is-a-unit-test" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         What is a unit test?
+        </h3>
+        <p>
+         Similar to unit tests in code, unit tests in Pipeline Builder allow you to confirm that pipeline logic produces the expected outputs when tested with predefined inputs. Unit tests consist of:
+        </p>
+        <ul>
+         <li>
+          Test inputs
+         </li>
+         <li>
+          Transform nodes
+         </li>
+         <li>
+          Expected outputs
+         </li>
+        </ul>
+        <p>
+         Test inputs and expected outputs can be created with manually entered or existing datasets and schemas, allowing for fast and streamlined unit test creation. The transform nodes to be tested can be selected in the Pipeline Builder workspace.
+        </p>
+        <p>
+         <img alt="A diagram of the unit test workflow showing test inputs, tested transform nodes, and expected outputs." node="[object Object]" src="/docs/resources/foundry/announcements/ipr1.png"/>
+        </p>
+        <p>
+         <em>
+          A diagram of the unit test workflow showing test inputs, tested transform nodes, and expected outputs.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-unit-test-capabilities" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#unit-test-capabilities" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Unit test capabilities
+        </h3>
+        <p>
+         You can access unit tests by selecting the
+         <strong>
+          Unit tests
+         </strong>
+         icon on the right side panel. From there, you can create and fine tune unit tests by selecting the relevant nodes and providing input and output datasets.
+        </p>
+        <p>
+         <img alt="The Unit tests icon on the right side panel." node="[object Object]" src="/docs/resources/foundry/announcements/ipr2.png"/>
+        </p>
+        <p>
+         <em>
+          The Unit tests icon on the right side panel.
+         </em>
+        </p>
+        <p>
+         After you have configured a unit test and created input and output datasets, select
+         <strong>
+          Run test
+         </strong>
+         to display expected and received outputs. From here, you can assess results and iterate on your pipeline or unit tests if necessary, all in one place.
+        </p>
+        <p>
+         <img alt="A sample unit test result, displaying test results and configuration on the right and expected and received outputs on the bottom." node="[object Object]" src="/docs/resources/foundry/announcements/ipr3.png"/>
+        </p>
+        <p>
+         <em>
+          A sample unit test result, displaying test results and configuration on the right and expected and received outputs on the bottom.
+         </em>
+        </p>
+        <p>
+         As part of this flexible and fully-featured testing interface, you can easily edit and delete unit tests to keep up with rapidly evolving pipelines. Changes to unit tests will also show up in the proposals page, allowing you to track changes and ensure that all tests are passing before merging proposals.
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../pipeline-builder/dataexpectations-unit-tests/>
+          Learn more about unit testing in Pipeline Builder.
+         </a>
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-improved-pipeline-builder-and-ontology-integration" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#improved-pipeline-builder-and-ontology-integration" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Improved Pipeline Builder and Ontology integration
+        </h2>
+        <p>
+         Date published: 2024-08-13
+        </p>
+        <p>
+         Pipeline Builder just got more powerful; it is now possible to create and edit Ontology object and link types, resolve conflicts, and migrate schemas directly from your pipelines. Thanks to an improved Pipeline Builder and Ontology integration, users can now benefit from streamlined workflows and added versatility when building on the Palantir platform.
+        </p>
+        <p>
+         Previously, it was not possible to edit Pipeline Builder-owned objects and links in Ontology Manager. Now, you can make changes to Pipeline Builder-owned objects in both Pipeline Builder and Ontology Manager, with the necessary conflict resolution and schema migration features to ensure consistency. Note that while objects created in Pipeline Builder can be edited in Ontology Manager, objects created in Ontology Manager
+         <em>
+          cannot
+         </em>
+         yet be edited in Pipeline Builder.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-enable-edits-through-actions" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#enable-edits-through-actions" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Enable edits through Actions
+        </h3>
+        <p>
+         To get started, enable edits in Pipeline Builder or Ontology Manager. Toggle
+         <strong>
+          Allow edits to objects of this type
+         </strong>
+         to allow edits in both Pipeline Builder and Ontology Manager. This will also enable Action-based Ontology edits in Workshop and other applications. Note that only batch-backed objects created in Pipeline Builder currently support this feature, and stream-backed object types do not currently support edits.
+        </p>
+        <p>
+         <img alt="The Allow edits toggle in the edit object type panel." node="[object Object]" src="/docs/resources/foundry/announcements/ipb1.png"/>
+        </p>
+        <p>
+         <em>
+          The
+          <strong>
+           Allow edits
+          </strong>
+          toggle in the edit object type panel.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-bidirectional-change-syncing-between-applications" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#bidirectional-change-syncing-between-applications" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Bidirectional change syncing between applications
+        </h3>
+        <p>
+         To support Ontology changes from both Pipeline Builder and Ontology Manager, we have introduced the following features to ensure that conflicts, validation errors, and schema changes are handled seamlessly.
+        </p>
+        <p>
+         <strong>
+          Merge conflict resolutions:
+         </strong>
+         We have added a merge conflict resolution dialog box for smoother editing across Ontology Manager and Pipeline Builder, preventing concurrent updates from being overwritten.
+        </p>
+        <p>
+         <img alt="The merge conflict resolution page in Ontology Manager." node="[object Object]" src="/docs/resources/foundry/announcements/ipb2.png"/>
+        </p>
+        <p>
+         <em>
+          The merge conflict resolution page in Ontology Manager.
+         </em>
+        </p>
+        <p>
+         <strong>
+          Validation error resolution:
+         </strong>
+         You will be informed of validation errors and provided with resolution options before deploying pipelines that make changes to the Ontology. This way, you can avoid errors and failures during pipeline deployment when attempting to push invalid changes to the Ontology.
+        </p>
+        <p>
+         <img alt="An example of validation failures that must be resolved before deployment." node="[object Object]" src="/docs/resources/foundry/announcements/ipb3.png"/>
+        </p>
+        <p>
+         <em>
+          An example of validation failures that must be resolved before deployment.
+         </em>
+        </p>
+        <p>
+         <strong>
+          Schema migration support:
+         </strong>
+         We have added a schema migrations dialog to let you choose between different schema migration options when required, such as dropping edits on a property or casting edits to a different data type.
+        </p>
+        <p>
+         <img alt="The Schema migrations dialog providing different options to enable schema migrations when needed." node="[object Object]" src="/docs/resources/foundry/announcements/ipb4.png"/>
+        </p>
+        <p>
+         <em>
+          The Schema migrations dialog providing different options to enable schema migrations when needed.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-share-pipelines-with-full-marketplace-compatibility" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#share-pipelines-with-full-marketplace-compatibility" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Share pipelines with full Marketplace compatibility
+        </h3>
+        <p>
+         Pipelines with Ontology outputs can now be packaged and installed via
+         <a href="../../../docs/foundry/announcements/../marketplace/overview/>
+          Marketplace
+         </a>
+         . Share or download pipelines that include Ontology object and link types to more easily set up and deploy workflows.
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../pipeline-builder/outputs-add-ontology-output/>
+          Learn more about Ontology outputs in Pipeline Builder.
+         </a>
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-platform-settings-organization-permissions-ui-will-be-deprecated-with-members-being-migrated-to-control-panel-roles" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#platform-settings-organization-permissions-ui-will-be-deprecated-with-members-being-migrated-to-control-panel-roles" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Platform settings Organization permissions UI will be deprecated, with members being migrated to Control Panel roles
+        </h2>
+        <p>
+         Date published: 2024-08-08
+        </p>
+        <p>
+         Phase 2 of
+         <a href="../../../docs/foundry/announcements/../announcements/2023-11/#control-panel-roles-will-now-grant-members-organization-permissions-in-platform-settings>
+          migrating Organization permissions from Platform Settings to Control Panel Organization roles
+         </a>
+         is taking place the week commencing September 9. This phase streamlines the administrative workflows within the Palantir platform by consolidating two separate categories of Organization permissions to a single source of truth, represented by Organization roles.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-phase-2-automatic-migration-and-removal-of-the-platform-settings-user-interface" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#phase-2-automatic-migration-and-removal-of-the-platform-settings-user-interface" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Phase 2: Automatic migration and removal of the Platform Settings user interface
+        </h3>
+        <p>
+         Remaining members with Platform Settings permissions will be transitioned to the corresponding roles in Control Panel, which were enriched with the necessary workflows and permissions in the first phase of the migration. With the completion of Phase 2, the permissions granted by the legacy Organization settings will be available exclusively through Organization roles in Control Panel. Environments that do not have Control Panel installed will have the current Platform Settings permissions sidebar replaced by a lightweight organization permissions component.
+        </p>
+        <p>
+         <strong>
+          You can expect the following changes:
+         </strong>
+        </p>
+        <ul>
+         <li>
+          <p>
+           <strong>
+            Automatic migration:
+           </strong>
+           All existing permissions members will be automatically migrated to ensure continuity and no loss of access or privileges. Two new custom Control Panel Organization roles will be created as needed for any individual members of legacy permissions to avoid expanding access. The diagram below shows which members of legacy permissions will be added to corresponding Organization roles.
+          </p>
+          <p>
+           <img alt="Diagram showing which members of legacy permissions will be added to corresponding Organization roles." node="[object Object]" src="/docs/resources/foundry/announcements/pso1.png"/>
+          </p>
+          <p>
+           <em>
+            Diagram showing which members of legacy permissions will be added to corresponding Organization roles.
+           </em>
+          </p>
+         </li>
+         <li>
+          <p>
+           <strong>
+            Removal of the Platform Settings user interface:
+           </strong>
+           The user interface for permissions management in Platform Settings will be deprecated, consolidating permission management solely within Control Panel, where available.
+          </p>
+         </li>
+        </ul>
+        <h3 data-pagefind-weight="0.8" id="user-content-administrators-should-audit-permissions-and-review-documentation" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#administrators-should-audit-permissions-and-review-documentation" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Administrators should audit permissions and review documentation
+        </h3>
+        <p>
+         The consolidation of permissions into a single interface is part of our ongoing efforts to simplify administrative tasks and improve the user experience. By enhancing role customization and granularity in permissions, administrators can more efficiently manage their Organization's settings and security.
+        </p>
+        <p>
+         As Phase 2 starts, we ask all administrators to:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Audit permissions:
+          </strong>
+          Perform a final audit to ensure that all permissions are correctly assigned in line with your Organization's requirements.
+         </li>
+         <li>
+          <strong>
+           Review documentation:
+          </strong>
+          Take the time to review the updated documentation on permissions management in the Palantir platform to familiarize yourself with the new workflows.
+         </li>
+        </ul>
+        <p>
+         For more information on how permissions and its primitives work in the Palantir platform, review the documentation on
+         <a href="../../../docs/foundry/announcements/../administration/enrollments-and-organizations/>
+          Enrollments and Organizations
+         </a>
+         .
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-use-struct-variables-in-workshop-to-decrease-network-calls-and-speed-up-your-workflows" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#use-struct-variables-in-workshop-to-decrease-network-calls-and-speed-up-your-workflows" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Use struct variables in Workshop to decrease network calls and speed up your workflows
+        </h2>
+        <p>
+         Date published: 2024-08-06
+        </p>
+        <p>
+         Workshop now supports a new
+         <strong>
+          struct
+         </strong>
+         variable type, which are composite variables containing fields of other variable types, backed by functions. This new feature gives application builders the ability to return custom types from functions or structs from Logic functions, decreasing both the amount of functions that need to be called and total network calls. Use the struct variable type to reduce complexity, bolster generative AI responses, and boost your Workshop module performance.
+        </p>
+        <p>
+         <strong>
+          Create struct variables within Workshop to support your workflows
+         </strong>
+        </p>
+        <p>
+         You can create a struct variable using either a function written in code repositories, or a Logic function. If a field's type is not supported in Workshop, it will be ignored and omitted from the initialized variable's fields. Note that the following are not currently supported: struct nesting (for example, inside a
+         <code>
+          person
+         </code>
+         struct, you cannot have another struct
+         <code>
+          bestFriend
+         </code>
+         ), and struct arrays.
+        </p>
+        <p>
+         <img alt="Struct variable" node="[object Object]" src="/docs/resources/foundry/announcements/usv1.png"/>
+        </p>
+        <p>
+         <em>
+          Struct variable
+          <code>
+           student1
+          </code>
+          is backed by a function that returns fields
+          <code>
+           name
+          </code>
+          ,
+          <code>
+           birthday
+          </code>
+          ,
+          <code>
+           studentId
+          </code>
+          ,
+          <code>
+           isGraduated
+          </code>
+          ,
+          <code>
+           isHonors
+          </code>
+          of field types
+          <code>
+           string
+          </code>
+          ,
+          <code>
+           date
+          </code>
+          ,
+          <code>
+           number
+          </code>
+          ,
+          <code>
+           boolean
+          </code>
+          ,
+          <code>
+           boolean
+          </code>
+          , respectively. Unsupported field
+          <code>
+           bestFriend
+          </code>
+          which is a type of nested struct is not yet supported and is omitted.
+         </em>
+        </p>
+        <p>
+         <strong>
+          Extract fields from struct variables to display in widgets
+         </strong>
+        </p>
+        <p>
+         As widgets and variable transformation operations cannot use structs as a whole, extract individual struct fields for use. The image below shows how the string type
+         <code>
+          name
+         </code>
+         field is extracted from the
+         <code>
+          person
+         </code>
+         struct variable using an
+         <a href="../../../docs/foundry/announcements/../workshop/variable-transformations/>
+          extract struct field variable transform
+         </a>
+         , and then used in a
+         <a href="../../../docs/foundry/announcements/../workshop/widgets-metric-card/>
+          Metric card widget
+         </a>
+         .
+        </p>
+        <p>
+         <img alt="Field name" node="[object Object]" src="/docs/resources/foundry/announcements/usv2.png"/>
+        </p>
+        <p>
+         <em>
+          Field
+          <code>
+           name
+          </code>
+          on struct variable
+          <code>
+           student1
+          </code>
+          is extracted into a string variable and displayed on a Metric card widget.
+         </em>
+        </p>
+        <p>
+         <strong>
+          Pass struct variables as inputs to functions
+         </strong>
+        </p>
+        <p>
+         Finally, understand that struct variables can also be used as inputs to functions. When configuring a function that uses a struct as an input, the required fields of the struct input may be previewed by hovering over the
+         <code>
+          Preview schema
+         </code>
+         label. In doing so, application builders can easily verify that the expected input schema matches that of the selected struct variable by referencing it to the struct variable's raw
+         <code>
+          Current value
+         </code>
+         .
+        </p>
+        <p>
+         <img alt="A function that returns a list of common course codes shared by the two students takes in two student structs as inputs." node="[object Object]" src="/docs/resources/foundry/announcements/usv3.png"/>
+        </p>
+        <p>
+         <em>
+          A function that returns a list of common course codes shared by the two students takes in two student structs as inputs.
+         </em>
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../workshop/struct-variables/>
+          Review the documentation on struct variables in Workshop.
+         </a>
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-value-types-are-now-generally-available-in-the-ontology-and-marketplace" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#value-types-are-now-generally-available-in-the-ontology-and-marketplace" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Value types are now generally available in the Ontology and Marketplace
+        </h2>
+        <p>
+         Date published: 2024-08-01
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../object-link-types/value-types-overview/>
+          Value types
+         </a>
+         are now generally available, providing semantic wrappers around field types that include metadata and constraints to enhance type safety, expressiveness, and context. These value types can be reused across multiple object types and pipelines in the platform, with no need to duplicate validation logic. You can easily create and manage value types through the new Value Types application, then apply them to properties in your Ontology using the
+         <a href="../../../docs/foundry/announcements/../ontology-manager/overview/>
+          Ontology Manager
+         </a>
+         . With their move to general availability, you can also package and install value types in
+         <a href="../../../docs/foundry/announcements/../marketplace/overview/>
+          Marketplace
+         </a>
+         for use in your Marketplace products.
+        </p>
+        <p>
+         <img alt="The Value Types application, displaying available value types in a given namespace." node="[object Object]" src="/docs/resources/foundry/announcements/vta1.png"/>
+         <em>
+          The Value Types application, displaying available value types in a given namespace.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-add-user-defined-semantic-types" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#add-user-defined-semantic-types" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Add user-defined semantic types
+        </h3>
+        <p>
+         With value types, you can capture the context and semantic meaning of data while centralizing data validation. You can intuitively define and consume meaning directly from the value type without relying on information like column names or property descriptions. Value types also enforce validation constraints on data in Pipeline Builder pipelines and the Ontology, allowing data integrators and ontology managers to ensure proper semantic typing in their data flows and models.
+        </p>
+        <p>
+         For example, you can define an
+         <code>
+          email
+         </code>
+         value type that has a regular expression constraint to ensure that any property using the value type represents a valid email address. This value type can then be reused across multiple object types and pipelines, without needing to duplicate the validation logic for every given property. Additionally, each property that uses this value type is explicitly understood to contain an email address.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-use-value-types-in-the-platform" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#use-value-types-in-the-platform" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Use value types in the platform
+        </h3>
+        <p>
+         Once you
+         <a href="../../../docs/foundry/announcements/../object-link-types/create-value-type/>
+          create a value type
+         </a>
+         , you can use it to provide data validation across Foundry. You can use value types in a variety of use cases:
+        </p>
+        <ul>
+         <li>
+          Assigning a value type to an object type property
+         </li>
+         <li>
+          Assigning a value type to a shared property
+         </li>
+         <li>
+          Assigning a value type to a Pipeline Builder pipeline property as a logical type, using the
+          <code>
+           logical type cast
+          </code>
+          expression and selecting the value type on the property when you write to the objects target.
+         </li>
+        </ul>
+        <p>
+         To assign a value type to a property, select the value type from the dropdown menu during property configuration.
+        </p>
+        <p>
+         <img alt="The value type selector in Ontology Manager, allowing a user to assign a value type to a property." node="[object Object]" src="/docs/resources/foundry/announcements/vta2.png"/>
+        </p>
+        <p>
+         <em>
+          The value type selector in Ontology Manager, allowing a user to assign a value type to a property.
+         </em>
+        </p>
+        <p>
+         <img alt="Value types packaged in a Marketplace product." node="[object Object]" src="/docs/resources/foundry/announcements/vta3.png"/>
+        </p>
+        <p>
+         <em>
+          Value types packaged in a Marketplace product.
+         </em>
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-additional-highlights" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#additional-highlights" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Additional highlights
+        </h2>
+        <h4 id="user-content-administration--workspace">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#administration--workspace" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Administration | Workspace
+        </h4>
+        <p>
+         <strong>
+          View platform updates from the workspace sidebar
+         </strong>
+         | Users can now navigate to the latest public announcements and release notes from Foundry using the
+         <strong>
+          Platform updates
+         </strong>
+         link available in the
+         <strong>
+          Support
+         </strong>
+         menu of the
+         <a href="../../../docs/foundry/announcements/../getting-started/orientation-and-nav/#workspace-navigation-sidebar>
+          workspace sidebar
+         </a>
+         .
+        </p>
+        <img alt="The **Support** menu from the  Foundry workspace sidebar." node="[object Object]" src="/docs/resources/foundry/announcements/1723570214148-20240813_foundry_workspace_support_menu.png?width=450" width="450"/>
+        <h4 id="user-content-data-integration--builds">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#data-integration--builds" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Data Integration | Builds
+        </h4>
+        <p>
+         <strong>
+          Introducing live logs
+         </strong>
+         | The live logs feature enables you to monitor logs from any job run in real time, directly within the Palantir platform. You can access live logs within the Builds application and in most areas where logs are typically available for viewing. To use live logs, select the
+         <strong>
+          View live
+         </strong>
+         option located in the top right corner of the log viewer.
+        </p>
+        <h4 id="user-content-data-integration--data-lineage">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#data-integration--data-lineage" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Data Integration | Data Lineage
+        </h4>
+        <p>
+         <strong>
+          Egress policy integration in Data Lineage
+         </strong>
+         | Sources with egress policies are now visually integrated into the Data Lineage downstream flow, offering improved insights into data movement.
+        </p>
+        <img alt="Egress policies in Data Lineage" node="[object Object]" src="/docs/resources/foundry/announcements/1722449939912-egress-policies-in-data-lineage.png?width=450" width="450"/>
+        <h4 id="user-content-data-integration--pipeline-builder">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#data-integration--pipeline-builder" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Data Integration | Pipeline Builder
+        </h4>
+        <p>
+         <strong>
+          Coalesce partitions with a new transform
+         </strong>
+         | We are excited to introduce partition coalescing with a new Pipeline Builder transform to reduce the number of partitions in your input. By reducing partitions, you can significantly speed up data processing tasks, leading to faster job completion times. Additionally, fewer partitions mean less overhead and more efficient use of system resources.
+        </p>
+        <p>
+         To use this transform, select
+         <strong>
+          Coalesce Data
+         </strong>
+         and enter the number of partitions to coalesce to. If you have a large number of partitions and coalesce to a smaller number, a shuffle will not occur; instead, each of the new partitions will claim a set of the current partitions. If a larger number of partitions is requested, the current number of partitions will remain.
+        </p>
+        <img alt="Coalesce data transform in Pipeline Builder" node="[object Object]" src="/docs/resources/foundry/announcements/1724160877082-coalesce_data.png?width=450" width="450"/>
+        <h4 id="user-content-ontology--ontology-management">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#ontology--ontology-management" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Ontology | Ontology Management
+        </h4>
+        <p>
+         <strong>
+          Enhanced date and time formatting in Ontology Manager
+         </strong>
+         | Ontology Manager has now introduced expanded capabilities for customizing date and time formats. Users can tailor date and timestamp properties through a new selector. You can also now have a uniform format for all users regardless of local date formats.
+        </p>
+       </div>
+      </div>
+      <div class="ptcom-design__animatedLine__116w76e">
+       <div class="ptcom-design__animatedLineRule__116w76e">
+       </div>
+      </div>
+      <div class="ptcom-design__neighbours-container__w8fvw7">
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/announcements/2024-09/>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7 ptcom-design__neighbours-link-arrow-reversed__w8fvw7" title="Previous page">
+          â
+         </span>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           PREVIOUS
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            September 2024
+           </span>
+          </span>
+         </div>
+        </a>
+       </div>
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/announcements/2024-07/>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7 ptcom-design__neighbours-link-text-end-aligned__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           NEXT
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            July 2024
+           </span>
+          </span>
+         </div>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7" title="Next page">
+          â
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+     <nav class="ptcom-design__toc__ko5zom ptcom-design__toc__1pf03m6">
+      <h2 class="ptcom-design__tocNavHeader__1pf03m6">
+       Contents
+      </h2>
+      <ul class="ptcom-design__tocList__1pf03m6">
+       <li class="ptcom-design__tocListItem__1pf03m6">
+        <a class="ptcom-design__tocLink__1pf03m6" href="#announcements">
+         Announcements
+        </a>
+        <ul class="ptcom-design__tocList__1pf03m6">
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#introducing-interfaces-a-new-ontology-type-beta">
+           Introducing interfaces, a new Ontology type [Beta]
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#introducing-folders-for-node-organization-in-pipeline-builder">
+           Introducing folders for node organization in Pipeline Builder
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#increase-pipeline-reliability-with-unit-tests-in-pipeline-builder">
+           Increase pipeline reliability with unit tests in Pipeline Builder
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#improved-pipeline-builder-and-ontology-integration">
+           Improved Pipeline Builder and Ontology integration
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#platform-settings-organization-permissions-ui-will-be-deprecated-with-members-being-migrated-to-control-panel-roles">
+           Platform settings Organization permissions UI will be deprecated, with members being migrated to Control Panel roles
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#use-struct-variables-in-workshop-to-decrease-network-calls-and-speed-up-your-workflows">
+           Use struct variables in Workshop to decrease network calls and speed up your workflows
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#value-types-are-now-generally-available-in-the-ontology-and-marketplace">
+           Value types are now generally available in the Ontology and Marketplace
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#additional-highlights">
+           Additional highlights
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </nav>
+    </div>
+    <footer class="ptcom-design__footer__ko5zom">
+     <p>
+      Â© 2025 Palantir Technologies Inc. All rights reserved.
+     </p>
+     <div class="ptcom-design__statement-links__ko5zom">
+      <a href="https://www.palantir.com/cookie-statement/">
+       Cookies Statement â
+      </a>
+      <a href="https://www.palantir.com/privacy-and-security/">
+       Privacy Statement â
+      </a>
+     </div>
+     <button class="ptcom-design__button__ko5zom" id="ot-sdk-btn">
+      <div class="ot-sdk-show-settings">
+       Cookie Settings
+      </div>
+     </button>
+    </footer>
+   </div>
+  </div>
+  
+ </body>
+</html>

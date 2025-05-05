@@ -1,0 +1,2489 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+  <meta content="1; mode=block" http-equiv="X-XSS-Protection"/>
+  <link href="/docs/icon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/docs/icon.svg" rel="shortcut icon" type="image/svg+xml"/>
+  <link href="https://www.gstatic.com" rel="dns-prefetch"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="dns-prefetch"/>
+  <meta content="REMINDER: Sign up for the Foundry Newsletter to receive a summary of new products, features, and improvements across the platform directly to your..." name="description"/>
+  <link href="https://palantir.com/docs/foundry/announcements/2024-10//" rel="canonical"/>
+  <meta content="Palantir" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://palantir.com/docs/foundry/announcements/2024-10//" property="og:url"/>
+  <meta content="Palantir" property="og:site_name"/>
+  <meta content="https://palantir.com/docs/resources/homepage/iso-grid.png" name="image" property="og:image"/>
+  <meta content="REMINDER: Sign up for the Foundry Newsletter to receive a summary of new products, features, and improvements across the platform directly to your..." property="og:description"/>
+  <meta content="Documentation | Palantir" name="twitter:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@palantirtech" name="twitter:site"/>
+  <link href="https://www.googletagmanager.com" rel="preconnect"/>
+  <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
+  <title>
+   2024 â¢ October 2024 â¢ Palantir
+  </title>
+  <meta content="23" name="next-head-count"/>
+  <script data-nscript="beforeInteractive" type="text/javascript">
+   function OptanonWrapper() {}
+  </script>
+  <link as="style" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="preload"/>
+  <link data-n-g="" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="stylesheet"/>
+  <noscript data-n-css="">
+  </noscript>
+  <script defer="" nomodule="" src="/docs/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js">
+  </script>
+  <script data-document-language="true" data-domain-script="0c1270b7-3d02-4afa-bd15-f3c23839b75a" data-nscript="beforeInteractive" defer="" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/webpack-d50bf798bfb74151.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/framework-777d23e5800d4dc0.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/main-7bc202b68cac4a69.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/_app-87c1de53eb5f2af5.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5117-b9a97c6f03ed6079.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1059-7fd152d892580497.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5819-22ba01b9d8cbb33a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/8913-a71dbce8790fe614.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1472-56bad0c7930cc63a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/9537-3c0ceb8250403970.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/%5B...slug%5D-1bf87c642d9d87bc.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_buildManifest.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_ssgManifest.js">
+  </script>
+ </head>
+ <body>
+  <div data-reactroot="" id="__next">
+   <script id="docs-theme" nonce="**CSP_NONCE**">
+    (function() {
+                                    const theme = document.cookie.split('; ').find(row => row.startsWith('docsColorTheme='));
+                                    if (theme) {
+                                        document.body.className = theme.split('=')[1] + "Theme";
+                                    }
+                                })();
+   </script>
+   <noscript>
+    <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PSL84DJ" style="display:none;visibility:hidden" width="0">
+    </iframe>
+   </noscript>
+   <div class="ptcom-design__layoutWrapper__ko5zom ptcom-design__hasToc__ko5zom">
+    <div class="ptcom-design__navContainer__ko5zom ptcom-design__hasDropdownNav__ko5zom">
+     <div class="ptcom-design__cornerButtons__twowro">
+      <button aria-expanded="false" class="ptcom-design__button__16lyg8o" id="navBtn" title="Show Navigation">
+       <div class="ptcom-design__burger__16lyg8o hamburger hamburger--emphatic">
+        <span class="hamburger-box">
+         <span class="hamburger-inner">
+         </span>
+        </span>
+       </div>
+      </button>
+      <button aria-expanded="false" class="ptcom-design__button__67pw73" id="searchBtn" title="Search">
+       <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <title>
+         Search
+        </title>
+        <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+        </circle>
+        <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+        </path>
+       </svg>
+      </button>
+     </div>
+     <div class="ptcom-design__brandBar__ko5zom">
+      <div class="ptcom-design__logoContainer__ko5zom">
+       <div class="ptcom-design__navBrand__1aug2ec">
+        <a aria-label="Link to Palantir homepage" class="ptcom-design__branding__1aug2ec" data-axe="reviewed" href="../../../docs/ id="logo">
+         <svg class="ptcom-design__logo__1aug2ec" height="20" role="img" viewbox="0 0 83 20" width="83" xmlns="http://www.w3.org/2000/svg">
+          <title>
+           Palantir
+          </title>
+          <path d="M20.115 2.092h5.112c1.896 0 3.133.084 4.204 1.255.742.837 1.154 1.841 1.154 3.013 0 1.171-.412 2.176-1.236 3.012-.825.837-1.896 1.34-4.617 1.34H22.26v6.945h-2.144V2.092zm2.144 6.862h2.473c1.402 0 3.545-.084 3.545-2.678 0-2.427-1.979-2.427-3.133-2.427H22.26v5.105zm15.169 8.703c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.165-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zM36.026 12.3c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.989 0 1.813-.418 2.308-1.172.412-.753.495-1.338.495-2.845-.33.084-.66 0-1.155 0zM40.89 2.092h1.979v15.565H40.89V2.092zm10.553 15.565c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.164-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zm-1.32-5.356c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.99 0 1.814-.418 2.308-1.172.413-.753.495-1.338.495-2.845-.412.084-.66 0-1.154 0zm4.865-4.184V6.862h1.978v1.757c.248-.418.99-1.924 3.38-1.924.99 0 3.875.334 3.875 3.682v7.364H62.16v-6.862c0-.67-.082-1.34-.577-1.841-.495-.502-1.237-.753-1.896-.753-1.484 0-2.803 1.087-2.803 3.263v6.193h-1.979V8.117h.083zm9.893-1.255h1.896V4.519l1.978-.67v2.93h2.391v1.506h-2.39v6.443c0 .502 0 1.423 1.4 1.423.413 0 .825-.084.99-.084v1.59c-.33.084-.907.167-1.649.167-1.896 0-2.72-.586-2.72-2.343V8.284H64.88V6.862zm7.666-4.77h2.391v2.26h-2.39v-2.26zm.165 4.77h1.979v10.795h-1.979V6.862zm3.875 2.176c0-.753-.082-1.507-.082-2.176h1.978l.083 2.092c.412-1.506 1.648-2.008 2.555-2.092a9.379 9.379 0 011.402-.084v2.009c-.083 0-.248-.084-.412-.084h-.578c-2.39 0-2.885 1.422-2.885 3.263v5.774H76.67V9.037h-.083zM7.832 0C3.71 0 .33 3.431.33 7.615s3.38 7.615 7.502 7.615 7.502-3.43 7.502-7.615C15.334 3.431 11.954 0 7.832 0zm0 12.887c-2.886 0-5.194-2.343-5.194-5.272 0-2.929 2.308-5.272 5.194-5.272 2.885 0 5.194 2.343 5.194 5.272-.083 2.929-2.391 5.272-5.194 5.272zm6.677 1.674l-6.677 2.928-6.678-2.928L0 16.653 7.832 20l7.832-3.347-1.155-2.092z">
+          </path>
+         </svg>
+        </a>
+        <div class="ptcom-design__subnavLink__1aug2ec">
+         <li class="ptcom-design__item__vv201u ptcom-design__subNavListContainer__1wclymi" tabindex="0">
+          <div class="ptcom-design__pageGroupTitle__vv201u ptcom-design__subNavPickerDropdown__1wclymi">
+           <span>
+            Documentation
+           </span>
+           <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+            </polyline>
+           </svg>
+          </div>
+          <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__subNavList__1wclymi ptcom-design__pageGroupListFixedWidth__vv201u">
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/>
+             Documentation
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/apollo/>
+             Apollo
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/gotham/>
+             Gotham
+            </a>
+           </li>
+          </ul>
+         </li>
+        </div>
+       </div>
+      </div>
+      <div class="ptcom-design__searchContainer__ko5zom">
+       <div class="ptcom-design__container__11sdyh7">
+        <div class="ptcom-design__search__11sdyh7">
+         <div class="ptcom-design__searchIcon__11sdyh7">
+          <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            Search documentation
+           </title>
+           <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+           </circle>
+           <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+           </path>
+          </svg>
+         </div>
+         <form class="ptcom-design__inputForm__11sdyh7" method="GET">
+          <label class="ptcom-design__hiddenLabel__11sdyh7" for="query">
+           Search
+          </label>
+          <input autocomplete="off" class="ptcom-design__searchInput__11sdyh7" id="query" name="query" placeholder="Search documentation" type="search" value=""/>
+         </form>
+         <div class="ptcom-design__quickSearchRightSideContainer__11sdyh7">
+          <svg class="ptcom-design__quickSearchRightSideButton__11sdyh7" enable-background="new 0 0 16 16" id="Layer_1" version="1.1" viewbox="0 0 16 16" x="0px" y="0px">
+           <title>
+            karat
+           </title>
+           <g id="key_control_1_">
+            <g>
+             <path clip-rule="evenodd" d="M12.71,5.29l-4-4C8.53,1.11,8.28,1,8,1S7.47,1.11,7.29,1.29l-4,4
+                    C3.11,5.47,3,5.72,3,6c0,0.55,0.45,1,1,1c0.28,0,0.53-0.11,0.71-0.29L8,3.41l3.29,3.29C11.47,6.89,11.72,7,12,7c0.55,0,1-0.45,1-1
+                    C13,5.72,12.89,5.47,12.71,5.29z" fill-rule="evenodd">
+             </path>
+            </g>
+           </g>
+          </svg>
+          <p class="ptcom-design__addition__11sdyh7">
+           +
+          </p>
+          <p class="ptcom-design__quickSearchRightSideButton__11sdyh7">
+           K
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <a class="ptcom-design__altLink__ko5zom" href="../../../docs/foundry/api/v2/>
+       API Reference â
+      </a>
+      <a class="ptcom-design__button__10xiqev ptcom-design__feedbackButton__ko5zom ptcom-design__feedbackButton-WithToc__ko5zom">
+       Send feedback
+      </a>
+      <div class="ptcom-design__pickers__ko5zom">
+       <div class="ptcom-design__localePicker__958zz8 ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__958zz8">
+         <button class="ptcom-design__button__958zz8" title="Select a locale">
+          <span>
+           en
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__958zz8">
+         <button class="ptcom-design__button__958zz8 ptcom-design__active__958zz8" title="Select en locale">
+          <span>
+           en
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select jp locale">
+          <span>
+           jp
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select kr locale">
+          <span>
+           kr
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select zh locale">
+          <span>
+           zh
+          </span>
+         </button>
+        </div>
+       </div>
+       <div class="ptcom-design__themePicker__efbtyr ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr" title="Current theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr ptcom-design__active__efbtyr" title="Select light theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightBlueTheme__efbtyr" title="Select lightBlue theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightGoldTheme__efbtyr" title="Select lightGold theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkTheme__efbtyr" title="Select dark theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkMintTheme__efbtyr" title="Select darkMint theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkSalmonTheme__efbtyr" title="Select darkSalmon theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+     <ul class="ptcom-design__dropdownNav__vv201u ptcom-design__dropdownNav__ko5zom">
+      <li class="ptcom-design__item__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Capabilities
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/data-integration/overview/>
+          Data connectivity &amp; integration
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/model-integration/overview/>
+          Model connectivity &amp; development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/ontology/overview/>
+          Ontology building
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/dev-toolchain/overview/>
+          Developer toolchain
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/app-building/overview/>
+          Use case development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/analytics/overview/>
+          Analytics
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/devops/overview/>
+          Product delivery
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/security/overview/>
+          Security &amp; governance
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/administration/overview/>
+          Management &amp; enablement
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="ptcom-design__item__vv201u">
+       <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/getting-started/overview/>
+        Getting started
+       </a>
+      </li>
+      <li class="ptcom-design__item__vv201u ptcom-design__isSelected__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Platform updates
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__pageGroupListFixedWidth__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/>
+          Announcements
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/release-notes/>
+          Release notes
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+    <div class="ptcom-design__content__ko5zom ptcom-design__hasToc__ko5zom ptcom-design__hasDropdownNav__ko5zom ptcom-design__hasSidebarNav__ko5zom">
+     <div class="ptcom-design__sideBarWrapper__ko5zom">
+      <nav class="ptcom-design__sideBar__ko5zom ptcom-design__container__17amtsp">
+       <h2 class="ptcom-design__header__17amtsp ptcom-design__headerNavTitle__17amtsp">
+        Announcements
+       </h2>
+       <ul class="ptcom-design__navList__17amtsp">
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2025-04/>
+          April 2025
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2025-03/>
+          March 2025
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2025-02/>
+          February 2025
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2025-01/>
+          January 2025
+         </a>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           2024
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-12/>
+            December 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-11/>
+            November 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp ptcom-design__isSelected__17amtsp" href="../../../docs/foundry/announcements/2024-10/>
+            October 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-09/>
+            September 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-08/>
+            August 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-07/>
+            July 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-06/>
+            June 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-05/>
+            May 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-04/>
+            April 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-03/>
+            March 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-02/>
+            February 2024
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2024-01/>
+            January 2024
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           2023
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-12/>
+            December 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-11/>
+            November 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-10/>
+            October 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-09/>
+            September 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-08/>
+            August 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-07/>
+            July 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-06/>
+            June 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-05/>
+            May 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-04/>
+            April 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-03/>
+            March 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-02/>
+            February 2023
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2023-01/>
+            January 2023
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           2022
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-12/>
+            December 2022
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-11/>
+            November 2022
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-10/>
+            October 2022
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-09/>
+            September 2022
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/2022-08/>
+            August 2022
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/release-notes/ rel="noopener noreferrer" target="_blank">
+          Release notes â
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="ptcom-design__bodyContainer__ko5zom" data-pagefind-filter="product:foundry" data-pagefind-meta="product:foundry">
+      <div class="ptcom-design__breadcrumbs__qq0wfv" data-pagefind-meta="breadcrumb:Announcements / 2024 / October 2024">
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" href="../../../docs/foundry/announcements/>
+         Announcements
+        </a>
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        2024
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" data-pagefind-weight="1" href="../../../docs/foundry/announcements/2024-10/>
+         October 2024
+        </a>
+       </span>
+      </div>
+      <div data-pagefind-body="true">
+       <div class="ptcom-design__markdownDoc__1vbgce2">
+        <h1 data-pagefind-weight="1" id="user-content-announcements" level="1" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#announcements" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Announcements
+        </h1>
+        <p>
+         <strong>
+          REMINDER:
+         </strong>
+         Sign up for the Foundry Newsletter to receive a summary of new products, features, and improvements across the platform directly to your inbox. For more information on how to subscribe, see the
+         <a href="../../../docs/foundry/announcements/../announcements/2023-11/#foundry-newsletter-and-product-feedback-channels-available-for-sign-up-now-ga>
+          Foundry Newsletter and Product Feedback channels announcement
+         </a>
+         .
+        </p>
+        <p>
+         Share your thoughts about these announcements in our
+         <a href="https://community.palantir.com/c/announcements/6">
+          Developer Community Forum â
+         </a>
+         .
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-introducing-typescript-ontology-sdk-20-now-generally-available" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#introducing-typescript-ontology-sdk-20-now-generally-available" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Introducing TypeScript Ontology SDK 2.0, now generally available
+        </h2>
+        <p>
+         Date published: 2024-10-29
+        </p>
+        <p>
+         TypeScript Ontology SDK (OSDK) 2.0 is generally available the week of October 28th, offering a streamlined syntax to improve performance, enable more complex applications, and speed up the development process. By default, any new TypeScript applications created in
+         <a href="../../../docs/foundry/announcements/../ontology-sdk/create-a-new-osdk/#create-an-application-using-developer-console>
+          Developer Console
+         </a>
+         will now use the latest 2.0.x generator.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-migrate-existing-applications-to-typescript-20" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#migrate-existing-applications-to-typescript-20" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Migrate existing applications to TypeScript 2.0
+        </h3>
+        <p>
+         The
+         <a href="../../../docs/foundry/announcements/../ontology-sdk/typescript-osdk-migration/>
+          TypeScript OSDK 2.0 migration guide
+         </a>
+         explains version differences, highlights relevant syntax and structure changes, and provides code examples to help you update applications built using legacy versions.
+        </p>
+        <p>
+         Though it is not currently mandatory to migrate legacy applications to use version 2.0 syntax, upcoming TypeScript OSDK 2.0 releases, including support for
+         <a href="../../../docs/foundry/announcements/../interfaces/interface-overview/>
+          interfaces
+         </a>
+         and
+         <a href="../../../docs/foundry/announcements/../data-integration/media-sets/>
+          media sets
+         </a>
+         , will require migration.
+        </p>
+        <p>
+         Palantir will maintain support for legacy TypeScript applications for at least one year from the release of version 2.0.
+        </p>
+        <p>
+         To generate TypeScript OSDK 2.0 for an existing application, select the
+         <strong>
+          SDK versions
+         </strong>
+         menu in the left side panel of your application in Developer Console.
+        </p>
+        <p>
+         <img alt="Generate TypeScript OSDK 2.0 for an existing legacy version application in Developer Console." node="[object Object]" src="/docs/resources/foundry/announcements/1729875212175-osdk-generate-2.0-version.png"/>
+        </p>
+        <p>
+         <em>
+          Generate TypeScript OSDK 2.0 for an existing legacy version application in Developer Console.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-get-support" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#get-support" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Get support
+        </h3>
+        <p>
+         The
+         <a href="https://community.palantir.com/tag/ontology-sdk">
+          Ontology SDK Developer Community â
+         </a>
+         provides a forum for Foundry users to ask and answer questions about the Ontology SDK's capability suite. If you are unable to find answers to your questions in the community forum or migration guide, contact Palantir Support for additional assistance.
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-foundry-connector-20-for-sap-applications-v2320-sp32-is-now-available" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#foundry-connector-20-for-sap-applications-v2320-sp32-is-now-available" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Foundry Connector 2.0 for SAP Applications v2.32.0 (SP32) is now available
+        </h2>
+        <p>
+         Date published: 2024-10-29
+        </p>
+        <p>
+         Version 2.32.0 (SP32) of the
+         <a href="../../../docs/foundry/announcements/../sap/overview/>
+          Foundry Connector 2.0 for SAP Applications add-on
+         </a>
+         , used to connect Foundry to SAP systems, is now available for download from within the Palantir platform.
+        </p>
+        <p>
+         This latest release features bug fixes and minor enhancements, including:
+        </p>
+        <ul>
+         <li>
+          Improved database-level paging for SAP HANA (no materialization of paging key)
+         </li>
+         <li>
+          Support for BALDAT table decompression
+         </li>
+         <li>
+          Resolution of an issue with filters that contain empty spaces between values
+         </li>
+        </ul>
+        <p>
+         We recommend sharing this notice with your organization's SAP Basis team.
+        </p>
+        <p>
+         For more information about downloading the latest add-on version, review our
+         <a href="../../../docs/foundry/announcements/../sap/download-sap-addon/>
+          documentation
+         </a>
+         .
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-edit-history-tracking-is-now-supported-in-object-storage-v2-ga" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#edit-history-tracking-is-now-supported-in-object-storage-v2-ga" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Edit history tracking is now supported in Object Storage V2 [GA]
+        </h2>
+        <p>
+         Date published: 2024-10-22
+        </p>
+        <p>
+         Object Storage V2 now supports tracking user edit history. To use this feature, enable the
+         <a href="../../../docs/foundry/announcements/../object-edits/user-edit-history/>
+          Track user edit history
+         </a>
+         setting in Ontology Manager for object types, and to display user edit histories, update object views to include the
+         <a href="../../../docs/foundry/announcements/../workshop/widgets-edits-history/>
+          Edit History
+         </a>
+         widget.
+        </p>
+        <p>
+         <img alt="The Track user edit history setting within Ontology Manager." node="[object Object]" src="/docs/resources/foundry/announcements/1729572845786-2024-10-17_10-39-00-pn.png"/>
+        </p>
+        <p>
+         <em>
+          The
+          <strong>
+           Track user edit history
+          </strong>
+          setting within Ontology Manager.
+         </em>
+        </p>
+        <p>
+         <img alt="The Edit History workshop widget displays user edit history." node="[object Object]" src="/docs/resources/foundry/announcements/1729572850137-widgets_edits_history_example-pn.png"/>
+        </p>
+        <p>
+         <em>
+          The
+          <strong>
+           Edit History
+          </strong>
+          workshop widget displays user edit history.
+         </em>
+        </p>
+        <p>
+         The edit history reflects changes made to objects after enabling the
+         <strong>
+          Track user edit history
+         </strong>
+         setting. Any changes made prior to the activation of this feature will not be tracked. Additionally, user edit history from Object Storage V1 will not be available after migrating to Object Storage V2.
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-redesigned-control-panel-and-enhanced-navigation-features" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#redesigned-control-panel-and-enhanced-navigation-features" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Redesigned Control Panel and enhanced navigation features
+        </h2>
+        <p>
+         Date published: 2024-10-15
+        </p>
+        <p>
+         We are excited to announce the latest updates to our Control Panel layout and its homepage, designed to enhance your user experience and streamline navigation. Read on for the latest features, navigation improvements, and visual and organizational enhancements.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-latest-features" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#latest-features" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Latest features
+        </h3>
+        <p>
+         <strong>
+          Favorite settings:
+         </strong>
+         You can now "favorite" your most frequented settings. Favorited settings will appear on the left sidebar for quick and easy access.
+        </p>
+        <p>
+         <img alt="The Favorite Settings section in Control Panel." node="[object Object]" src="/docs/resources/foundry/announcements/rcp1.png"/>
+        </p>
+        <p>
+         <em>
+          The
+          <strong>
+           Favorite Settings
+          </strong>
+          section in Control Panel.
+         </em>
+        </p>
+        <p>
+         <strong>
+          Recently visited settings:
+         </strong>
+         Keep track of your recent activity with the new "recently visited" settings feature, allowing you to quickly return to settings you have accessed recently.
+        </p>
+        <p>
+         <img alt="The recently visited settings section in Control Panel." node="[object Object]" src="/docs/resources/foundry/announcements/rcp2.png"/>
+        </p>
+        <p>
+         <em>
+          The recently visited settings section in Control Panel.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-improved-navigation" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#improved-navigation" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Improved navigation
+        </h3>
+        <p>
+         <strong>
+          Enhanced headers:
+         </strong>
+         The
+         <strong>
+          Organization
+         </strong>
+         and
+         <strong>
+          Enrollment
+         </strong>
+         selectors have been moved to the page header. This change simplifies navigation and makes it easier to switch between different sections.
+        </p>
+        <p>
+         <img alt="The enhanced header design, featuring the Organization and Enrollment dropdown selectors." node="[object Object]" src="/docs/resources/foundry/announcements/rcp3.png"/>
+        </p>
+        <p>
+         <em>
+          The enhanced header design, featuring the
+          <strong>
+           Organization
+          </strong>
+          and
+          <strong>
+           Enrollment
+          </strong>
+          dropdown selectors.
+         </em>
+        </p>
+        <p>
+         <strong>
+          Contextual save Actions:
+         </strong>
+         When modifying settings, Actions will now display the context of the Action. For example, when saving to an enrollment, the Action will state "Save for [enrollment name]" as in the following screenshot. This ensures clarity and reduces the risk of errors.
+        </p>
+        <p>
+         <img alt='An example of a contextual save Action for a "Test" Organization.' node="[object Object]" src="/docs/resources/foundry/announcements/rcp4.png"/>
+        </p>
+        <p>
+         <em>
+          An example of a contextual save Action for a "Test" Organization.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-visual-and-organizational-enhancements" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#visual-and-organizational-enhancements" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Visual and organizational enhancements
+        </h3>
+        <p>
+         <strong>
+          Streamlined look and feel:
+         </strong>
+         The overall look and feel of the Control Panel and homepage has been redesigned to provide a cleaner and more modern interface, improving usability and aesthetics.
+        </p>
+        <p>
+         <img alt="The newly updated and streamlined design of Control Panel." node="[object Object]" src="/docs/resources/foundry/announcements/rcp5.png"/>
+        </p>
+        <p>
+         <em>
+          The newly updated and streamlined design of Control Panel.
+         </em>
+        </p>
+        <p>
+         <strong>
+          Categorized settings and new All Settings page:
+         </strong>
+         Settings are now grouped into new, intuitive categories. You can view the full list of settings on the new
+         <strong>
+          All settings
+         </strong>
+         page, making it easier to find and manage your preferences.
+        </p>
+        <p>
+         <img alt='The new "All Settings" page, showing all available settings split into categories.' node="[object Object]" src="/docs/resources/foundry/announcements/rcp6.png"/>
+        </p>
+        <p>
+         <em>
+          The new
+          <strong>
+           All Settings
+          </strong>
+          page, showing all available settings split into categories.
+         </em>
+        </p>
+        <p>
+         We believe these changes will significantly improve your experience using the Palantir platform.
+        </p>
+        <p>
+         For more information, review the
+         <a href="../../../docs/foundry/announcements/../administration/control-panel/>
+          Control Panel documentation
+         </a>
+         .
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-create-custom-llm-powered-assistants-with-aip-assist-agents-beta" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#create-custom-llm-powered-assistants-with-aip-assist-agents-beta" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Create custom LLM-powered Assistants with AIP Assist Agents [Beta]
+        </h2>
+        <p>
+         Date published: 2024-10-10
+        </p>
+        <p>
+         We are excited to announce the beta release of custom-made LLM-powered assistants called "AIP Assist Agents". This feature allows users to create LLM-powered assistants that specialize only on custom content sources, with no coding experience required. This builds on the ability to register custom content sources with AIP Assist, which allows users to add Notepad documents or in-platform custom documentation to AIP Assist's knowledge base.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-custom-source-backed-aip-assist-agents" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#custom-source-backed-aip-assist-agents" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Custom source-backed AIP Assist Agents
+        </h3>
+        <p>
+         It is important to note how this feature differs from existing AIP Assist support for custom content sources. Serving custom sources with AIP Assist makes content available as a resource when AIP Assist answers user queries, along with Palantir platform and developer documentation. Without AIP Assist Agents, custom sources can be configured to be available to AIP Assist's default mode.
+        </p>
+        <img alt="The AIP Assist mode selector." node="[object Object]" src="/docs/resources/foundry/announcements/ccl1.png?width=450" width="450"/>
+        <p>
+         <em>
+          The AIP Assist mode selector.
+         </em>
+        </p>
+        <p>
+         In contrast, AIP Assist Agents must first be selected from the AIP Assist mode selector, as shown below, and only use the provided custom sources to respond to user questions. As a result, AIP Assist Agents are hyper-focused and purpose-built, providing users with higher quality responses based solely on specialized content sources. This is a powerful new functionality for support teams, developer teams, and platform administrators.
+        </p>
+        <p>
+         <img alt="The AIP Assist mode selector, showing a sample inventory management AIP Assist Agent." node="[object Object]" src="/docs/resources/foundry/announcements/ccl2.png"/>
+        </p>
+        <p>
+         <em>
+          The AIP Assist mode selector, showing a sample inventory management AIP Assist Agent.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-create-custom-llm-powered-assistants-in-just-a-few-clicks" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#create-custom-llm-powered-assistants-in-just-a-few-clicks" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Create custom LLM-powered assistants in just a few clicks
+        </h3>
+        <p>
+         To get started with AIP Assist Agents, you must first register custom content sources from Notepad or in-platform custom documentation. After doing so, you can create an
+         <strong>
+          AIP Assist Agent
+         </strong>
+         in the Agent Studio application and give it access to your custom content sources.
+        </p>
+        <p>
+         <img alt="AIP Assist Agent creation in the Agent Studio application." node="[object Object]" src="/docs/resources/foundry/announcements/ccl3.png"/>
+        </p>
+        <p>
+         <em>
+          AIP Assist Agent creation in the Agent Studio application.
+         </em>
+        </p>
+        <p>
+         Once you have created an AIP Assist Agent and provided it with access to your custom content source, you are ready to start interacting with it in AIP Assist. Creating specialized LLM-powered assistants is now a streamlined, no-code process that you can leverage to fit your operational needs and increase application support for your users.
+        </p>
+        <iframe height="315" src="https://www.youtube-nocookie.com/embed/NGJKf3srI5E?si=PUZf4Xg1bgbDCXr-&amp;start=300" title="YouTube video player" width="560">
+        </iframe>
+        <p>
+         Note that these features are part of Palantir's AIP offering, and require your enrollment to have
+         <a href="../../../docs/foundry/announcements/../administration/enable-aip-features/>
+          AIP enabled in Control Panel
+         </a>
+         . AIP Assist Agents and Agent Studio may not be available on all enrollments at this time. Contact your Palantir representative to determine eligibility for your enrollment.
+        </p>
+        <p>
+         Learn more about
+         <a href="../../../docs/foundry/announcements/../assist/aip-assist-custom-docs-overview/>
+          AIP Assist custom sources
+         </a>
+         and
+         <a href="../../../docs/foundry/announcements/../assist/agents-in-aip-assist/>
+          AIP Assist Agents
+         </a>
+         .
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-improved-access-to-and-usability-of-aip-in-quiver-beta" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#improved-access-to-and-usability-of-aip-in-quiver-beta" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Improved access to and usability of AIP in Quiver [Beta]
+        </h2>
+        <p>
+         Date published: 2024-10-10
+        </p>
+        <p>
+         This feature is now generally available.
+         <a href="../../../docs/foundry/announcements/./2024-12/#improved-access-to-and-usability-of-aip-in-quiver-ga>
+          Read the latest announcement
+         </a>
+         .
+        </p>
+        <p>
+         Since
+         <a href="../../../docs/foundry/announcements/../announcements/2023-07/#introducing-aip-in-quiver-beta>
+          July 2023
+         </a>
+         , users have been able to leverage the power of AIP in Quiver to explore their data with ease by asking AIP to generate new or configure existing cards on their canvas via natural language prompts. Deploying the week of October 7th in beta on most AIP-enabled enrollments, Quiver's two primary large language model-driven capabilities -
+         <a href="../../../docs/foundry/announcements/../quiver/quiver-aip/#generate-analysis>
+          AIP Generate
+         </a>
+         and
+         <a href="../../../docs/foundry/announcements/../quiver/quiver-aip/#configure-cards>
+          AIP Configure
+         </a>
+         - are now accessible beneath a card in addition to their existing availability in the top ribbon of Quiver's workspace and a selected card.
+        </p>
+        <p>
+         AIP Generate creates analysis from a user prompt to provide rapid insight on data available in the Ontology, offering another method for object set analysis in addition to capabilities native to
+         <a href="../../../docs/foundry/announcements/../object-explorer/overview/>
+          Object Explorer
+         </a>
+         and
+         <a href="../../../docs/foundry/announcements/../contour/overview/>
+          Contour
+         </a>
+         . AIP Configure applies user prompts to update card configurations and tailor analytical outputs to a user's needs regardless of their familiarity with Quiver's visualization settings.
+        </p>
+        <p>
+         Quiver cards that can leverage AIP now display an AIP logo to their right in the card search bar.
+        </p>
+        <p>
+         <img alt="Quiver cards backed by AIP's analytical capabilities display an AIP logo to their right." node="[object Object]" src="/docs/resources/foundry/announcements/iat1.png"/>
+        </p>
+        <p>
+         <em>
+          Quiver cards backed by AIP's analytical capabilities display an AIP logo to their right.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-access-aip-generate-from-a-quiver-card" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#access-aip-generate-from-a-quiver-card" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Access AIP Generate from a Quiver card
+        </h3>
+        <p>
+         After you select an object set to analyze in Quiver, you will see an input field
+         <code>
+          with an AIP logo
+         </code>
+         beneath the card selection that instructs you to
+         <code>
+          Enter a query to continue the exploration
+         </code>
+         . When you select the input field, AIP Generate produces a list of suggested
+         <code>
+          queries
+         </code>
+         to support your analysis. Deploying the week of October 7th in beta on most AIP-enabled enrollments, Quiver's two primary large language model-driven capabilities -
+         <a href="../../../docs/foundry/announcements/../quiver/quiver-aip/#generate-analysis>
+          AIP Generate
+         </a>
+         and
+         <a href="../../../docs/foundry/announcements/../quiver/quiver-aip/#configure-cards>
+          AIP Configure
+         </a>
+         - are now accessible beneath a card in addition to their existing availability in the top ribbon of Quiver's workspace and a selected card.
+        </p>
+        <p>
+         <img alt="Users can access AIP Generate beneath a Quiver card to create a new analysis." node="[object Object]" src="/docs/resources/foundry/announcements/iat2.png"/>
+        </p>
+        <p>
+         <em>
+          Users can access AIP Generate beneath a Quiver card to create a new analysis.
+         </em>
+        </p>
+        <p>
+         You can choose a suggested query or enter your own. After you select a suggested or enter your own query, AIP Generate produces potential next steps for the analysis, which you can refine by editing the
+         <code>
+          query
+         </code>
+         directly within the input bar where you wrote the original query. Next, select the result or press the
+         <code>
+          Enter
+         </code>
+         key to instruct AIP to add the card to the canvas and make all configurations on your behalf.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-access-aip-configure-from-a-newly-created-analysis" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#access-aip-configure-from-a-newly-created-analysis" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Access AIP Configure from a newly-created analysis
+        </h3>
+        <p>
+         To configure an existing card, hover your cursor over the card and select the
+         <strong>
+          Modify
+         </strong>
+         button before entering your configuration prompt into the text field to the right of the AIP icon. Verify that AIP's suggestion answers your prompt before selecting the proposed modification.
+        </p>
+        <p>
+         <img alt="Users can access AIP Configure beneath an analysis card." node="[object Object]" src="/docs/resources/foundry/announcements/iat3.png"/>
+        </p>
+        <p>
+         <em>
+          Users can access AIP Configure beneath an analysis card.
+         </em>
+        </p>
+        <p>
+         If you are unable to access these features in your enrollment, contact Palantir Support for enablement.
+        </p>
+        <p>
+         You can reference additional
+         <a href="../../../docs/foundry/announcements/../quiver/quiver-aip/>
+          AIP Generate and AIP Configure
+         </a>
+         details within Quiver's existing documentation.
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-workshop-vega-chart-widget" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#workshop-vega-chart-widget" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Workshop Vega chart widget
+        </h2>
+        <p>
+         Date published: 2024-10-10
+        </p>
+        <p>
+         Introducing Workshop's newest widget,
+         <a href="../../../docs/foundry/announcements/../workshop/widgets-vega-chart/>
+          Vega Chart
+         </a>
+         . This widget offers advanced data visualization capabilities backed by the
+         <a href="https://vega.github.io/vega-lite/">
+          Vega-Lite â
+         </a>
+         grammar. Additionally, it provides additional flexibility over the
+         <a href="../../../docs/foundry/announcements/../workshop/widgets-chart/>
+          Chart XY widget
+         </a>
+         with its wider array of configuration options, and is the widget that should be used when you encounter limitations from use of the Chart XY widget.
+        </p>
+        <p>
+         <img alt="Select Vega Chart from the Workshop widget picker." node="[object Object]" src="/docs/resources/foundry/announcements/wvc.png"/>
+         <em>
+          Select Vega Chart from the Workshop widget picker.
+         </em>
+        </p>
+        <p>
+         To get started, select
+         <strong>
+          Vega Chart
+         </strong>
+         from Workshop's widget picker, or read more about the widget in
+         <a href="../../../docs/foundry/announcements/../workshop/widgets-vega-chart/>
+          documentation
+         </a>
+         .
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-ontology-sdk-for-java-development-ga" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#ontology-sdk-for-java-development-ga" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Ontology SDK for Java development [GA]
+        </h2>
+        <p>
+         Date published: 2024-10-08
+        </p>
+        <p>
+         Java support is generally available the week of October 7th in
+         <a href="../../../docs/foundry/announcements/../ontology-sdk/overview/>
+          Ontology SDK
+         </a>
+         and
+         <a href="../../../docs/foundry/announcements/../ontology-sdk/overview/#developer-console>
+          Developer Console
+         </a>
+         . Java developers can now generate a Java library to easily interact with Ontology objects, links, actions, aggregations, and functions. Users can add the
+         <a href="../../../docs/foundry/announcements/../ontology-sdk/java-osdk/>
+          Java OSDK
+         </a>
+         to existing Java services or create brand-new applications to enable seamless integrations with data on the Palantir platform.
+        </p>
+        <p>
+         The
+         <a href="../../../docs/foundry/announcements/../ontology-sdk/overview/>
+          Ontology Software Development Kit (SDK)
+         </a>
+         allows you to access the full power of the Ontology directly from your development environment. You can generate the Java OSDK with Developer Console, a portal for creating and managing applications using Palantir APIs. With the new support for Java OSDK, you can build Java-based programs, such as backend services that interact with the Ontology. These services will use confidential clients to authenticate to the Palantir platform and serve data based on the permissions granted to users.
+        </p>
+        <p>
+         <img alt="This is a code sample featuring some functionality of a generated Java OSDK for an Aircraft Ontology Object" node="[object Object]" src="/docs/resources/foundry/announcements/osfj1.png"/>
+        </p>
+        <p>
+         <em>
+          This is a code sample featuring some functionality of a generated Java OSDK for an Aircraft Ontology Object.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-get-started-with-java-packages" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#get-started-with-java-packages" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Get started with Java packages
+        </h3>
+        <p>
+         Java support is included as an additional language in Developer Console, which also supports Typescript and Python development. Developers who want to use the Java OSDK can follow the documented steps to
+         <a href="../../../docs/foundry/announcements/../ontology-sdk/create-a-new-osdk/>
+          create a Developer Console application
+         </a>
+         and generate a new version. The
+         <strong>
+          SDK Versions
+         </strong>
+         page now includes a
+         <code>
+          maven
+         </code>
+         tab that lists all generated Java packages.
+        </p>
+        <p>
+         Before you can generate a Java OSDK, you must set a Maven group ID under
+         <strong>
+          SDK Versions &gt; Settings.
+         </strong>
+         Once generated, follow the instructions found in
+         <strong>
+          API documentation &gt; Getting started
+         </strong>
+         to import your Java OSDK into your Java environments.
+        </p>
+        <p>
+         To bootstrap an application, you can follow the
+         <a href="../../../docs/foundry/announcements/../ontology-sdk/how-to-bootstrapping-java/>
+          Bootstrap a New Ontology SDK (OSDK) Java Application Guide
+         </a>
+         .
+        </p>
+        <p>
+         <img alt="To generate an SDK, first select the SDK versions tab to view all generated SDKs, select Settings to set a Maven Group ID, then finalize with Generate new version to generate the Java OSDK." node="[object Object]" src="/docs/resources/foundry/announcements/osfj2.png"/>
+        </p>
+        <p>
+         <em>
+          To generate an SDK, first select the SDK versions tab to view all generated SDKs, select
+          <strong>
+           Settings
+          </strong>
+          to set a Maven Group ID, then finalize with
+          <strong>
+           Generate new version
+          </strong>
+          to generate the Java OSDK.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-how-can-i-learn-how-to-use-it" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#how-can-i-learn-how-to-use-it" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         How can I learn how to use it?
+        </h3>
+        <p>
+         For an introduction into using the Java OSDK and some
+         <em>
+          sample
+         </em>
+         functionality, you can generate a Java OSDK Tutorial inside Developer Console. This will give you an overview on some
+         <em>
+          functionality
+         </em>
+         offered by the Java OSDK and how you can interact with the Ontology through a
+         <em>
+          Java client
+         </em>
+         .
+        </p>
+        <p>
+         First, generate an example Ontology SDK Tutorial app through the top tab in Developer Console.
+        </p>
+        <p>
+         <img alt="The Developer Console homepage where you can select to generate a tutorial through the Ontology SDK Tutorial - Todo App." node="[object Object]" src="/docs/resources/foundry/announcements/osfj3.png"/>
+        </p>
+        <p>
+         <em>
+          The Developer Console homepage where you can select to generate a tutorial through the Ontology SDK Tutorial - To-do App.
+         </em>
+        </p>
+        <p>
+         After generation, you will be brought to a series of lessons. Before being able to access the Java tutorial, you must set a Maven group ID under
+         <strong>
+          SDK Versions &gt; Settings.
+         </strong>
+         Once generated, follow the instructions found in
+         <strong>
+          Lessons &gt; 0: Getting Started
+         </strong>
+         to use the console to generate an example tutorial Java application and complete the tasks. From here, complete each lesson and its associated tasks. For a hint, reference a sample solution.
+        </p>
+        <p>
+         <img alt="To create a Java Lesson using OSDK, select a lesson, select Java as the language, and lastly, configure a Maven group and generate the Java OSDK." node="[object Object]" src="/docs/resources/foundry/announcements/osfj4.png"/>
+        </p>
+        <p>
+         <em>
+          To create a Java Lesson using OSDK, select a lesson, select
+          <strong>
+           Java
+          </strong>
+          as the language, and lastly, configure a
+          <strong>
+           Maven
+          </strong>
+          group and generate the Java OSDK.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-need-support" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#need-support" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Need support?
+        </h3>
+        <p>
+         Developer Console includes dynamically created API documentation for all languages supported by the Ontology SDK. Use the language dropdown menu to switch to Java-specific documentation.
+        </p>
+        <p>
+         In addition, public documentation for all Java OSDK functionality can be found in Palantir's public
+         <a href="../../../docs/foundry/announcements/../ontology-sdk/java-osdk/>
+          Java OSDK documentation
+         </a>
+         .
+        </p>
+        <p>
+         We are always happy to
+         <em>
+          interact
+         </em>
+         with you through our
+         <a href="https://community.palantir.com/tag/ontology-sdk">
+          Palantir Community Forum â
+         </a>
+         . Submit feedback and any questions related to Ontology SDK or Developer Console using the
+         <code>
+          #ontology-sdk
+         </code>
+         tag.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-what-is-next-on-the-development-roadmap" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#what-is-next-on-the-development-roadmap" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         What is next on the development roadmap?
+        </h3>
+        <p>
+         We are working on adding more features to the Java OSDK including Interface casting, filtering and operations, a Compute Module template for Foundry Workflows, and more.
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-introducing-a-simplified-process-for-creating-and-managing-code-workspaces" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#introducing-a-simplified-process-for-creating-and-managing-code-workspaces" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Introducing a simplified process for creating and managing code workspaces
+        </h2>
+        <p>
+         Date published: 2024-10-08
+        </p>
+        <p>
+         A refined creation and management process for code workspaces is now generally available. This new process allows Code Workspaces users to manage new workspaces from a single code repository resource, rather than from two distinct resources that need to be individually configured and permissioned. During code workspace creation, users now only need to configure the backing code repository, and new code workspaces can be accessed by selecting the code repository from anywhere in the Palantir platform filesystem, removing confusion and streamlining access.
+        </p>
+        <p>
+         <img alt="The new Code Workspaces user interface, now only requiring configuration for the backing code repository." node="[object Object]" src="/docs/resources/foundry/announcements/isp1.png"/>
+        </p>
+        <p>
+         <em>
+          The new Code Workspaces UI, now only
+          <em>
+           requiring
+          </em>
+          configuration for
+          <em>
+           the backing
+          </em>
+          code
+          <em>
+           repository
+          </em>
+          .
+         </em>
+        </p>
+        <p>
+         Users can benefit from a decluttered user interface, and will no longer run into permissions issues with new code workspace resources. This feature applies to both RStudioÂ® and JupyterLabÂ® workspaces, but only affects code workspaces created after the week of September 30. These code workspaces will still have both a Code Workspaces and Code Repositories resource in the filesystem.
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../code-workspaces/getting-started/>
+          Learn more about creating new code workspaces.
+         </a>
+        </p>
+        <p>
+         <em>
+          RStudioÂ® is a trademark of Positâ¢ and JupyterLabÂ® is a trademark of NumFOCUS.
+         </em>
+        </p>
+        <p>
+         <em>
+          All third-party trademarks referenced remain the property of their respective owners. No affiliation or endorsement is implied.
+         </em>
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-introducing-model-inputs-in-code-workspaces" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#introducing-model-inputs-in-code-workspaces" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Introducing model inputs in Code Workspaces
+        </h2>
+        <p>
+         Date published: 2024-10-08
+        </p>
+        <p>
+         We are excited to introduce new modeling capabilities in JupyterÂ® Code Workspaces. Existing models can now be imported into JupyterÂ® notebooks, enabling a new series of interactive workflows in Code Workspaces, from fine-tuning existing models to integrating ML/AI capabilities into Code Workspaces dashboards.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-download-models-in-jupyter-notebooks" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#download-models-in-jupyter-notebooks" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Download models in JupyterÂ® Notebooks
+        </h3>
+        <p>
+         Maximize the utility of your models by downloading them directly into Code Workspaces. This new feature allows you to bring models produced in the Palantir platform into your notebook environment, giving you access to the serialized model weights. Ideal for fine-tuning, this functionality enables a deeper interaction with your models.
+        </p>
+        <p>
+         With the ability to deserialize models into actual Python objects, you can run inference on imported datasets seamlessly. The results of these inferences can then be written back to the Palantir platform for further use in downstream applications.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-deploy-models-for-inference-in-jupyter-notebooks" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#deploy-models-for-inference-in-jupyter-notebooks" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Deploy models for inference in JupyterÂ® Notebooks
+        </h3>
+        <p>
+         <img alt="Image showing sidebar controls for downloading models in Code Workspaces" node="[object Object]" src="/docs/resources/foundry/announcements/imi1.png"/>
+        </p>
+        <p>
+         Imported models can also be deployed for interactive inference within Code Workspaces. This opens up a range of new capabilities for model usage in the Palantir platform:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Deployment verification:
+          </strong>
+          These deployments share the same infrastructure as model deployments. Easily publish and deploy a model for instant testing, all from the same notebook.
+         </li>
+         <li>
+          <strong>
+           Interactive Evaluations:
+          </strong>
+          Construct detailed evaluation notebooks to assess multiple models interactively, providing real-time feedback and enabling rapid iteration.
+         </li>
+         <li>
+          <strong>
+           AI/ML-Enhanced Dashboards:
+          </strong>
+          Integrate advanced AI/ML features into
+          <a href="../../../docs/foundry/announcements/../analytics/dashboards/#code-workspaces-applications>
+           your dashboards
+          </a>
+          , offering real-time predictions and analytics directly in your dashboards.
+         </li>
+        </ul>
+        <p>
+         <img alt="Image showing model deployment controls in Code Workspaces" node="[object Object]" src="/docs/resources/foundry/announcements/imi2.png"/>
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../code-workspaces/training-models/>
+          Review
+         </a>
+         the documentation on using model inputs in Code Workspaces.
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-share-data-insights-with-reports-in-rstudio-code-workspaces" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#share-data-insights-with-reports-in-rstudio-code-workspaces" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Share data insights with reports in RStudioÂ® Code Workspaces
+        </h2>
+        <p>
+         Date published: 2024-10-03
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../code-workspaces/rstudio/#r-markdown-reports>
+          R Markdown Reports in Code Workspaces are now generally available
+         </a>
+         , allowing RStudioÂ® users to seamlessly generate, visualize, and share reports from R Markdown files. Reports are generated as a shareable webpage, enabling RStudioÂ® users to distribute analyses and critical findings to colleagues and stakeholders. Generated reports can be configured to update when edits are made to the underlying R Markdown file, keeping involved parties informed on the latest changes.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-a-user-friendly-option-for-delivering-findings" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#a-user-friendly-option-for-delivering-findings" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         A user-friendly option for delivering findings
+        </h3>
+        <p>
+         Leverage user-friendly report creation by navigating to an R Markdown file and opening the
+         <strong>
+          Reports
+         </strong>
+         tab in the
+         <strong>
+          Applications
+         </strong>
+         sidebar of Code Workspaces.
+        </p>
+        <p>
+         <img alt="The Reports tab in the Applications sidebar showing the Create a new report option." node="[object Object]" src="/docs/resources/foundry/announcements/1727816485031-create-new-report.png"/>
+        </p>
+        <p>
+         <em>
+          The Reports tab in the
+          <strong>
+           Applications
+          </strong>
+          sidebar showing the
+          <strong>
+           Create a new report
+          </strong>
+          option.
+         </em>
+        </p>
+        <p>
+         The
+         <strong>
+          Reports
+         </strong>
+         tab is your go-to place for viewing, editing, and creating reports. From here, you can select a report to open it in a new tab and share the report link to deliver insights and analyses.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-revisit-and-share-historical-reports" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#revisit-and-share-historical-reports" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Revisit and share historical reports
+        </h3>
+        <p>
+         Additionally, it is possible to share past report versions and evaluate how reports change over time with built-in version history. This enables users to continuously update the underlying R Markdown file, while still being able to step back in time to showcase previous findings. The record of previous reports affords users peace of mind when making changes to the underlying file; if a previous report was particularly useful or impactful, you always have the ability to view or share it.
+        </p>
+        <img alt="The version selector on a report card in the Reports tab." node="[object Object]" src="/docs/resources/foundry/announcements/1727816538704-rstudio-reports.png?width=550" width="550"/>
+        <p>
+         <em>
+          The version selector on a report card in the
+          <strong>
+           Reports
+          </strong>
+          tab.
+         </em>
+        </p>
+        <p>
+         The introduction of R Markdown reports in RStudioÂ® Code Workspaces marks a significant improvement that streamlines the creation of shareable datasets. Dive into this new feature to create insightful, shareable reports built with customizable workflows that integrate seamlessly with the Palantir platform.
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../code-workspaces/rstudio/#r-markdown-reports>
+          Learn more about R Markdown Reports in Code Workspaces.
+         </a>
+        </p>
+        <p>
+         <em>
+          RStudioÂ® is a trademark of Positâ¢.
+         </em>
+        </p>
+        <p>
+         <em>
+          All third-party trademarks referenced remain the property of their respective owners. No affiliation or endorsement is implied.
+         </em>
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-configure-your-support-team-in-control-panel" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#configure-your-support-team-in-control-panel" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Configure your support team in Control Panel
+        </h2>
+        <p>
+         Date published: 2024-10-03
+        </p>
+        <p>
+         The configuration for support teams has moved from the Foundry Issues application to Control Panel in an effort to improve discoverability.
+        </p>
+        <p>
+         When a group has been registered as a support team, some status changes can be automated according to a set of rules. For example, when a reporter comments on an issue, the issue can automatically transition to âWaiting on Supportâ status for support team visibility.
+        </p>
+        <p>
+         This move to Control Panel also means that support teams are now configured at the enrollment-level rather than by Organization. As such, all Foundry issues assigned to support teams will now be affected by status automation regardless of the reporter's Organization, simplifying configuration in multi-Organization setups.
+        </p>
+        <img alt="You can now configure your support teams in Control Panel." node="[object Object]" src="/docs/resources/foundry/announcements/cys1.png?width=550" width="550"/>
+        <p>
+         <em>
+          You can now configure your support teams in Control Panel.
+         </em>
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-introducing-platform-updates-for-in-platform-access-to-release-notes-and-announcements-ga" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#introducing-platform-updates-for-in-platform-access-to-release-notes-and-announcements-ga" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Introducing "Platform Updates" for in-platform access to release notes and announcements [GA]
+        </h2>
+        <p>
+         Date published: 2024-10-01
+        </p>
+        <p>
+         We are excited to announce the availability of product updates directly in-platform, advertising the latest features of the Palantir platform. Once a month, the application will be advertised on the left sidebar and upon opening it, you will have access in-platform to the latest product release notes and announcements. You can navigate freely to this feature via
+         <strong>
+          Notifications
+         </strong>
+         or under
+         <strong>
+          Support
+         </strong>
+         &gt;
+         <strong>
+          Platform updates
+         </strong>
+         .
+        </p>
+        <p>
+         If you are interested in drilling down into a specific application, simply use the filter at the top right. The bar at the top allows you to switch between
+         <strong>
+          Announcements
+         </strong>
+         and
+         <strong>
+          Release notes
+         </strong>
+         . Furthermore, you can select an announcement individually to access the long version stored in our
+         <a href="../../../docs/foundry/announcements/>
+          public documentation
+         </a>
+         .
+        </p>
+        <img alt="A screenshot of the What's new in the Palantir platform feature, enabling greater access to Announcements and Release notes." node="[object Object]" src="/docs/resources/foundry/announcements/ipu.png?width=400" width="400"/>
+        <p>
+         <em>
+          A screenshot of the "What's new in the Palantir platform" feature, enabling greater access to Announcements and Release notes.
+         </em>
+        </p>
+        <p>
+         As a reminder, if you would also like to receive these updates as emails directly to your inbox,
+         <a href="../../../docs/foundry/announcements/./2023-11/#foundry-newsletter-and-product-feedback-channels-available-for-sign-up-now-ga>
+          sign up for our monthly newsletter
+         </a>
+         .
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-build-interactive-assistants-with-aip-agent-studio-beta" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#build-interactive-assistants-with-aip-agent-studio-beta" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Build interactive assistants with AIP Agent Studio [Beta]
+        </h2>
+        <p>
+         Date published: 2024-10-01
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../agent-studio/overview/>
+          AIP Agent Studio
+         </a>
+         is a new, no-code tool that enables users to build and deploy interactive assistants, known as AIP Agents, equipped with enterprise-specific information and tools. AIP Agent Studio provides a natural language interface to leverage the Ontology, documents, and LLMs via AIP Agents that can take and update parameters (such as Ontology objects or text strings).
+        </p>
+        <p>
+         Available as a beta release, contact your Palantir representative to install on your enrollment.
+        </p>
+        <p>
+         <img alt="LLM-powered AIP Agent." node="[object Object]" src="/docs/resources/foundry/announcements/bia1.png"/>
+        </p>
+        <p>
+         <em>
+          A LLM-powered AIP Agent that uses a parameter to take a filtered Ontology object set of customer support transcripts as context when answering user questions about current product issues.
+         </em>
+        </p>
+        <p>
+         <img alt="An AIP Agent that can be deployed in a Workshop application with the agent parameters linked to variables." node="[object Object]" src="/docs/resources/foundry/announcements/bia2.png"/>
+        </p>
+        <p>
+         <em>
+          The above AIP Agent can be deployed in a Workshop application with the agent parameters linked to variables.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-versatile-agents-designed-for-interactive-assistance-and-effortless-integration" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#versatile-agents-designed-for-interactive-assistance-and-effortless-integration" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Versatile agents designed for interactive assistance and effortless integration
+        </h3>
+        <p>
+         AIP Agent Studio offers several compelling features:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Customizable agents:
+          </strong>
+          Create and configure AIP Agents with specific prompts, parameters, and tools tailored to your enterprise needs.
+         </li>
+         <li>
+          <strong>
+           Interactive assistance:
+          </strong>
+          Deploy agents that can interact with users in a conversational manner to provide insights and perform tasks.
+         </li>
+         <li>
+          <strong>
+           Seamless integration:
+          </strong>
+          Leverage Ontology, documents, custom content sources, and LLMs to build powerful agents that can be deployed in Workshop,
+          <a href="#introducing-aip-threads-beta-your-enterprise-productivity-tool">
+           AIP Threads
+          </a>
+          , and
+          <a href="#create-custom-llm-powered-assistants-with-aip-assist-agents-beta">
+           AIP Assist
+          </a>
+          .
+         </li>
+         <li>
+          <strong>
+           Security:
+          </strong>
+          Built on the
+          <a href="../../../docs/foundry/announcements/../security/overview/>
+           same rigorous security model
+          </a>
+          that governs the rest of the Palantir platform, ensuring data integrity and access control.
+         </li>
+        </ul>
+        <p>
+         <img alt="An AIP Agent with an Ontology semantic search tool and an Object query tool to find relevant information from supply chain communications and correlate that to specific orders." node="[object Object]" src="/docs/resources/foundry/announcements/bia3.png"/>
+        </p>
+        <p>
+         <em>
+          An AIP Agent with an Ontology semantic search tool and an Object query tool to find relevant information from supply chain communications and correlate that to specific orders.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-when-should-you-use-aip-agent-studio" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#when-should-you-use-aip-agent-studio" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         When should you use AIP Agent Studio?
+        </h3>
+        <p>
+         We recommend using AIP Studio Agent for:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Grouped document retrieval-augmented generation (RAG) Agents:
+          </strong>
+          Ideal for analyzing large sets of documents or unstructured data. Whether dealing with procurement documents, environmental impact assessments, insurance claims, or shift handover logs, AIP Agents can provide context-aware responses and insights.
+         </li>
+         <li>
+          <strong>
+           Ontology context filtering:
+          </strong>
+          Useful for tasks requiring additional filtering based on the application context. For example, in drafting or brainstorming scenarios, agents can be used to adhere to specific style guidelines published by different stakeholders. This allows for consistent and personalized document generation, such as creating briefings tailored to specific higher-ups' preferences.
+         </li>
+         <li>
+          <strong>
+           Custom documentation assistance:
+          </strong>
+          By
+          <a href="#create-custom-llm-powered-assistants-with-aip-assist-agents-beta">
+           integrating with AIP Assist
+          </a>
+          , AIP Agents can specialize in responding to queries based solely on custom content sources, making them invaluable for support teams, developer teams, and platform administrators. This functionality extends the power of AIP Agents to custom documentation.
+         </li>
+         <li>
+          <strong>
+           Routine prompting and templating:
+          </strong>
+          Perfect for scenarios requiring routine drafting or templating, such as coding assistance or generating domain-specific language (DSL) rules. Pre-prompting the agent with specific guidelines or templates can significantly enhance performance and consistency.
+         </li>
+        </ul>
+        <p>
+         AIP Agent Studio is not suitable for tasks that require repetitive, well-defined processes. For such use cases, other tools like AIP Logic or AIP Automate may be more appropriate.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-whats-next-on-the-development-roadmap" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#whats-next-on-the-development-roadmap" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Whatâs next on the development roadmap?
+        </h3>
+        <p>
+         We are actively developing AIP Agent Studio and will soon introduce support for deploying AIP Agents externally via the Ontology SDK (OSDK). Stay tuned for updates.
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../agent-studio/overview/>
+          Learn more about AIP Agent Studio.
+         </a>
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-aip-terminal-will-be-deprecated-october-2-replaced-by-aip-agent-studio" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#aip-terminal-will-be-deprecated-october-2-replaced-by-aip-agent-studio" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         AIP Terminal will be deprecated October 2, replaced by AIP Agent Studio
+        </h2>
+        <p>
+         Date published: 2024-10-01
+        </p>
+        <p>
+         The AIP Terminal application is being replaced by AIP Agent Studio. To get started with AIP Agent Studio, review the relevant getting started guide.
+AIP Terminal app will be deleted on October 2, 2024. Any saved profiles made in AIP Terminal app will no longer be accessible. If you are actively using AIP Terminal or AIP Terminal profiles, migrate to AIP Agent Studio and manually transfer any important saved profiles over to agents in AIP Agent Studio. The AIP Interactive widget will be unaffected.
+        </p>
+        <p>
+         <img alt="Deprecated AIP Terminal profiles will be deleted on October 2." node="[object Object]" src="/docs/resources/foundry/announcements/aipterminal.png"/>
+        </p>
+        <p>
+         <em>
+          Deprecated AIP Terminal profiles will be deleted on October 2.
+         </em>
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-store-time-series-logic-with-derived-series-now-generally-available-ga" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#store-time-series-logic-with-derived-series-now-generally-available-ga" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Store time series logic with derived series, now generally available [GA]
+        </h2>
+        <p>
+         Date published: 2024-10-01
+        </p>
+        <p>
+         We are excited to announce the GA release of
+         <a href="../../../docs/foundry/announcements/../time-series/derived-series-overview/>
+          derived time series
+         </a>
+         , available on all enrollments the week of October 7.
+        </p>
+        <p>
+         Prior to the release of this feature, the results of time series analyses performed in Quiver could not be used in workflows involving other Foundry applications. Now, you can derive a new series from raw sensor data and save it back to the Ontology, allowing for the use of the derived series in all Ontology-aware applications. Once in the Ontology, derived series behave as raw time series but are calculated on the fly. This eliminates the need to manage or store derived data or duplicate those calculations across the platform.
+        </p>
+        <img alt="A generic outline of how an operation can be performed on raw data to generate derived series." node="[object Object]" src="/docs/resources/foundry/announcements/sts1.png?width=600" width="600"/>
+        <p>
+         <em>
+          A generic outline of how an operation can be performed on raw data to generate derived series.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-whats-new-with-derived-series" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#whats-new-with-derived-series" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         What's new with derived series?
+        </h3>
+        <p>
+         In the previous beta version of derived series, you were required to manually save the derived time series to the Ontology through Pipeline Builder or Code Repositories. Now, you can conveniently save to the Ontology automatically using the
+         <strong>
+          Save derived series
+         </strong>
+         setting found in the
+         <strong>
+          Derived Series Options
+         </strong>
+         section of any
+         <a href="../../../docs/foundry/announcements/../time-series/derived-series-common-questions/#which-quiver-cards-are-supported-in-derived-series-logic>
+          supported time series card
+         </a>
+         in Quiver.
+        </p>
+        <img alt="The Save derived series option in a Quiver card." node="[object Object]" src="/docs/resources/foundry/announcements/sts15.png?width=325" width="325"/>
+        <img alt="The setting to save automatically to the Ontology in configuration options." node="[object Object]" src="/docs/resources/foundry/announcements/sts2.png?width=425" width="425"/>
+        <p>
+         <em>
+          The
+          <strong>
+           Save derived series
+          </strong>
+          option in a Quiver card, and the setting to save automatically to the Ontology in configuration options.
+         </em>
+        </p>
+        <p>
+         We also updated the derived series management experience with a feature-rich time series logic editor, shown below:
+        </p>
+        <p>
+         <img alt="The updated time series logic editor for a Delta pressure derived series." node="[object Object]" src="/docs/resources/foundry/announcements/sts3.png"/>
+        </p>
+        <p>
+         <em>
+          The updated time series logic editor for a Delta pressure derived series.
+         </em>
+        </p>
+        <p>
+         Finally, we now provide tooling for managing the derived series that have been saved into the Ontology:
+        </p>
+        <p>
+         <img alt="The new Ontology tab for configuring automatic Ontology saving to sensor object types." node="[object Object]" src="/docs/resources/foundry/announcements/sts4.png"/>
+        </p>
+        <p>
+         <em>
+          The new Ontology tab for configuring automatic Ontology saving to sensor object types.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-why-use-derived-series" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#why-use-derived-series" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Why use derived series?
+        </h3>
+        <p>
+         Before derived series, there was a lack of user-friendly tooling for creating and managing derived series in the platform. Additionally, there was no intuitive way to use transformed time series across different Palantir applications without materializing the transformed data and manually adding the new series to the Ontology.
+        </p>
+        <p>
+         Now, users can derive new series in Quiver and save them to the Ontology for use in operational and analytical applications throughout Foundry. Users can also manage the logic and Ontology saving of derived series in a dedicated tool, with calculations only performed when a user requests the derived series.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-example-use-case" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#example-use-case" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Example use case
+        </h3>
+        <p>
+         A current use case for derived series focuses on process optimization for waste water treatment plants, using data science to optimize energy and chemical consumption. With derived series as features to machine learning models, we can streamline the deployment of these models that use live-streamed time series data to inform operational safe water plant decisions at scale.
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-what-is-next-for-derived-series" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#what-is-next-for-derived-series" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         What is next for derived series?
+        </h3>
+        <p>
+         Over the upcoming weeks, we will be adding the ability to select a filtered object scope for the root object to which the derived series will be linked.
+        </p>
+        <p>
+         Learn more about derived series in our documentation, including
+         <a href="../../../docs/foundry/announcements/../time-series/derived-series-permissions/>
+          permissions requirements
+         </a>
+         and how to set up
+         <a href="../../../docs/foundry/announcements/../time-series/derived-series-create/>
+          automatic Ontology saving
+         </a>
+         .
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-use-intake-forms-to-eliminate-access-management-information-gaps-beta" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#use-intake-forms-to-eliminate-access-management-information-gaps-beta" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Use intake forms to eliminate access management information gaps [Beta]
+        </h2>
+        <p>
+         Date published: 2024-10-01
+        </p>
+        <p>
+         This feature is now generally available.
+         <a href="../../../docs/foundry/announcements/./2024-11/#authentication-and-user-management-through-intake-forms-ga>
+          Read the latest announcement
+         </a>
+         .
+        </p>
+        <p>
+         Platform administrators can now create authentication intake forms from Foundry's
+         <a href="../../../docs/foundry/announcements/../administration/control-panel/>
+          Control Panel
+         </a>
+         to capture, review, and supplement user information not provided through existing identity provider integrations, such as those with
+         <a href="../../../docs/foundry/announcements/../authentication/saml-getting-started/>
+          SAML
+         </a>
+         or
+         <a href="../../../docs/foundry/announcements/../authentication/oidc-getting-started/>
+          OpenID Connect
+         </a>
+         providers. Intake forms can be used to gather and enhance user data required for platform access management, particularly in instances where certain information may not be obtained from identity providers.
+        </p>
+        <p>
+         <img alt="User intake forms created in the Control Panel supplement authentication information not inherited from an identity provider" node="[object Object]" src="/docs/resources/foundry/announcements/uif1.png"/>
+        </p>
+        <p>
+         <em>
+          User intake forms
+         </em>
+         created in the Control Panel supplement authentication information not inherited from an identity provider.
+        </p>
+        <p>
+         After a platform administrator publishes an intake form, users complete the form at the time of their first login and receive platform access upon approval. After submission, users can view their intake form's status and resubmit a new form, if necessary.
+        </p>
+        <p>
+         <img alt="Users can view their intake form's review status or resubmit a new form to garner platform access." node="[object Object]" src="/docs/resources/foundry/announcements/uif2.png"/>
+        </p>
+        <p>
+         <em>
+          Users can view their intake form's review status or resubmit a new form to garner platform access.
+         </em>
+        </p>
+        <p>
+         During the beta period, contact Palantir Support to enable intake forms on your enrollment.
+        </p>
+        <p>
+         Palantir's platform authentication
+         <a href="../../../docs/foundry/announcements/../authentication/intake-forms/>
+          documentation
+         </a>
+         offers additional detail about intake forms.
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-introducing-aip-threads-beta-your-enterprise-productivity-tool" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#introducing-aip-threads-beta-your-enterprise-productivity-tool" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Introducing AIP Threads [Beta], your enterprise productivity tool
+        </h2>
+        <p>
+         Date published: 2024-10-01
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../threads/overview/>
+          AIP Threads
+         </a>
+         is a new general productivity tool for enterprise that enables users to accomplish a variety of tasks and ad-hoc analyses with the power of LLMs. No special configuration or technical expertise is required to interact with documents (for example, PDFs) and AIP Agents (interactive assistants equipped with enterprise-specific information and tools.) To begin working with AIP Threads, simply drag and drop your document into the interface, pick from previously uploaded documents that you have access to, or select an AIP Agent that you and your organization have created, and ask away.
+        </p>
+        <p>
+         AIP Threads is available as a beta release and can be accessed by contacting your Palantir representative to install on your enrollment.
+        </p>
+        <p>
+         <img alt="The AIP Threads interface showcasing interactions with documents and AIP Agents." node="[object Object]" src="/docs/resources/foundry/announcements/aipt1.png"/>
+        </p>
+        <p>
+         <em>
+          The AIP Threads interface showcasing interactions with documents and AIP Agents.
+         </em>
+        </p>
+        <p>
+         <img alt="A PDF document citation shown in AIP Threads" node="[object Object]" src="/docs/resources/foundry/announcements/aipt2.png"/>
+        </p>
+        <p>
+         <em>
+          A PDF document citation shown in AIP Threads.
+         </em>
+        </p>
+        <h3 data-pagefind-weight="0.8" id="user-content-perform-rapid-document-analysis-and-obtain-specialized-assistance" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#perform-rapid-document-analysis-and-obtain-specialized-assistance" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Perform rapid document analysis and obtain specialized assistance
+        </h3>
+        <p>
+         AIP Threads is ideal for:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Quick, ad-hoc document analysis:
+          </strong>
+          Extracting and summarizing key information from technical manuals, vendor contracts, intelligence reports, and more.
+         </li>
+         <li>
+          <strong>
+           Interactive assistance:
+          </strong>
+          Using
+          <a href="#build-interactive-assistants-with-aip-agent-studio-beta">
+           AIP Agents
+          </a>
+          for dynamic help and insights based on specific enterprise data.
+         </li>
+         <li>
+          <strong>
+           Iterative workflows:
+          </strong>
+          Performing iterative tasks that require detailed document analysis and interaction.
+         </li>
+        </ul>
+        <p>
+         AIP Threads is not suitable for workflows requiring highly structured, repetitive tasks. For such cases, other tools like AIP Logic or AIP Automate may be more appropriate.
+        </p>
+        <p>
+         <strong>
+          Whatâs next on the development roadmap?
+         </strong>
+        </p>
+        <p>
+         We are actively developing AIP Threads and will soon add support for passing the full document text into the context window to further enhance its capabilities. Stay tuned for updates.
+        </p>
+        <p>
+         <a href="../../../docs/foundry/announcements/../threads/overview/>
+          Learn more about AIP Threads.
+         </a>
+        </p>
+        <hr/>
+        <h2 data-pagefind-weight="0.9" id="user-content-additional-highlights" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#additional-highlights" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Additional highlights
+        </h2>
+        <p>
+         Starting October 2024, the additional highlights section will no longer be in use and will be merged into release notes. From now on, review
+         <a href="../../../docs/foundry/announcements/release-notes/>
+          Palantir platform release notes
+         </a>
+         for enhancements, bug fixes, and new features.
+        </p>
+       </div>
+      </div>
+      <div class="ptcom-design__animatedLine__116w76e">
+       <div class="ptcom-design__animatedLineRule__116w76e">
+       </div>
+      </div>
+      <div class="ptcom-design__neighbours-container__w8fvw7">
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/announcements/2024-11/>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7 ptcom-design__neighbours-link-arrow-reversed__w8fvw7" title="Previous page">
+          â
+         </span>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           PREVIOUS
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            November 2024
+           </span>
+          </span>
+         </div>
+        </a>
+       </div>
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/announcements/2024-09/>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7 ptcom-design__neighbours-link-text-end-aligned__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           NEXT
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            September 2024
+           </span>
+          </span>
+         </div>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7" title="Next page">
+          â
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+     <nav class="ptcom-design__toc__ko5zom ptcom-design__toc__1pf03m6">
+      <h2 class="ptcom-design__tocNavHeader__1pf03m6">
+       Contents
+      </h2>
+      <ul class="ptcom-design__tocList__1pf03m6">
+       <li class="ptcom-design__tocListItem__1pf03m6">
+        <a class="ptcom-design__tocLink__1pf03m6" href="#announcements">
+         Announcements
+        </a>
+        <ul class="ptcom-design__tocList__1pf03m6">
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#introducing-typescript-ontology-sdk-20-now-generally-available">
+           Introducing TypeScript Ontology SDK 2.0, now generally available
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#foundry-connector-20-for-sap-applications-v2320-sp32-is-now-available">
+           Foundry Connector 2.0 for SAP Applications v2.32.0 (SP32) is now available
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#edit-history-tracking-is-now-supported-in-object-storage-v2-ga">
+           Edit history tracking is now supported in Object Storage V2 [GA]
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#redesigned-control-panel-and-enhanced-navigation-features">
+           Redesigned Control Panel and enhanced navigation features
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#create-custom-llm-powered-assistants-with-aip-assist-agents-beta">
+           Create custom LLM-powered Assistants with AIP Assist Agents [Beta]
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#improved-access-to-and-usability-of-aip-in-quiver-beta">
+           Improved access to and usability of AIP in Quiver [Beta]
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#workshop-vega-chart-widget">
+           Workshop Vega chart widget
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#ontology-sdk-for-java-development-ga">
+           Ontology SDK for Java development [GA]
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#introducing-a-simplified-process-for-creating-and-managing-code-workspaces">
+           Introducing a simplified process for creating and managing code workspaces
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#introducing-model-inputs-in-code-workspaces">
+           Introducing model inputs in Code Workspaces
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#share-data-insights-with-reports-in-rstudio-code-workspaces">
+           Share data insights with reports in RStudioÂ® Code Workspaces
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#configure-your-support-team-in-control-panel">
+           Configure your support team in Control Panel
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#introducing-platform-updates-for-in-platform-access-to-release-notes-and-announcements-ga">
+           Introducing "Platform Updates" for in-platform access to release notes and announcements [GA]
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#build-interactive-assistants-with-aip-agent-studio-beta">
+           Build interactive assistants with AIP Agent Studio [Beta]
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#aip-terminal-will-be-deprecated-october-2-replaced-by-aip-agent-studio">
+           AIP Terminal will be deprecated October 2, replaced by AIP Agent Studio
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#store-time-series-logic-with-derived-series-now-generally-available-ga">
+           Store time series logic with derived series, now generally available [GA]
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#use-intake-forms-to-eliminate-access-management-information-gaps-beta">
+           Use intake forms to eliminate access management information gaps [Beta]
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#introducing-aip-threads-beta-your-enterprise-productivity-tool">
+           Introducing AIP Threads [Beta], your enterprise productivity tool
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#additional-highlights">
+           Additional highlights
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </nav>
+    </div>
+    <footer class="ptcom-design__footer__ko5zom">
+     <p>
+      Â© 2025 Palantir Technologies Inc. All rights reserved.
+     </p>
+     <div class="ptcom-design__statement-links__ko5zom">
+      <a href="https://www.palantir.com/cookie-statement/">
+       Cookies Statement â
+      </a>
+      <a href="https://www.palantir.com/privacy-and-security/">
+       Privacy Statement â
+      </a>
+     </div>
+     <button class="ptcom-design__button__ko5zom" id="ot-sdk-btn">
+      <div class="ot-sdk-show-settings">
+       Cookie Settings
+      </div>
+     </button>
+    </footer>
+   </div>
+  </div>
+  
+ </body>
+</html>

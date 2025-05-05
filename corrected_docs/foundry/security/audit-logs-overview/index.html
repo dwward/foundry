@@ -1,0 +1,2567 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+  <meta content="1; mode=block" http-equiv="X-XSS-Protection"/>
+  <link href="/docs/icon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/docs/icon.svg" rel="shortcut icon" type="image/svg+xml"/>
+  <link href="https://www.gstatic.com" rel="dns-prefetch"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="dns-prefetch"/>
+  <meta content="Audit logs are the primary way for an auditor to understand what actions have been taken by Foundry users. Audit logs in Foundry contain enough..." name="description"/>
+  <link href="https://palantir.com/docs/foundry/security/audit-logs-overview//" rel="canonical"/>
+  <meta content="Palantir" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://palantir.com/docs/foundry/security/audit-logs-overview//" property="og:url"/>
+  <meta content="Palantir" property="og:site_name"/>
+  <meta content="https://palantir.com/docs/resources/homepage/iso-grid.png" name="image" property="og:image"/>
+  <meta content="Audit logs are the primary way for an auditor to understand what actions have been taken by Foundry users. Audit logs in Foundry contain enough..." property="og:description"/>
+  <meta content="Documentation | Palantir" name="twitter:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@palantirtech" name="twitter:site"/>
+  <link href="https://www.googletagmanager.com" rel="preconnect"/>
+  <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
+  <title>
+   Security auditing â¢ Audit logging overview â¢ Palantir
+  </title>
+  <meta content="23" name="next-head-count"/>
+  <script data-nscript="beforeInteractive" type="text/javascript">
+   function OptanonWrapper() {}
+  </script>
+  <link as="style" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="preload"/>
+  <link data-n-g="" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/bd17fdc8846f8c68.css" rel="stylesheet"/>
+  <noscript data-n-css="">
+  </noscript>
+  <script defer="" nomodule="" src="/docs/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js">
+  </script>
+  <script data-document-language="true" data-domain-script="0c1270b7-3d02-4afa-bd15-f3c23839b75a" data-nscript="beforeInteractive" defer="" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/webpack-d50bf798bfb74151.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/framework-777d23e5800d4dc0.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/main-7bc202b68cac4a69.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/_app-87c1de53eb5f2af5.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5117-b9a97c6f03ed6079.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1059-7fd152d892580497.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5819-22ba01b9d8cbb33a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/8913-a71dbce8790fe614.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1472-56bad0c7930cc63a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/9537-3c0ceb8250403970.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/%5B...slug%5D-1bf87c642d9d87bc.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_buildManifest.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_ssgManifest.js">
+  </script>
+ </head>
+ <body>
+  <div data-reactroot="" id="__next">
+   <script id="docs-theme" nonce="**CSP_NONCE**">
+    (function() {
+                                    const theme = document.cookie.split('; ').find(row => row.startsWith('docsColorTheme='));
+                                    if (theme) {
+                                        document.body.className = theme.split('=')[1] + "Theme";
+                                    }
+                                })();
+   </script>
+   <noscript>
+    <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PSL84DJ" style="display:none;visibility:hidden" width="0">
+    </iframe>
+   </noscript>
+   <div class="ptcom-design__layoutWrapper__ko5zom ptcom-design__hasToc__ko5zom">
+    <div class="ptcom-design__navContainer__ko5zom ptcom-design__hasDropdownNav__ko5zom">
+     <div class="ptcom-design__cornerButtons__twowro">
+      <button aria-expanded="false" class="ptcom-design__button__16lyg8o" id="navBtn" title="Show Navigation">
+       <div class="ptcom-design__burger__16lyg8o hamburger hamburger--emphatic">
+        <span class="hamburger-box">
+         <span class="hamburger-inner">
+         </span>
+        </span>
+       </div>
+      </button>
+      <button aria-expanded="false" class="ptcom-design__button__67pw73" id="searchBtn" title="Search">
+       <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <title>
+         Search
+        </title>
+        <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+        </circle>
+        <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+        </path>
+       </svg>
+      </button>
+     </div>
+     <div class="ptcom-design__brandBar__ko5zom">
+      <div class="ptcom-design__logoContainer__ko5zom">
+       <div class="ptcom-design__navBrand__1aug2ec">
+        <a aria-label="Link to Palantir homepage" class="ptcom-design__branding__1aug2ec" data-axe="reviewed" href="../../../docs/ id="logo">
+         <svg class="ptcom-design__logo__1aug2ec" height="20" role="img" viewbox="0 0 83 20" width="83" xmlns="http://www.w3.org/2000/svg">
+          <title>
+           Palantir
+          </title>
+          <path d="M20.115 2.092h5.112c1.896 0 3.133.084 4.204 1.255.742.837 1.154 1.841 1.154 3.013 0 1.171-.412 2.176-1.236 3.012-.825.837-1.896 1.34-4.617 1.34H22.26v6.945h-2.144V2.092zm2.144 6.862h2.473c1.402 0 3.545-.084 3.545-2.678 0-2.427-1.979-2.427-3.133-2.427H22.26v5.105zm15.169 8.703c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.165-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zM36.026 12.3c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.989 0 1.813-.418 2.308-1.172.412-.753.495-1.338.495-2.845-.33.084-.66 0-1.155 0zM40.89 2.092h1.979v15.565H40.89V2.092zm10.553 15.565c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.164-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zm-1.32-5.356c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.99 0 1.814-.418 2.308-1.172.413-.753.495-1.338.495-2.845-.412.084-.66 0-1.154 0zm4.865-4.184V6.862h1.978v1.757c.248-.418.99-1.924 3.38-1.924.99 0 3.875.334 3.875 3.682v7.364H62.16v-6.862c0-.67-.082-1.34-.577-1.841-.495-.502-1.237-.753-1.896-.753-1.484 0-2.803 1.087-2.803 3.263v6.193h-1.979V8.117h.083zm9.893-1.255h1.896V4.519l1.978-.67v2.93h2.391v1.506h-2.39v6.443c0 .502 0 1.423 1.4 1.423.413 0 .825-.084.99-.084v1.59c-.33.084-.907.167-1.649.167-1.896 0-2.72-.586-2.72-2.343V8.284H64.88V6.862zm7.666-4.77h2.391v2.26h-2.39v-2.26zm.165 4.77h1.979v10.795h-1.979V6.862zm3.875 2.176c0-.753-.082-1.507-.082-2.176h1.978l.083 2.092c.412-1.506 1.648-2.008 2.555-2.092a9.379 9.379 0 011.402-.084v2.009c-.083 0-.248-.084-.412-.084h-.578c-2.39 0-2.885 1.422-2.885 3.263v5.774H76.67V9.037h-.083zM7.832 0C3.71 0 .33 3.431.33 7.615s3.38 7.615 7.502 7.615 7.502-3.43 7.502-7.615C15.334 3.431 11.954 0 7.832 0zm0 12.887c-2.886 0-5.194-2.343-5.194-5.272 0-2.929 2.308-5.272 5.194-5.272 2.885 0 5.194 2.343 5.194 5.272-.083 2.929-2.391 5.272-5.194 5.272zm6.677 1.674l-6.677 2.928-6.678-2.928L0 16.653 7.832 20l7.832-3.347-1.155-2.092z">
+          </path>
+         </svg>
+        </a>
+        <div class="ptcom-design__subnavLink__1aug2ec">
+         <li class="ptcom-design__item__vv201u ptcom-design__subNavListContainer__1wclymi" tabindex="0">
+          <div class="ptcom-design__pageGroupTitle__vv201u ptcom-design__subNavPickerDropdown__1wclymi">
+           <span>
+            Documentation
+           </span>
+           <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+            </polyline>
+           </svg>
+          </div>
+          <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__subNavList__1wclymi ptcom-design__pageGroupListFixedWidth__vv201u">
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/>
+             Documentation
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/apollo/>
+             Apollo
+            </a>
+           </li>
+           <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+            <a class="ptcom-design__itemLink__vv201u" href="../../../docs/gotham/>
+             Gotham
+            </a>
+           </li>
+          </ul>
+         </li>
+        </div>
+       </div>
+      </div>
+      <div class="ptcom-design__searchContainer__ko5zom">
+       <div class="ptcom-design__container__11sdyh7">
+        <div class="ptcom-design__search__11sdyh7">
+         <div class="ptcom-design__searchIcon__11sdyh7">
+          <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            Search documentation
+           </title>
+           <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+           </circle>
+           <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+           </path>
+          </svg>
+         </div>
+         <form class="ptcom-design__inputForm__11sdyh7" method="GET">
+          <label class="ptcom-design__hiddenLabel__11sdyh7" for="query">
+           Search
+          </label>
+          <input autocomplete="off" class="ptcom-design__searchInput__11sdyh7" id="query" name="query" placeholder="Search documentation" type="search" value=""/>
+         </form>
+         <div class="ptcom-design__quickSearchRightSideContainer__11sdyh7">
+          <svg class="ptcom-design__quickSearchRightSideButton__11sdyh7" enable-background="new 0 0 16 16" id="Layer_1" version="1.1" viewbox="0 0 16 16" x="0px" y="0px">
+           <title>
+            karat
+           </title>
+           <g id="key_control_1_">
+            <g>
+             <path clip-rule="evenodd" d="M12.71,5.29l-4-4C8.53,1.11,8.28,1,8,1S7.47,1.11,7.29,1.29l-4,4
+                    C3.11,5.47,3,5.72,3,6c0,0.55,0.45,1,1,1c0.28,0,0.53-0.11,0.71-0.29L8,3.41l3.29,3.29C11.47,6.89,11.72,7,12,7c0.55,0,1-0.45,1-1
+                    C13,5.72,12.89,5.47,12.71,5.29z" fill-rule="evenodd">
+             </path>
+            </g>
+           </g>
+          </svg>
+          <p class="ptcom-design__addition__11sdyh7">
+           +
+          </p>
+          <p class="ptcom-design__quickSearchRightSideButton__11sdyh7">
+           K
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <a class="ptcom-design__altLink__ko5zom" href="../../../docs/foundry/api/v2/>
+       API Reference â
+      </a>
+      <a class="ptcom-design__button__10xiqev ptcom-design__feedbackButton__ko5zom ptcom-design__feedbackButton-WithToc__ko5zom">
+       Send feedback
+      </a>
+      <div class="ptcom-design__pickers__ko5zom">
+       <div class="ptcom-design__localePicker__958zz8 ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__958zz8">
+         <button class="ptcom-design__button__958zz8" title="Select a locale">
+          <span>
+           en
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__958zz8">
+         <button class="ptcom-design__button__958zz8 ptcom-design__active__958zz8" title="Select en locale">
+          <span>
+           en
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select jp locale">
+          <span>
+           jp
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select kr locale">
+          <span>
+           kr
+          </span>
+         </button>
+         <button class="ptcom-design__button__958zz8" title="Select zh locale">
+          <span>
+           zh
+          </span>
+         </button>
+        </div>
+       </div>
+       <div class="ptcom-design__themePicker__efbtyr ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr" title="Current theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr ptcom-design__active__efbtyr" title="Select light theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightBlueTheme__efbtyr" title="Select lightBlue theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightGoldTheme__efbtyr" title="Select lightGold theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkTheme__efbtyr" title="Select dark theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkMintTheme__efbtyr" title="Select darkMint theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkSalmonTheme__efbtyr" title="Select darkSalmon theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+     <ul class="ptcom-design__dropdownNav__vv201u ptcom-design__dropdownNav__ko5zom">
+      <li class="ptcom-design__item__vv201u ptcom-design__isSelected__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Capabilities
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/data-integration/overview/>
+          Data connectivity &amp; integration
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/model-integration/overview/>
+          Model connectivity &amp; development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/ontology/overview/>
+          Ontology building
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/dev-toolchain/overview/>
+          Developer toolchain
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/app-building/overview/>
+          Use case development
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/analytics/overview/>
+          Analytics
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/devops/overview/>
+          Product delivery
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u ptcom-design__isSelected__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/security/overview/>
+          Security &amp; governance
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/administration/overview/>
+          Management &amp; enablement
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="ptcom-design__item__vv201u">
+       <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/getting-started/overview/>
+        Getting started
+       </a>
+      </li>
+      <li class="ptcom-design__item__vv201u" tabindex="0">
+       <div class="ptcom-design__pageGroupTitle__vv201u">
+        <span>
+         Platform updates
+        </span>
+        <svg aria-label="chevron" class="ptcom-design__pageGroupTitleIcon__vv201u" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+         <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+         </polyline>
+        </svg>
+       </div>
+       <ul class="ptcom-design__pageGroupList__vv201u ptcom-design__pageGroupListFixedWidth__vv201u">
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/>
+          Announcements
+         </a>
+        </li>
+        <li class="ptcom-design__item__vv201u ptcom-design__pageGroupItem__vv201u">
+         <a class="ptcom-design__itemLink__vv201u" href="../../../docs/foundry/announcements/release-notes/>
+          Release notes
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+    <div class="ptcom-design__content__ko5zom ptcom-design__hasToc__ko5zom ptcom-design__hasDropdownNav__ko5zom ptcom-design__hasSidebarNav__ko5zom">
+     <div class="ptcom-design__sideBarWrapper__ko5zom">
+      <nav class="ptcom-design__sideBar__ko5zom ptcom-design__container__17amtsp">
+       <h2 class="ptcom-design__header__17amtsp ptcom-design__headerNavTitle__17amtsp">
+        Security &amp; governance
+       </h2>
+       <ul class="ptcom-design__navList__17amtsp">
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/overview/>
+          Overview
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/shared-security-responsibility-model/>
+          Shared security responsibility model
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/security-glossary/>
+          Security glossary
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/announcements/release-notes/?filters=security rel="noopener noreferrer" target="_blank">
+          Release notes â
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Platform security
+         </div>
+        </li>
+        <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Getting started
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/securing-a-data-foundation/>
+            Securing a data foundation
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/securing-a-business-application/>
+            Securing a business application
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/protecting-sensitive-data/>
+            Protecting sensitive data
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/cross-organization-collaboration/>
+            Cross-Organization collaboration
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/checking-permissions/>
+            Checking permissions
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/requesting-justification-for-sensitive-actions/>
+            Requesting justification for sensitive actions
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Concepts
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/orgs-and-spaces/>
+            Organizations and spaces
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/projects-and-roles/>
+            Projects and roles
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/portfolios/>
+            Portfolios
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/users-and-groups/>
+            Users and groups
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/markings/>
+            Markings
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/cover-pages/>
+            Cover pages
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/project-constraints/>
+            Project constraints
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/restricted-views/>
+            Restricted Views
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/classification-based-access-controls/>
+            Classification-based Access Controls
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Management
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-orgs-and-spaces/>
+            Manage Organizations and spaces
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-roles/>
+            Manage roles
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-users/>
+            Manage users
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-groups/>
+            Manage groups
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-markings/>
+            Manage markings
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-project-constraints/>
+            Manage Project constraints
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-project-templates/>
+            Manage Project templates
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/manage-restricted-views/>
+            Manage Restricted Views
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/disabling-propagate-view-requirements/>
+            Migrate from and disable "Propagate view requirements" setting [Planned deprecation]
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-management/disabling-ignore-inherited-permissions/>
+            Migrate from and disable "Ignore inherited permissions" setting [Planned deprecation]
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Third-party applications
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/third-party-apps-overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/manage-3pa/>
+            Managing third-party applications
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/register-3pa/>
+            Registering third-party applications
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/enabling-3pa-access/>
+            Enabling third-party application access
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/authorizing-3pa-access/>
+            Authorizing third-party application access
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/danger-zone-actions/>
+            Danger zone actions
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/writing-oauth2-clients/>
+            Writing OAuth2 clients for Foundry
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/user-generated-tokens/>
+            User-generated tokens
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/platform-security-third-party/3pa-api-guidance/>
+            Foundry third-party application &amp; API guidance
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/data-protection-and-governance/>
+          Data protection and governance
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/download-controls/>
+          Download controls
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Applications
+         </div>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Approvals
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/approvals/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/approvals/review-a-request/>
+            Review a request
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Checkpoints
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/checkpoints/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/checkpoints/core-concepts/>
+            Core concepts
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/checkpoints/checkpoint-types/>
+            Checkpoint types
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/checkpoints/configure-checkpoints/>
+            Configure checkpoints
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/checkpoints/review-checkpoint-records/>
+            Review checkpoint records
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/checkpoints/checkpoints-marketplace/>
+            Add checkpoint configurations to a Marketplace product [Beta]
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Cipher
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/core-concepts/>
+            Core concepts
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/getting-started/>
+            Getting started
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Workflows
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/apply-operations/>
+              Apply operations on columns of datasets
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/decrypt-individual-values/>
+              Decrypt individual values across applications
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/ciphertext-in-functions-and-actions/>
+              Use CipherText properties in Functions and Actions
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/example-use-case/>
+              Example use case
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/cipher-marketplace/>
+              Add Cipher to a Marketplace product [Beta]
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/cipher/visual-obfuscation/>
+              Use Cipher for visual obfuscation
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Compass
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/quicksearch/>
+            Quicksearch
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/create-a-project/>
+            Create a Project
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/tags/>
+            Tags
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/manually-upload-data/>
+            Manually upload data
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/move-and-share-resources/>
+            Move and share resources
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/use-project-navigation-panel/>
+            Use Project navigation panel
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/use-project-details-panel/>
+            Use Project details panel
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/compass/data-catalog/>
+            Data Catalog
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Sensitive Data Scanner
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/core-concepts/>
+            Core concepts
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/create-a-sensitive-data-scan/>
+            Create a sensitive data scan
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/create-match-conditions/>
+            Create match conditions
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/create-match-actions/>
+            Create match actions
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/best-practices/>
+            Best practices
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/sensitive-data-scanner/media-set-scanning/>
+            Media set scanning [Beta]
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__panel__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M4,10.5h13m-6.5-6.5v13m0-15.5C5.5,1.5,1.5,5.53,1.5,10.5s4,9,9,9,9-4,9-9S15.5,1.5,10.5,1.5Z" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Data Lifetime [Beta]
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/overview/>
+            Overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/core-concepts-data-lifetime/>
+            Core concepts
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/getting-started/>
+            Getting started
+           </a>
+          </li>
+          <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+           <div class="ptcom-design__panelTitle__17amtsp">
+            <span class="ptcom-design__panelIconCell__17amtsp">
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+              </path>
+             </svg>
+             <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+              <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+              </path>
+             </svg>
+            </span>
+            <span>
+             Workflows
+            </span>
+           </div>
+           <ul class="ptcom-design__panelList__17amtsp">
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/deletion-policies-implications/>
+              Implications of deletion policies
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/creating-a-deletion-policy/>
+              Create a deletion policy
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/removing-a-policy/>
+              Remove a deletion policy
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/view-changes-applied-policy/>
+              View policy activity history
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/policy-overrides/>
+              Create a policy override
+             </a>
+            </li>
+            <li>
+             <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/data-lifetime/FAQ/>
+              FAQ
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Enterprise security
+         </div>
+        </li>
+        <li class="ptcom-design__panel__17amtsp ptcom-design__isOpen__17amtsp">
+         <div class="ptcom-design__panelTitle__17amtsp">
+          <span class="ptcom-design__panelIconCell__17amtsp">
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconDefault__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M16.5,9v7.5h-7.5m7.5,0L4,4" stroke="currentColor">
+            </path>
+           </svg>
+           <svg class="ptcom-design__panelIcon__17amtsp ptcom-design__panelIconHover__17amtsp" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+            <path d="M1,7.5L5.5,3l4.5,4.5M5.5,3V15.5h11.5" stroke="currentColor">
+            </path>
+           </svg>
+          </span>
+          <span>
+           Security auditing
+          </span>
+         </div>
+         <ul class="ptcom-design__panelList__17amtsp">
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp ptcom-design__isSelected__17amtsp" href="../../../docs/foundry/security/audit-logs-overview/>
+            Audit logging overview
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/audit-log-categories/>
+            Audit log categories
+           </a>
+          </li>
+          <li>
+           <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/monitor-audit-logs/>
+            Monitoring audit logs
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/single-sign-on-security/>
+          Protecting identity
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Infrastructure security
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/protect-foundry-installation/>
+          Protecting your self-hosted Foundry installation
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/protect-data-connector-installation/>
+          Protecting your on-premise Foundry Data Connector
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/protect-tokens-api-keys/>
+          Protecting tokens and API keys
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/protect-phishing/>
+          Protecting against phishing
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/protect-malicious-files/>
+          Protecting against malicious files
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/monitor-for-vulnerabilities/>
+          Monitoring for vulnerabilities
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../docs/foundry/security/report-security-concerns/>
+          Reporting security concerns
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="ptcom-design__bodyContainer__ko5zom" data-pagefind-filter="product:foundry" data-pagefind-meta="product:foundry">
+      <div class="ptcom-design__breadcrumbs__qq0wfv" data-pagefind-meta="breadcrumb:Security &amp; governance / Security auditing / Audit logging overview">
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" href="../../../docs/foundry/security/overview/>
+         Security &amp; governance
+        </a>
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        Security auditing
+       </span>
+       <span class="ptcom-design__crumb__qq0wfv">
+        <a class="ptcom-design__link__qq0wfv" data-pagefind-weight="7" href="../../../docs/foundry/security/audit-logs-overview/>
+         Audit logging overview
+        </a>
+       </span>
+      </div>
+      <div data-pagefind-body="true">
+       <div class="ptcom-design__markdownDoc__1vbgce2">
+        <h1 data-pagefind-weight="7" id="user-content-security-auditing" level="1" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#security-auditing" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Security auditing
+        </h1>
+        <p>
+         Audit logs are the primary way for an auditor to understand what actions have been taken by Foundry users.
+        </p>
+        <p>
+         Audit logs in Foundry contain enough information to infer:
+        </p>
+        <ul>
+         <li>
+          <em>
+           who
+          </em>
+          performed an action
+         </li>
+         <li>
+          <em>
+           what
+          </em>
+          the action was
+         </li>
+         <li>
+          <em>
+           when
+          </em>
+          the action happened
+         </li>
+         <li>
+          <em>
+           where
+          </em>
+          the action happened
+         </li>
+        </ul>
+        <p>
+         In some cases, audit logs will contain contextual information about users including Personal Identifiable Information (PII), such as names and email addresses. As such, audit log contents should be considered sensitive and viewed only by persons with the necessary security qualifications.
+        </p>
+        <p>
+         Audit logs are typically consumed into a purpose-built system for security monitoring (a "security information and event management", or
+         <strong>
+          SIEM
+         </strong>
+         solution) owned by the customer.
+        </p>
+        <p>
+         This guide will explain the process of extracting and using audit logs in two sections:
+        </p>
+        <ul>
+         <li>
+          <a href="#audit-delivery">
+           Audit delivery
+          </a>
+          : How a downstream SIEM or user should consume audit logs.
+         </li>
+         <li>
+          <a href="#audit-schema">
+           Audit schema
+          </a>
+          : The contents of a Foundry audit log.
+         </li>
+        </ul>
+        <div class="ptcom-design__callout__5381em ptcom-design__success__5381em">
+         <svg class="ptcom-design__icon__5381em" fill="currentColor" height="20" role="img" viewbox="0 0 20 20" width="20">
+          <path d="M10,2a8,8,0,1,0,8,8A8,8,0,0,0,10,2Zm1,13H9V10H7V8h4ZM10,7a1,1,0,1,1,1-1A1,1,0,0,1,10,7Z">
+          </path>
+         </svg>
+         <div class="ptcom-design__title__5381em">
+          Best practice
+         </div>
+         <p>
+          Customers are strongly encouraged to capture and monitor their own audit logs via the mechanisms presented below. See
+          <a href="../../../docs/foundry/security/./monitor-audit-logs/>
+           Monitoring Security Audit Logs
+          </a>
+          for additional guidance.
+         </p>
+        </div>
+        <h2 data-pagefind-weight="6.3" id="user-content-audit-delivery" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#audit-delivery" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Audit delivery
+        </h2>
+        <p>
+         Audit logs are delivered for downstream consumption via several mechanisms depending on a customer's security infrastructure and SIEM requirements. Batches of audit logs produced by Foundry services are compiled, compressed, and moved to a log bucket within 24 hours (often S3, although environment-dependent). From here, Foundry can deliver logs directly to customer for consumption via
+         <a href="#audit-export-to-foundry">
+          Audit Export To Foundry
+         </a>
+         .
+        </p>
+        <h3 data-pagefind-weight="5.6" id="user-content-audit-export-to-foundry" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#audit-export-to-foundry" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Audit Export to Foundry
+        </h3>
+        <p>
+         Audit logs can be exported, per-organization, directly into a Foundry dataset. As part of the configuration setup, an organization admin chooses where within the Foundry file system this audit log dataset will be generated.
+        </p>
+        <p>
+         Once log data has landed in a dataset, a customer may choose to export the audit data to an external SIEM via Foundry's
+         <a href="../../../docs/foundry/security/../data-connection/export-overview/>
+          Data Connection
+         </a>
+         application.
+        </p>
+        <h4 id="user-content-export-permissions">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#export-permissions" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Export permissions
+        </h4>
+        <p>
+         To export audit logs, a user will need
+         <code>
+          audit-export:orchestrate-v2
+         </code>
+         operation on the target organization(s). This can be granted via the
+         <strong>
+          Organization administrator
+         </strong>
+         role in Control Panel, under the
+         <strong>
+          Organization permissions
+         </strong>
+         tab. See
+         <a href="../../../docs/foundry/security/../platform-security-management/manage-orgs-and-spaces/#organization>
+          Organization Permissions
+         </a>
+         for more details.
+        </p>
+        <h4 id="user-content-export-setup">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#export-setup" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Export setup
+        </h4>
+        <p>
+         To set up Audit Export to Foundry:
+        </p>
+        <ol>
+         <li>
+          Navigate to the Foundry Control Panel.
+         </li>
+         <li>
+          In the left-hand sidebar, select the relevant organization via the dropdown menu.
+         </li>
+         <li>
+          In the left-hand sidebar, select
+          <strong>
+           Audit Logs
+          </strong>
+          under
+          <strong>
+           Organization Settings
+          </strong>
+          .
+         </li>
+         <li>
+          Select
+          <strong>
+           Create dataset
+          </strong>
+          to generate an audit log dataset. Select a location in Foundry for this dataset. By default, audit log datasets will be marked with the Organization selected above. See
+          <a href="../../../docs/foundry/security/./orgs-and-spaces/>
+           Organization Markings
+          </a>
+          .
+         </li>
+         <li>
+          Optionally, configure a start date filter to limit this dataset to events that occur on or after a given date.
+         </li>
+         <li>
+          Optionally, configure a retention policy to limit the amount of time logs are kept in this export dataset. Note that retention policies are based on the transaction timestamp when logs were added to the export dataset, not the timestamp of the log entries themselves. Deleting the
+          <a href="../../../docs/foundry/security/../retention/policy-execution/>
+           relevant transactions
+          </a>
+          may take up to seven days after they are marked for deletion. Here are two examples to illustrate how this works in practice:
+          <ul>
+           <li>
+            Example one:
+            <ul>
+             <li>
+              Start date: One year ago
+             </li>
+             <li>
+              Retention policy: 90 days
+             </li>
+             <li>
+              In this case, the export dataset will initially contain logs from the past year. 90 days after the creation of the dataset, the retention policy will take effect, and only logs added in the last 90 days will be retained, rather than the full year that was initially in the dataset. In practice, this means that the size of the dataset decreases significantly after 90 days when older logs are removed.
+             </li>
+            </ul>
+           </li>
+           <li>
+            Example two:
+            <ul>
+             <li>
+              Start date: 30 days ago
+             </li>
+             <li>
+              Retention policy: 90 days
+             </li>
+             <li>
+              In this scenario, the export dataset will begin with logs from the past 30 days. As new logs are added, the dataset will grow until it holds a rolling window of the most recent 90 days of data. Logs added in transactions older than 90 days will be removed according to the retention policy.
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+        </ol>
+        <p>
+         <img alt="audit export to Foundry setup" node="[object Object]" src="/docs/resources/foundry/security/audit-export-control-panel.png"/>
+        </p>
+        <p>
+         Note that for larger stacks, builds in the first several hours may produce empty append transactions. This is expected behavior as the pipeline processes a backlog of audit logs.
+        </p>
+        <div class="ptcom-design__callout__5381em ptcom-design__success__5381em">
+         <svg class="ptcom-design__icon__5381em" fill="currentColor" height="20" role="img" viewbox="0 0 20 20" width="20">
+          <path d="M10,2a8,8,0,1,0,8,8A8,8,0,0,0,10,2Zm1,13H9V10H7V8h4ZM10,7a1,1,0,1,1,1-1A1,1,0,0,1,10,7Z">
+          </path>
+         </svg>
+         <div class="ptcom-design__title__5381em">
+          Best practice
+         </div>
+         <p>
+          Due to the sensitivity of audit logs, it is highly recommended that the created dataset is restricted on a need-to-know basis and is only accessible by persons with necessary qualifications. Use
+          <a href="../../../docs/foundry/security/./markings/>
+           markings
+          </a>
+          to restrict your audit log dataset and to specify the set of platform administrators who can view potentially sensitive usage details like identifying information or search queries.
+         </p>
+        </div>
+        <h4 id="user-content-disable-an-export">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#disable-an-export" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Disable an export
+        </h4>
+        <p>
+         To disable an export, move the audit log dataset to the trash or to another Project.
+        </p>
+        <div class="ptcom-design__callout__5381em ptcom-design__warning__5381em">
+         <svg class="ptcom-design__icon__5381em" fill="currentColor" height="20" role="img" viewbox="0 0 20 20" width="20">
+          <path d="M11,2H9L2,15v2H18V15.5ZM10,15a1,1,0,1,1,1-1A1,1,0,0,1,10,15Zm1-3H9V6h2Z">
+          </path>
+         </svg>
+         <p>
+          Moving an audit log dataset will stop any further builds of that dataset. There is no way to restart these builds, even if the dataset is subsequently restored from the trash or moved back to the original Project.
+         </p>
+        </div>
+        <h4 id="user-content-audit-log-updates">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#audit-log-updates" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Audit log updates
+        </h4>
+        <p>
+         On build, audit log datasets follow a specific set of conditions to append new logs as they become available (subject to change):
+        </p>
+        <ul>
+         <li>
+          Once audit logs are available in the log bucket, typically within 24 hours, an ingest runs every two hours to land those logs in a hidden intermediary dataset upstream of the export dataset.
+         </li>
+         <li>
+          New logs are then appended to the export dataset from the intermediary dataset once every 10 minutes. Each append pulls at most 10 GB of log data. Appends of 10GB of log data are generally only needed when an audit log dataset is first created.
+         </li>
+         <li>
+          When no new log data is available, the schedule on the export dataset pauses for one hour before resuming.
+         </li>
+         <li>
+          In most cases, once an audit log dataset is fully up-to-date, jobs will continue to run every hour. Typically, one out of every three jobs will append new data to an audit log dataset; the others will be aborted with no additional content written.
+         </li>
+         <li>
+          The runtime of each audit log append is directly proportional to how many new logs are being appended to an audit log dataset.
+         </li>
+         <li>
+          Schedules controlling the builds of the export dataset are controlled by audit-export and are hidden from view of the user.
+         </li>
+        </ul>
+        <h4 id="user-content-analyzing-an-audit-log-dataset">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#analyzing-an-audit-log-dataset" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Analyzing an audit log dataset
+        </h4>
+        <p>
+         Audit log datasets can contain very high volumes of data, so we recommend filtering down this dataset using the
+         <code>
+          time
+         </code>
+         column before performing any aggregations or visualizations. For any filtering, we recommend using Pipeline Builder or Transforms as audit datasets may be too large to effectively analyze in Contour without filtering them first.
+        </p>
+        <h2 data-pagefind-weight="6.3" id="user-content-audit-schema" level="2" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#audit-schema" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Audit schema
+        </h2>
+        <p>
+         All logs that Palantir products produce are
+         <em>
+          structured
+         </em>
+         logs. This means that they have a specific schema that they follow, which can be relied on by downstream systems.
+        </p>
+        <p>
+         Palantir audit logs are currently delivered in the
+         <code>
+          audit.2
+         </code>
+         <a href="#audit2-logs">
+          schema
+         </a>
+         , also commonly refered to as "Audit V2". An updated schema,
+         <code>
+          audit.3
+         </code>
+         or "Audit V3" is in development but is not yet generally available.
+        </p>
+        <p>
+         Within both
+         <code>
+          audit.2
+         </code>
+         and
+         <code>
+          audit.3
+         </code>
+         schemas, audit logs may vary depending on the service that produces it. This is because each service is reasoning about a different domain, and thus will have different concerns that it needs to describe. This variance is more noticeable in
+         <code>
+          audit.2
+         </code>
+         , as will be explained below.
+        </p>
+        <p>
+         Service-specific information is primarily captured within the
+         <code>
+          request_params
+         </code>
+         and
+         <code>
+          result_params
+         </code>
+         fields. The contents of these fields will change shape depending on both the service doing the logging and the event being logged.
+        </p>
+        <h3 data-pagefind-weight="5.6" id="user-content-audit-categories" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#audit-categories" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Audit categories
+        </h3>
+        <p>
+         Audit logs can be thought of as a distilled record of all actions taken by users in the platform. This is often a compromise between verbosity and precision, where overly verbose logs may contain more information but be more difficult to reason about.
+        </p>
+        <p>
+         Palantir logs include a concept called
+         <strong>
+          audit categories
+         </strong>
+         to make logs easier to reason about with little service-specific knowledge.
+        </p>
+        <p>
+         With audit categories, audit logs are described as a union of auditable events. Audit categories are based on a set of core concepts, such as
+         <code>
+          data
+         </code>
+         versus
+         <code>
+          metaData
+         </code>
+         versus
+         <code>
+          logic
+         </code>
+         , and divided into categories that describe actions on those concepts, such as
+         <code>
+          dataLoad
+         </code>
+         (loading data from the system),
+         <code>
+          metaDataCreate
+         </code>
+         (creating a new piece of metadata that describes some data), and
+         <code>
+          logicDelete
+         </code>
+         (deleting some logic within the system, where the logic describes a transformation between two pieces of data).
+        </p>
+        <p>
+         Audit categories have also gone through a versioning change, from a looser form within
+         <code>
+          audit.2
+         </code>
+         logs to a stricter and richer form within
+         <code>
+          audit.3
+         </code>
+         logs. See below for more detail.
+        </p>
+        <p>
+         Refer to
+         <a href="../../../docs/foundry/security/./audit-log-categories/>
+          Audit log categories
+         </a>
+         for a detailed list of available
+         <code>
+          audit.2
+         </code>
+         and
+         <code>
+          audit.3
+         </code>
+         categories.
+        </p>
+        <h3 data-pagefind-weight="5.6" id="user-content-audit-log-attribution" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#audit-log-attribution" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Audit log attribution
+        </h3>
+        <p>
+         Audit logs are written to a single
+         <a href="../../../docs/foundry/security/./monitor-audit-logs/#audit-logging-of-palantir-services>
+          log archive
+         </a>
+         per environment. When audit logs are processed via the delivery pipeline, the User ID fields (
+         <code>
+          uid
+         </code>
+         and
+         <code>
+          otherUids
+         </code>
+         in the
+         <a href="#audit2-logs">
+          schema
+         </a>
+         below) are extracted, and the users are mapped to their corresponding organizations.
+        </p>
+        <p>
+         An Audit Export orchestrated for a given orchestration is limited to audit logs attributed to that organization. Actions taken solely by service (non-human) users will not typically be attributed to any organization as these users are not organization members, except service users for Third Party Applications using
+         <a href="../../../docs/foundry/security/../platform-security-third-party/writing-oauth2-clients/#client-credentials-grant>
+          Client Credentials Grants
+         </a>
+         and used only by the registering organization, which will generate audit logs attributed to that organization.
+        </p>
+        <h3 data-pagefind-weight="5.6" id="user-content-audit2-logs" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#audit2-logs" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Audit.2 logs
+        </h3>
+        <p>
+         <code>
+          audit.2
+         </code>
+         logs have
+         <strong>
+          no inter-service guarantees
+         </strong>
+         about the shape of the request and response parameters. As such, reasoning about audit logs must typically be performed on a service-by-service basis.
+        </p>
+        <p>
+         <code>
+          audit.2
+         </code>
+         logs may present an
+         <a href="#audit-categories">
+          audit category
+         </a>
+         within them that can be useful for narrowing a search. However, this category does not contain further information or prescribe the rest of the contents of the audit log. Additionally,
+         <code>
+          audit.2
+         </code>
+         logs
+         <em>
+          are not guaranteed
+         </em>
+         to contain an audit category. If present, categories will be included in either the
+         <code>
+          _category
+         </code>
+         or
+         <code>
+          _categories
+         </code>
+         field within
+         <code>
+          request_params
+         </code>
+         .
+        </p>
+        <p>
+         The schema of
+         <code>
+          audit.2
+         </code>
+         log export datasets is provided below.
+        </p>
+        <div class="ptcom-design__tableContainer__1vbgce2" data-pagefind-weight="0.5">
+         <table>
+          <thead>
+           <tr>
+            <th>
+             Field
+            </th>
+            <th>
+             Type
+            </th>
+            <th>
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             <code>
+              filename
+             </code>
+            </td>
+            <td>
+             <code>
+              .log.gz
+             </code>
+            </td>
+            <td>
+             Name of the compressed file from the log archive
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              type
+             </code>
+            </td>
+            <td>
+             <code>
+              string
+             </code>
+            </td>
+            <td>
+             Specifies the audit schema version -
+             <code>
+              "audit.2"
+             </code>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              time
+             </code>
+            </td>
+            <td>
+             <code>
+              datetime
+             </code>
+            </td>
+            <td>
+             RFC3339Nano UTC datetime string, e.g.
+             <code>
+              2023-03-13T23:20:24.180Z
+             </code>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              uid
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;UserId&gt;
+             </code>
+            </td>
+            <td>
+             User ID (if available); this is the most downstream caller
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              sid
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;SessionId&gt;
+             </code>
+            </td>
+            <td>
+             Session ID (if available)
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              token_id
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;TokenId&gt;
+             </code>
+            </td>
+            <td>
+             API token ID (if available)
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              ip
+             </code>
+            </td>
+            <td>
+             <code>
+              string
+             </code>
+            </td>
+            <td>
+             Best-effort identifier of the originating IP address
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              trace_id
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;TraceId&gt;
+             </code>
+            </td>
+            <td>
+             Zipkin trace ID (if available)
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              name
+             </code>
+            </td>
+            <td>
+             <code>
+              string
+             </code>
+            </td>
+            <td>
+             Name of the audit event, such as PUT_FILE
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              result
+             </code>
+            </td>
+            <td>
+             <code>
+              AuditResult
+             </code>
+            </td>
+            <td>
+             The result of the event (success, failure, etc.)
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              request_params
+             </code>
+            </td>
+            <td>
+             <code>
+              map&lt;string, any&gt;
+             </code>
+            </td>
+            <td>
+             The parameters known at method invocation time
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              result_params
+             </code>
+            </td>
+            <td>
+             <code>
+              map&lt;string, any&gt;
+             </code>
+            </td>
+            <td>
+             Information derived within a method, commonly parts of the return value
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+        <h3 data-pagefind-weight="5.6" id="user-content-audit3-logs" level="3" node="[object Object]">
+         <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#audit3-logs" tabindex="-1">
+          <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+           </path>
+          </svg>
+         </a>
+         Audit.3 logs
+        </h3>
+        <div class="ptcom-design__callout__5381em">
+         <svg class="ptcom-design__icon__5381em" fill="currentColor" height="20" role="img" viewbox="0 0 20 20" width="20">
+          <path d="M10,2a8,8,0,1,0,8,8A8,8,0,0,0,10,2Zm1,13H9V10H7V8h4ZM10,7a1,1,0,1,1,1-1A1,1,0,0,1,10,7Z">
+          </path>
+         </svg>
+         <p>
+          Audit V3 is under development and is not yet generally available.
+         </p>
+        </div>
+        <p>
+         <code>
+          audit.3
+         </code>
+         logs establish stricter usage of audit categories to reduce the need to understand the particular service when reasoning about log contents.
+         <code>
+          audit.3
+         </code>
+         logs are produced with the following guarantees in mind:
+        </p>
+        <ol>
+         <li>
+          Every audit category explicitly defines the values/items on which it applies - for example,
+          <code>
+           dataLoad
+          </code>
+          describes the precise
+          <em>
+           resources
+          </em>
+          that are loaded.
+         </li>
+         <li>
+          Every log is produced strictly as a union of audit categories. This means that logs will not contain free-form data.
+         </li>
+         <li>
+          Certain important information within an audit log are promoted to the top-level of the
+          <code>
+           audit.3
+          </code>
+          schema. For example, all named resources are present at the top level, as well as within the request and response parameters.
+         </li>
+        </ol>
+        <p>
+         These guarantees mean that for any particular log it is possible to tell (1) what auditable event created it and (2) exactly what fields it contains. These guarantees are service-agnostic.
+        </p>
+        <p>
+         The
+         <code>
+          audit.3
+         </code>
+         schema is provided below. This information is non-exhaustive and subject to change:
+        </p>
+        <div class="ptcom-design__tableContainer__1vbgce2" data-pagefind-weight="0.5">
+         <table>
+          <thead>
+           <tr>
+            <th>
+             Field
+            </th>
+            <th>
+             Type
+            </th>
+            <th>
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             <code>
+              environment
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;string&gt;
+             </code>
+            </td>
+            <td>
+             The environment that produced this log.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              stack
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;string&gt;
+             </code>
+            </td>
+            <td>
+             The stack on which this log was generated.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              service
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;string&gt;
+             </code>
+            </td>
+            <td>
+             The service that produced this log.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              product
+             </code>
+            </td>
+            <td>
+             <code>
+              string
+             </code>
+            </td>
+            <td>
+             The product that produced this log.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              productVersion
+             </code>
+            </td>
+            <td>
+             <code>
+              string
+             </code>
+            </td>
+            <td>
+             The version of the product that produced this log.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              host
+             </code>
+            </td>
+            <td>
+             <code>
+              string
+             </code>
+            </td>
+            <td>
+             The host that produced this log.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              producerType
+             </code>
+            </td>
+            <td>
+             <code>
+              AuditProducer
+             </code>
+            </td>
+            <td>
+             How this audit log was produced; for example, from a backend (SERVER) or frontend (CLIENT).
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              time
+             </code>
+            </td>
+            <td>
+             <code>
+              datetime
+             </code>
+            </td>
+            <td>
+             RFC3339Nano UTC datetime string, for example
+             <code>
+              2023-03-13T23:20:24.180Z
+             </code>
+             .
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              name
+             </code>
+            </td>
+            <td>
+             <code>
+              string
+             </code>
+            </td>
+            <td>
+             The name of the audit event, such as PUT_FILE.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              result
+             </code>
+            </td>
+            <td>
+             <code>
+              AuditResult
+             </code>
+            </td>
+            <td>
+             Indicates whether the request was successful or the type of failure; for example, ERROR or UNAUTHORIZED.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              categories
+             </code>
+            </td>
+            <td>
+             <code>
+              set&lt;string&gt;
+             </code>
+            </td>
+            <td>
+             All audit categories produced by this audit event.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              entities
+             </code>
+            </td>
+            <td>
+             <code>
+              list&lt;any&gt;
+             </code>
+            </td>
+            <td>
+             All entities (for example, resources) present in the request and response params of this log.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              users
+             </code>
+            </td>
+            <td>
+             <code>
+              set&lt;ContextualizedUser&gt;
+             </code>
+            </td>
+            <td>
+             All users present in this audit log, contextualized.
+             <br/>
+             <br/>
+             <code>
+              ContextualizedUser
+             </code>
+             :
+             <br/>
+             fields:
+             <ul>
+              <li>
+               uid: UserId
+              </li>
+              <li>
+               userName:
+               <code>
+                optional&lt;string&gt;
+               </code>
+              </li>
+              <li>
+               firstName:
+               <code>
+                optional&lt;string&gt;
+               </code>
+              </li>
+              <li>
+               lastName:
+               <code>
+                optional&lt;string&gt;
+               </code>
+              </li>
+              <li>
+               groups:
+               <code>
+                list&lt;string&gt;
+               </code>
+              </li>
+              <li>
+               realm:
+               <code>
+                optional&lt;string&gt;
+               </code>
+              </li>
+             </ul>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              requestFields
+             </code>
+            </td>
+            <td>
+             <code>
+              map&lt;string, any&gt;
+             </code>
+            </td>
+            <td>
+             The parameters known at method invocation time.
+             <br/>
+             Entries in the request and response fields will be dependent on the
+             <code>
+              categories
+             </code>
+             field defined above.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              resultFields
+             </code>
+            </td>
+            <td>
+             <code>
+              map&lt;string, any&gt;
+             </code>
+            </td>
+            <td>
+             Information derived within a method, commonly parts of the return value.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              origins
+             </code>
+            </td>
+            <td>
+             <code>
+              list&lt;string&gt;
+             </code>
+            </td>
+            <td>
+             The origins of the network request, determined by request headers. This value can be spoofed.
+             <br/>
+             <br/>
+             To identify audit logs for user-initiated requests, filter to audit logs that have non-empty
+             <code>
+              origins
+             </code>
+             . Audit logs with empty
+             <code>
+              origins
+             </code>
+             correspond to service-initiated requests made by the Palantir backend while fulfilling user-initiated requests.
+             <br/>
+             If an audit log with non-empty
+             <code>
+              origins
+             </code>
+             has
+             <code>
+              categories
+             </code>
+             including
+             <code>
+              apiGatewayRequest
+             </code>
+             , then the associated request was fulfilled by an API gateway. To find audit logs for the requests made by the API gateway to fulfill the user-initiated request, filter to logs with the same
+             <code>
+              traceId
+             </code>
+             that have a
+             <code>
+              userAgent
+             </code>
+             starting with the
+             <code>
+              service
+             </code>
+             in this audit log.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              sourceOrigin
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;string&gt;
+             </code>
+            </td>
+            <td>
+             The origin of the network request, determined by the TCP stack.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              origin
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;string&gt;
+             </code>
+            </td>
+            <td>
+             The best-effort identifier of the originating machine. For example, an IP address, a Kubernetes node identifier, or similar. This value can be spoofed.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              orgId
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;string&gt;
+             </code>
+            </td>
+            <td>
+             The organization to which the
+             <code>
+              uid
+             </code>
+             belongs, if available.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              userAgent
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;string&gt;
+             </code>
+            </td>
+            <td>
+             The user agent of the user that originated this log.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              uid
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;UserId&gt;
+             </code>
+            </td>
+            <td>
+             The user ID, if available. This is the most downstream caller.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              sid
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;SessionId&gt;
+             </code>
+            </td>
+            <td>
+             The session ID, if available.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              eventId
+             </code>
+            </td>
+            <td>
+             <code>
+              uuid
+             </code>
+            </td>
+            <td>
+             The unique identifier for an auditable event. This can be used to group log lines that are part of the same event. For example, the same
+             <code>
+              eventId
+             </code>
+             will be logged in lines emitted at the start and end of a large binary response streamed to the consumer.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              logEntryId
+             </code>
+            </td>
+            <td>
+             <code>
+              uuid
+             </code>
+            </td>
+            <td>
+             The unique identifier for this audit log line, not repeated across any other log line in the system. Note that some log lines may be duplicated during ingestion into Foundry, and there may be several rows with the same
+             <code>
+              logEntryId
+             </code>
+             . Rows with the same
+             <code>
+              logEntryId
+             </code>
+             are duplicates and can be ignored.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              sequenceId
+             </code>
+            </td>
+            <td>
+             <code>
+              uuid
+             </code>
+            </td>
+            <td>
+             A best-effort ordering field for events that share the same
+             <code>
+              eventId
+             </code>
+             .
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <code>
+              traceId
+             </code>
+            </td>
+            <td>
+             <code>
+              optional&lt;TraceId&gt;
+             </code>
+            </td>
+            <td>
+             The Zipkin trace ID, if available.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+      </div>
+      <div class="ptcom-design__animatedLine__116w76e">
+       <div class="ptcom-design__animatedLineRule__116w76e">
+       </div>
+      </div>
+      <div class="ptcom-design__neighbours-container__w8fvw7">
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/data-lifetime/FAQ/>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7 ptcom-design__neighbours-link-arrow-reversed__w8fvw7" title="Previous page">
+          â
+         </span>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           PREVIOUS
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-breadcrumb__w8fvw7">
+            Applications / Data Lifetime [Beta] / Workflows /
+           </span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            FAQ
+           </span>
+          </span>
+         </div>
+        </a>
+       </div>
+       <div>
+        <a class="ptcom-design__neighbours-link__w8fvw7" href="../../../docs/foundry/security/audit-log-categories/>
+         <div class="ptcom-design__neighbours-link-text__w8fvw7 ptcom-design__neighbours-link-text-end-aligned__w8fvw7">
+          <span class="ptcom-design__neighbours-link-hint__w8fvw7">
+           NEXT
+          </span>
+          <span>
+           <span class="ptcom-design__neighbours-link-title__w8fvw7">
+            Audit log categories
+           </span>
+          </span>
+         </div>
+         <span class="ptcom-design__neighbours-link-arrow__w8fvw7" title="Next page">
+          â
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+     <nav class="ptcom-design__toc__ko5zom ptcom-design__toc__1pf03m6">
+      <h2 class="ptcom-design__tocNavHeader__1pf03m6">
+       Contents
+      </h2>
+      <ul class="ptcom-design__tocList__1pf03m6">
+       <li class="ptcom-design__tocListItem__1pf03m6">
+        <a class="ptcom-design__tocLink__1pf03m6" href="#security-auditing">
+         Security auditing
+        </a>
+        <ul class="ptcom-design__tocList__1pf03m6">
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#audit-delivery">
+           Audit delivery
+          </a>
+         </li>
+         <li class="ptcom-design__tocListItem__1pf03m6">
+          <a class="ptcom-design__tocLink__1pf03m6" href="#audit-schema">
+           Audit schema
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </nav>
+    </div>
+    <footer class="ptcom-design__footer__ko5zom">
+     <p>
+      Â© 2025 Palantir Technologies Inc. All rights reserved.
+     </p>
+     <div class="ptcom-design__statement-links__ko5zom">
+      <a href="https://www.palantir.com/cookie-statement/">
+       Cookies Statement â
+      </a>
+      <a href="https://www.palantir.com/privacy-and-security/">
+       Privacy Statement â
+      </a>
+     </div>
+     <button class="ptcom-design__button__ko5zom" id="ot-sdk-btn">
+      <div class="ot-sdk-show-settings">
+       Cookie Settings
+      </div>
+     </button>
+    </footer>
+   </div>
+  </div>
+  
+ </body>
+</html>

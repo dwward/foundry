@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+  <meta content="1; mode=block" http-equiv="X-XSS-Protection"/>
+  <link href="/docs/icon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/docs/icon.svg" rel="shortcut icon" type="image/svg+xml"/>
+  <link href="https://www.gstatic.com" rel="dns-prefetch"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="dns-prefetch"/>
+  <meta content="Learn how Foundry can help you leverage your data to solve real-world problems with documentation on workflows, applications, APIs and more." name="description"/>
+  <link href="https://palantir.com/docs/foundry/api/ontology-resources/action-types/action-type-basics//" rel="canonical"/>
+  <meta content="Palantir" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://palantir.com/docs/foundry/api/ontology-resources/action-types/action-type-basics//" property="og:url"/>
+  <meta content="Palantir" property="og:site_name"/>
+  <meta content="https://palantir.com/docs/resources/homepage/iso-grid.png" name="image" property="og:image"/>
+  <meta content="Learn how Foundry can help you leverage your data to solve real-world problems with documentation on workflows, applications, APIs and more." property="og:description"/>
+  <meta content="Documentation | Palantir" name="twitter:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@palantirtech" name="twitter:site"/>
+  <link href="https://www.googletagmanager.com" rel="preconnect"/>
+  <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
+  <title>
+   Action Type basics â¢ API Reference â¢ Palantir
+  </title>
+  <meta content="23" name="next-head-count"/>
+  <script data-nscript="beforeInteractive" type="text/javascript">
+   function OptanonWrapper() {}
+  </script>
+  <link as="style" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="preload"/>
+  <link data-n-g="" href="/docs/_next/static/css/2e7b64cb4ce98909.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/e6bdea3307ccef92.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/ba2cea7d5e76e77e.css" rel="stylesheet"/>
+  <link as="style" href="/docs/_next/static/css/f10dfc37c63fcd63.css" rel="preload"/>
+  <link data-n-p="" href="/docs/_next/static/css/f10dfc37c63fcd63.css" rel="stylesheet"/>
+  <noscript data-n-css="">
+  </noscript>
+  <script defer="" nomodule="" src="/docs/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js">
+  </script>
+  <script data-document-language="true" data-domain-script="0c1270b7-3d02-4afa-bd15-f3c23839b75a" data-nscript="beforeInteractive" defer="" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/webpack-d50bf798bfb74151.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/framework-777d23e5800d4dc0.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/main-7bc202b68cac4a69.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/_app-87c1de53eb5f2af5.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/280b0e58-95b3e1c89a6aedd3.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/bf34b54a-b0e1366e51e42d88.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5117-b9a97c6f03ed6079.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1059-7fd152d892580497.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/5819-22ba01b9d8cbb33a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/8913-a71dbce8790fe614.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/3628-e73011dfa9cfceae.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/1472-56bad0c7930cc63a.js">
+  </script>
+  <script defer="" src="/docs/_next/static/chunks/pages/%5BproductId%5D/api/%5B%5B...slug%5D%5D-ad655f4c75188f94.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_buildManifest.js">
+  </script>
+  <script defer="" src="/docs/_next/static/development/_ssgManifest.js">
+  </script>
+ </head>
+ <body>
+  <div data-reactroot="" id="__next">
+   <script id="docs-theme" nonce="**CSP_NONCE**">
+    (function() {
+                                    const theme = document.cookie.split('; ').find(row => row.startsWith('docsColorTheme='));
+                                    if (theme) {
+                                        document.body.className = theme.split('=')[1] + "Theme";
+                                    }
+                                })();
+   </script>
+   <noscript>
+    <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PSL84DJ" style="display:none;visibility:hidden" width="0">
+    </iframe>
+   </noscript>
+   <div class="ptcom-design__layoutWrapper__ko5zom">
+    <div class="ptcom-design__navContainer__ko5zom ptcom-design__has-api-version-picker__ko5zom">
+     <div class="ptcom-design__cornerButtons__twowro">
+      <button aria-expanded="false" class="ptcom-design__button__16lyg8o" id="navBtn" title="Show Navigation">
+       <div class="ptcom-design__burger__16lyg8o hamburger hamburger--emphatic">
+        <span class="hamburger-box">
+         <span class="hamburger-inner">
+         </span>
+        </span>
+       </div>
+      </button>
+      <button aria-expanded="false" class="ptcom-design__button__67pw73" id="searchBtn" title="Search">
+       <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <title>
+         Search
+        </title>
+        <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+        </circle>
+        <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+        </path>
+       </svg>
+      </button>
+     </div>
+     <div class="ptcom-design__brandBar__ko5zom">
+      <div class="ptcom-design__logoContainer__ko5zom">
+       <div class="ptcom-design__navBrand__1aug2ec">
+        <a aria-label="Link to Palantir homepage" class="ptcom-design__branding__1aug2ec" data-axe="reviewed" href="../../../../../../docs/ id="logo">
+         <svg class="ptcom-design__logo__1aug2ec" height="20" role="img" viewbox="0 0 83 20" width="83" xmlns="http://www.w3.org/2000/svg">
+          <title>
+           Palantir
+          </title>
+          <path d="M20.115 2.092h5.112c1.896 0 3.133.084 4.204 1.255.742.837 1.154 1.841 1.154 3.013 0 1.171-.412 2.176-1.236 3.012-.825.837-1.896 1.34-4.617 1.34H22.26v6.945h-2.144V2.092zm2.144 6.862h2.473c1.402 0 3.545-.084 3.545-2.678 0-2.427-1.979-2.427-3.133-2.427H22.26v5.105zm15.169 8.703c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.165-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zM36.026 12.3c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.989 0 1.813-.418 2.308-1.172.412-.753.495-1.338.495-2.845-.33.084-.66 0-1.155 0zM40.89 2.092h1.979v15.565H40.89V2.092zm10.553 15.565c-.165-.502-.165-1.088-.165-1.59-.99 1.757-2.39 1.925-3.298 1.925-2.473 0-3.792-1.423-3.792-3.18 0-.837.33-2.26 1.896-3.18 1.154-.67 2.803-.67 3.71-.67.495 0 .824 0 1.402.084 0-1.339 0-1.925-.413-2.427-.412-.502-1.236-.67-1.813-.67-1.979 0-2.144 1.424-2.144 1.842h-1.978c.082-.586.164-1.339.742-2.008.824-.92 2.308-1.172 3.462-1.172 1.566 0 3.215.502 3.792 1.59.33.67.33 1.172.33 1.674l-.082 5.188c0 .167 0 1.59.165 2.678h-1.814v-.084zm-1.32-5.356c-.824 0-3.874 0-3.874 2.176 0 .67.412 1.841 2.226 1.841.99 0 1.814-.418 2.308-1.172.413-.753.495-1.338.495-2.845-.412.084-.66 0-1.154 0zm4.865-4.184V6.862h1.978v1.757c.248-.418.99-1.924 3.38-1.924.99 0 3.875.334 3.875 3.682v7.364H62.16v-6.862c0-.67-.082-1.34-.577-1.841-.495-.502-1.237-.753-1.896-.753-1.484 0-2.803 1.087-2.803 3.263v6.193h-1.979V8.117h.083zm9.893-1.255h1.896V4.519l1.978-.67v2.93h2.391v1.506h-2.39v6.443c0 .502 0 1.423 1.4 1.423.413 0 .825-.084.99-.084v1.59c-.33.084-.907.167-1.649.167-1.896 0-2.72-.586-2.72-2.343V8.284H64.88V6.862zm7.666-4.77h2.391v2.26h-2.39v-2.26zm.165 4.77h1.979v10.795h-1.979V6.862zm3.875 2.176c0-.753-.082-1.507-.082-2.176h1.978l.083 2.092c.412-1.506 1.648-2.008 2.555-2.092a9.379 9.379 0 011.402-.084v2.009c-.083 0-.248-.084-.412-.084h-.578c-2.39 0-2.885 1.422-2.885 3.263v5.774H76.67V9.037h-.083zM7.832 0C3.71 0 .33 3.431.33 7.615s3.38 7.615 7.502 7.615 7.502-3.43 7.502-7.615C15.334 3.431 11.954 0 7.832 0zm0 12.887c-2.886 0-5.194-2.343-5.194-5.272 0-2.929 2.308-5.272 5.194-5.272 2.885 0 5.194 2.343 5.194 5.272-.083 2.929-2.391 5.272-5.194 5.272zm6.677 1.674l-6.677 2.928-6.678-2.928L0 16.653 7.832 20l7.832-3.347-1.155-2.092z">
+          </path>
+         </svg>
+        </a>
+        <div class="ptcom-design__subnavLink__1aug2ec">
+         API Reference
+        </div>
+       </div>
+      </div>
+      <div class="ptcom-design__searchContainer__ko5zom">
+       <div class="ptcom-design__container__11sdyh7">
+        <div class="ptcom-design__search__11sdyh7">
+         <div class="ptcom-design__searchIcon__11sdyh7">
+          <svg fill="none" height="16" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            Search documentation
+           </title>
+           <circle cx="9.543" cy="6.589" r="5.709" stroke="currentColor">
+           </circle>
+           <path d="M6.051 10.524l-4.95 4.949" stroke="currentColor">
+           </path>
+          </svg>
+         </div>
+         <form class="ptcom-design__inputForm__11sdyh7" method="GET">
+          <label class="ptcom-design__hiddenLabel__11sdyh7" for="query">
+           Search
+          </label>
+          <input autocomplete="off" class="ptcom-design__searchInput__11sdyh7" id="query" name="query" placeholder="Search documentation" type="search" value=""/>
+         </form>
+         <div class="ptcom-design__quickSearchRightSideContainer__11sdyh7">
+          <svg class="ptcom-design__quickSearchRightSideButton__11sdyh7" enable-background="new 0 0 16 16" id="Layer_1" version="1.1" viewbox="0 0 16 16" x="0px" y="0px">
+           <title>
+            karat
+           </title>
+           <g id="key_control_1_">
+            <g>
+             <path clip-rule="evenodd" d="M12.71,5.29l-4-4C8.53,1.11,8.28,1,8,1S7.47,1.11,7.29,1.29l-4,4
+                    C3.11,5.47,3,5.72,3,6c0,0.55,0.45,1,1,1c0.28,0,0.53-0.11,0.71-0.29L8,3.41l3.29,3.29C11.47,6.89,11.72,7,12,7c0.55,0,1-0.45,1-1
+                    C13,5.72,12.89,5.47,12.71,5.29z" fill-rule="evenodd">
+             </path>
+            </g>
+           </g>
+          </svg>
+          <p class="ptcom-design__addition__11sdyh7">
+           +
+          </p>
+          <p class="ptcom-design__quickSearchRightSideButton__11sdyh7">
+           K
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <a class="ptcom-design__altLink__ko5zom" href="../../../../../../docs/foundry/>
+       User Documentation â
+      </a>
+      <div class="ptcom-design__pickers__ko5zom">
+       <div class="ptcom-design__themePicker__efbtyr ptcom-design__themePicker__ko5zom" tabindex="0">
+        <div class="ptcom-design__active__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr" title="Current theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+        <div class="ptcom-design__menu__efbtyr">
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightTheme__efbtyr ptcom-design__active__efbtyr" title="Select light theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightBlueTheme__efbtyr" title="Select lightBlue theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__lightGoldTheme__efbtyr" title="Select lightGold theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkTheme__efbtyr" title="Select dark theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkMintTheme__efbtyr" title="Select darkMint theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+         <button class="ptcom-design__button__efbtyr ptcom-design__darkSalmonTheme__efbtyr" title="Select darkSalmon theme">
+          <span>
+           AB
+          </span>
+          <span>
+           XY
+          </span>
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div aria-label="Select API version" class="ptcom-design__dropdown-container__98z0f2 ptcom-design__api-version-picker__ko5zom" tabindex="0">
+      <div class="ptcom-design__dropdown-title__98z0f2">
+       <span>
+        Version 1.0
+       </span>
+       <svg aria-label="chevron" class="ptcom-design__dropdown-icon__98z0f2" fill="none" height="20" role="img" viewbox="0 0 20 20" width="20">
+        <polyline points="5 7.5 10 12.5 15 7.5" stroke="currentColor">
+        </polyline>
+       </svg>
+      </div>
+      <div class="ptcom-design__dropdown-content__98z0f2">
+       <button aria-label="Select Version 1.0" class="ptcom-design__dropdown-item__98z0f2 ptcom-design__dropdown-item-selected__98z0f2" data-version="V1">
+        Version 1.0
+       </button>
+       <button aria-label="Select Version 2.0" class="ptcom-design__dropdown-item__98z0f2" data-version="V2">
+        Version 2.0
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="ptcom-design__content__ko5zom ptcom-design__content__12mddri ptcom-design__hasSidebarNav__ko5zom">
+     <div class="ptcom-design__sideBarWrapper__ko5zom">
+      <nav class="ptcom-design__sideBar__ko5zom ptcom-design__container__17amtsp">
+       <ul class="ptcom-design__navList__17amtsp">
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          General
+         </div>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Overview
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/general/overview/introduction/>
+          Introduction
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/general/overview/authentication/>
+          Authentication
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/general/overview/getting-started/>
+          Getting started
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/general/overview/sdks/>
+          Software development kit (SDK)
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/general/overview/paging/>
+          Paging
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/general/overview/versioning/>
+          Versioning
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/general/overview/limits/>
+          Limits
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/general/overview/errors/>
+          Errors
+         </a>
+        </li>
+        <li>
+         <hr class="ptcom-design__pageDivider__17amtsp"/>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Datasets
+         </div>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Datasets
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/datasets/dataset-basics/>
+          Dataset basics
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/datasets/create-dataset/>
+          Create Dataset
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/datasets/get-dataset/>
+          Get Dataset
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/datasets/read-table/>
+          Read Table
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Branches
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/branches/branch-basics/>
+          Branch basics
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/branches/create-branch/>
+          Create Branch
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/branches/get-branch/>
+          Get Branch
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/branches/delete-branch/>
+          Delete Branch
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/branches/list-branches/>
+          List Branches
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Transactions
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/transactions/transaction-basics/>
+          Transaction basics
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/transactions/create-transaction/>
+          Create Transaction
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/transactions/get-transaction/>
+          Get Transaction
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/transactions/commit-transaction/>
+          Commit Transaction
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/transactions/abort-transaction/>
+          Abort Transaction
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Files
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/files/file-basics/>
+          File basics
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/files/list-files/>
+          List Files
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/files/upload-file/>
+          Upload File
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/files/get-file-metadata/>
+          Get File Metadata
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/files/delete-file/>
+          Delete File
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/datasets-resources/files/get-file-content/>
+          Get File Content
+         </a>
+        </li>
+        <li>
+         <hr class="ptcom-design__pageDivider__17amtsp"/>
+        </li>
+        <li class="ptcom-design__header__17amtsp">
+         <div>
+          Ontologies [v1]
+         </div>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Ontologies
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/ontologies/ontology-basics/>
+          Ontology basics
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/ontologies/list-ontologies/>
+          List Ontologies
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/ontologies/get-ontology/>
+          Get Ontology
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Object Types
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/object-types/object-type-basics/>
+          Object Type basics
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/object-types/list-object-types/>
+          List Object Types
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/object-types/get-object-type/>
+          Get Object Type
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/object-types/list-outgoing-link-types/>
+          List Outgoing Link Types
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/object-types/get-outgoing-link-type/>
+          Get Outgoing Link Type
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Action Types
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp ptcom-design__isSelected__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/action-types/action-type-basics/>
+          Action Type basics
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/action-types/list-action-types/>
+          List Action Types
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/action-types/get-action-type/>
+          Get Action Type
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Actions
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/actions/action-basics/>
+          Action basics
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/actions/apply-action/>
+          Apply Action
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/actions/apply-action-batch/>
+          Apply Action Batch
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/actions/validate-action/>
+          Validate Action
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Query Types
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/query-types/query-type-basics/>
+          Query Type basics
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/query-types/list-query-types/>
+          List Query Types
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/query-types/get-query-type/>
+          Get Query Type
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Queries
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/queries/query-basics/>
+          Query basics
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/queries/execute-query/>
+          Execute Query
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Objects
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/objects/ontology-object-basics/>
+          Ontology Object basics
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/objects/list-objects/>
+          List Objects
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/objects/get-object/>
+          Get Object
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/objects/list-linked-objects/>
+          List Linked Objects
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/objects/get-linked-object/>
+          Get Linked Object
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/objects/search-objects/>
+          Search Objects
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/objects/aggregate-objects/>
+          Aggregate Objects
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/objects/search/>
+          Search Objects Details
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/objects/aggregate/>
+          Aggregate Objects Details
+         </a>
+        </li>
+        <li class="ptcom-design__header__17amtsp ptcom-design__minimal__17amtsp">
+         <div>
+          Attachments
+         </div>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/attachments/attachment-basics/>
+          Attachment basics
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/attachments/upload-attachment/>
+          Upload Attachment
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/attachments/get-attachment-content/>
+          Get Attachment Content
+         </a>
+        </li>
+        <li>
+         <a class="ptcom-design__itemLink__17amtsp" href="../../../../../../docs/foundry/api/v1/ontology-resources/attachments/get-attachment/>
+          Get Attachment
+         </a>
+        </li>
+        <li>
+         <hr class="ptcom-design__pageDivider__17amtsp"/>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="ptcom-design__bodyContainer__ko5zom" data-pagefind-filter="product:foundry" data-pagefind-meta="product:foundry">
+      <div data-pagefind-meta="type:API">
+       <div data-pagefind-body="true">
+        <div class="ptcom-design__markdownDoc__1vbgce2 ptcom-design__dev-markdown__1v5yfr0">
+         <h1 data-pagefind-weight="10" id="user-content-action-type-basics" level="1" node="[object Object]">
+          <a aria-hidden="true" aria-label="Copy link to section" class="autolink-header" href="#action-type-basics" tabindex="-1">
+           <svg class="autolink-img" fill="currentColor" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.368,10.29l-1.839,1.84a.75.75,0,1,1-1.061-1.06l1.84-1.841a3.214,3.214,0,0,0,0-4.539,3.286,3.286,0,0,0-4.538,0L11.411,8.05a2.3,2.3,0,0,0-.3.357,3.188,3.188,0,0,0,.3,4.183.75.75,0,1,1-1.061,1.06,4.664,4.664,0,0,1-.474-6.094,3.625,3.625,0,0,1,.474-.566l3.359-3.36a4.709,4.709,0,1,1,6.659,6.66Zm-7.779.06a.749.749,0,0,0,0,1.06,3.172,3.172,0,0,1,.749,3.353,3.068,3.068,0,0,1-.749,1.187L9.23,19.31a3.286,3.286,0,0,1-4.538,0,3.214,3.214,0,0,1,0-4.539l1.84-1.841a.75.75,0,1,0-1.061-1.06L3.632,13.71a4.709,4.709,0,1,0,6.659,6.66l3.359-3.36a4.546,4.546,0,0,0,1.105-1.756,4.712,4.712,0,0,0-1.105-4.9A.75.75,0,0,0,12.589,10.35Z">
+            </path>
+           </svg>
+          </a>
+          Action Type basics
+         </h1>
+        </div>
+       </div>
+       <div data-pagefind-body="true">
+        <div class="ptcom-design__markdownDoc__1vbgce2">
+         <p>
+          An action type represents a set of changes and logic that can be applied in the Ontology. Action types are
+created in the
+          <strong>
+           Ontology Manager
+          </strong>
+          . For more information, refer to the
+          <a href="../../../../../../docs/foundry/action-types/overview/>
+           action type
+          </a>
+          user documentation.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div data-pagefind-meta="breadcrumb:Ontology resources / Action types / Action type basics" style="display:none">
+      </div>
+     </div>
+    </div>
+    <footer class="ptcom-design__footer__ko5zom">
+     <p>
+      Â© 2025 Palantir Technologies Inc. All rights reserved.
+     </p>
+     <div class="ptcom-design__statement-links__ko5zom">
+      <a href="https://www.palantir.com/cookie-statement/">
+       Cookies Statement â
+      </a>
+      <a href="https://www.palantir.com/privacy-and-security/">
+       Privacy Statement â
+      </a>
+     </div>
+     <button class="ptcom-design__button__ko5zom" id="ot-sdk-btn">
+      <div class="ot-sdk-show-settings">
+       Cookie Settings
+      </div>
+     </button>
+    </footer>
+   </div>
+  </div>
+  
+ </body>
+</html>
